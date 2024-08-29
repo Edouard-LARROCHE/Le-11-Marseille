@@ -1,0 +1,7 @@
+@use "./primitives" as *;
+
+body {
+	--background-color: #{$white-opacity};
+	background-color: var(--background-color);
+}
+
