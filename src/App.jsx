@@ -1,8 +1,13 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react"
 
+import Home from "./pages/home/home.jsx"
+
 function App() {
-	return <div className="App">Le 11 à Marseille</div>
+	return (
+		<div className="App">
+			<Home />
+		</div>
+	)
 }
 
 export default App

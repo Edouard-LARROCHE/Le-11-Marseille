@@ -1,0 +1,27 @@
+@use "../scss/config/primitives" as *;
+
+.containerTitle {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.title {
+		color: $white-opacity;
+		font-size: 5rem;
+		// font-weight: 400;
+		font-style: italic;
+		letter-spacing: 0.2rem;
+	}
+
+	.titleExpend {
+		color: $white-opacity;
+		font-size: 3rem;
+		// font-weight: 400;
+		font-style: italic;
+		letter-spacing: 0.2rem;
+	}
+}
+
