@@ -1,0 +1,42 @@
+{
+	"extends": ["plugin:react/recommended", "prettier"],
+	"settings": {
+		"editor.tabSize": 4,
+		"react": {
+			"version": "detect",
+			// automatiquement détecte la version de React
+		},
+	},
+	"plugins": ["prettier", "react"],
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"sourceType": "module",
+	},
+	"rules": {
+		"prettier/prettier": "error",
+		"camelcase": "error",
+		"no-var": "error",
+		"no-unused-vars": "error",
+		"react/jsx-boolean-value": ["error", "never"],
+		"react/jsx-closing-bracket-location": ["error", "line-aligned"],
+		"react/jsx-wrap-multilines": [
+			"error",
+			{
+				"declaration": "parens-new-line",
+				"assignment": "parens-new-line",
+				"return": "parens-new-line",
+				"arrow": "parens-new-line",
+				"condition": "parens-new-line",
+				"logical": "parens-new-line",
+			},
+		],
+		"react/jsx-pascal-case": [
+			"error",
+			{
+				"allowAllCaps": true,
+				"ignore": [],
+			},
+		],
+	},
+}
+
