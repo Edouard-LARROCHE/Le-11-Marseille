@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react"
 
+import Carousel from "../carousel/carousel"
+import CardEffect from "../cardEffect/cardEffect"
+
 import IMGSejour from "../../assets/images/pictures/SEJOUR/IMG_3283.jpg"
 import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
+
 import LogoLe11 from "../../assets/logo/le11.svg?react"
+import Le11Vertical from "../../assets/logo/le11-vertical.svg?react"
+import Le11Vertical2 from "../../assets/logo/Le11-vertical-2.svg?react"
+import WaveLine from "../../assets/icons/wave-line.svg?react"
 
 import "./pictureHome.scss"
 
@@ -112,8 +119,13 @@ const PictureHome = () => {
 					</div>
 					<div className="content-top-left">
 						<img src={IMGBalcon} alt="Marseille" />
+						{/* <Carousel /> */}
+						<Le11Vertical className="le11Vertical" />
+						<WaveLine className="waveLine" />
+						<Le11Vertical2 className="le11Vertical2" />
 					</div>
 				</div>
+				<CardEffect />
 			</div>
 		</div>
 	)

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="svg2"
+   width="1587.4"
+   height="1122.52"
+   viewBox="0 0 1587.4 1122.52"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18">
+      <path
+         d="M 0,0.2099707 H 1190.52 V 841.89007 H 0 Z"
+         id="path16" />
+    </clipPath>
+  </defs>
+  <g
+     id="g8"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,1122.52)">
+    <g
+       id="g12">
+      <g
+         id="g14"
+         clip-path="url(#clipPath18)">
+        <g
+           id="g200"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="M 1104.552,1322.35 H 1114"
+             style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path202" />
+        </g>
+        <g
+           id="g208"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="m 770.2726,530.1611 -18.8975,37.0887"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path210" />
+        </g>
+        <g
+           id="g212"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="m 751.3751,567.2498 -36.1819,71.0107"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path214" />
+        </g>
+        <g
+           id="g216"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="m 818.3353,925.9565 h 18.8976"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path218" />
+        </g>
+        <g
+           id="g220"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="M 837.2329,529.8621 V 925.9565"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path222" />
+        </g>
+        <g
+           id="g224"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="M 818.3353,566.9507 V 925.9565"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path226" />
+        </g>
+        <g
+           id="g228"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="m 837.2329,529.8621 -18.8976,37.0886"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path230" />
+        </g>
+        <g
+           id="g232"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="m 818.3353,566.9507 -36.1817,71.0107"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path234" />
+        </g>
+        <g
+           id="g236"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="M 770.2726,530.1611 V 926.2556"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path238" />
+        </g>
+        <g
+           id="g240"
+           transform="matrix(0.36,0,0,-0.36,0,841.89)">
+          <path
+             d="M 751.3751,567.2498 V 926.2556"
+             style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:2.818;stroke-dasharray:none;stroke-opacity:1"
+             id="path242" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

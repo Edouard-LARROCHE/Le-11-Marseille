@@ -1,0 +1,51 @@
+@use "../../scss//config/functions" as *;
+@use "../../scss//config/primitives" as *;
+
+.card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: convertToREM(300);
+	margin: convertToREM(100) auto;
+	perspective: convertToREM(1000);
+	background-color: $grey-snow;
+
+	.card {
+		// position: absolute;
+		width: convertToREM(100);
+		height: convertToREM(150);
+		top: 0;
+		transition:
+			transform 0.3s ease,
+			z-index 0.3s ease;
+		transform-origin: bottom center;
+
+		&:nth-child(1) {
+			left: 0;
+			transform: rotate(-20deg);
+		}
+
+		&:nth-child(2) {
+			left: 50px;
+			transform: rotate(-10deg);
+		}
+
+		&:nth-child(3) {
+			left: 100px;
+			transform: rotate(0deg);
+		}
+
+		&:nth-child(4) {
+			left: 150px;
+			transform: rotate(10deg);
+		}
+
+		&:nth-child(5) {
+			left: 200px;
+			transform: rotate(20deg);
+		}
+	}
+}
+
