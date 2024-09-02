@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from "react"
 
 import IMGSejour from "../../assets/images/pictures/SEJOUR/IMG_3283.jpg"
+import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
 import LogoLe11 from "../../assets/logo/le11.svg?react"
 
 import "./pictureHome.scss"
 
 const PictureHome = () => {
 	const [showTopBar, setShowTopBar] = useState(false)
+	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 
 	useEffect(() => {
 		const smoothScroll = (targetPosition, duration) => {
-			const startPosition = window.pageYOffset
+			const startPosition = window.scrollY
 			const distance = targetPosition - startPosition
 			let startTime = null
 
 			const animation = (currentTime) => {
-				if (startTime === null) startTime = currentTime
+				if (startTime === null) {
+					startTime = currentTime
+				}
 				const timeElapsed = currentTime - startTime
 				const run = ease(timeElapsed, startPosition, distance, duration)
 				window.scrollTo(0, run)
-				if (timeElapsed < duration) requestAnimationFrame(animation)
+				if (timeElapsed < duration) {
+					requestAnimationFrame(animation)
+				}
 			}
 
 			const ease = (t, b, c, d) => {
@@ -38,6 +44,12 @@ const PictureHome = () => {
 
 		const handleScroll = () => {
 			setShowTopBar(true)
+
+			if (window.scrollY === 0) {
+				setIsScrolledToTop(true)
+			} else if (window.scrollY > 50) {
+				setIsScrolledToTop(false)
+			}
 		}
 
 		window.addEventListener("scroll", handleScroll)
@@ -50,8 +62,21 @@ const PictureHome = () => {
 
 	return (
 		<div className="container">
-			{showTopBar && <div className="topBar" />}{" "}
-			{/* Ajout de la barre en haut */}
+			{showTopBar && (
+				<div
+					onMouseEnter={() => {
+						if (window.scrollY !== 0) {
+							setIsScrolledToTop(true)
+						}
+					}}
+					onMouseLeave={() => {
+						if (window.scrollY !== 0) {
+							setIsScrolledToTop(false)
+						}
+					}}
+					className={`topBar ${isScrolledToTop ? "visible" : "hidden"}`}
+				/>
+			)}
 			<div className="containerImage">
 				<div className="containerImage1">
 					<img src={IMGSejour} alt="Marseille" />
@@ -59,104 +84,36 @@ const PictureHome = () => {
 				</div>
 			</div>
 			<div className="content">
-				<h1>Contenu après l'image</h1>
-				<p>
-					Ceci est du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.Ceci est
-					du contenu qui passe au-dessus de l'image lors du
-					défilement.Ceci est du contenu qui passe au-dessus de
-					l'image lors du défilement.Ceci est du contenu qui passe
-					au-dessus de l'image lors du défilement.Ceci est du contenu
-					qui passe au-dessus de l'image lors du défilement.
-				</p>
+				<div className="content-top">
+					<div className="content-top-right">
+						<div className="content-top-right-title">
+							<h1>
+								Le 11 Marseille <div className="line" />
+							</h1>
+						</div>
+						<div className="content-top-right-description">
+							<p>
+								Au coeur de la cité Phocéenne, votre appartement
+								en{" "}
+								<span className="highLight">
+									BAIL MOBILITÉ.
+								</span>
+							</p>
+							<p>
+								{" "}
+								La{" "}
+								<span className="highLight">
+									formule adaptée
+								</span>{" "}
+								aux déplacements professionnels de courte et
+								moyenne durée.
+							</p>
+						</div>
+					</div>
+					<div className="content-top-left">
+						<img src={IMGBalcon} alt="Marseille" />
+					</div>
+				</div>
 			</div>
 		</div>
 	)
