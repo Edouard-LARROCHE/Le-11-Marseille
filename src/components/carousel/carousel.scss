@@ -5,7 +5,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 100%;
 }
 
 .img-body img {
@@ -24,6 +24,7 @@
 }
 
 .container-carousel {
+	position: relative;
 	padding: 2rem;
 	margin: 0 auto;
 	width: 70%;
@@ -31,24 +32,16 @@
 	border-radius: 0.5rem;
 }
 
-.container-text {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.cross {
+	width: 2.5rem;
+	height: 2.5rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
 
-	h2 {
-		font-size: 1.5rem;
-		margin-bottom: 0.3rem;
-		color: $gold-yellow;
-		font-weight: bold;
-	}
-
-	p {
-		text-align: center;
-		font-size: 0.8rem;
-		color: $brand-black;
-		font-weight: normal;
+	rect {
+		fill: $gold-yellow;
 	}
 }
 

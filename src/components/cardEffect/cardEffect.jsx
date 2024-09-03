@@ -45,6 +45,7 @@ const CardEffect = () => {
 
 	return (
 		<div className="card-container">
+			<p className="title">Accéder à la galerie photo</p>
 			{selectedImages.map((item, index) => (
 				<div
 					key={item.id}

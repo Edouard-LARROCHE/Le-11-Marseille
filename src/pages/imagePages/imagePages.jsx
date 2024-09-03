@@ -1,9 +1,9 @@
 import React from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
+import Nav from "../header/nav"
 import Carousel from "../../components/carousel/carousel"
 
-import Cross from "../../assets/icons/cross.svg?react"
 import LogoLe11 from "../../assets/logo/le11.svg?react"
 
 import picturesData from "../../data/picturesData"
@@ -12,18 +12,18 @@ import "./imagePages.scss"
 
 const ImagePage = () => {
 	const { key } = useParams()
-	const navigate = useNavigate()
 
 	const images = picturesData[key] || []
-
-	const handleClose = () => {
-		navigate(-1)
-	}
+	const item = images[0]
 
 	return (
 		<div className="image-page">
+			<Nav />
 			<LogoLe11 className="logo" />
-			<Cross className="cross" onClick={handleClose} />
+			<div className="container-text">
+				<h2>{item.title}</h2>
+				<p>{item.desc}</p>
+			</div>
 			<div className="carousel-container">
 				<Carousel images={images} />
 			</div>

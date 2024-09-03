@@ -2,6 +2,7 @@
 @use "../../scss//config/primitives" as *;
 
 .card-container {
+	position: relative;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 1fr;
@@ -13,6 +14,14 @@
 	margin: convertToREM(100) auto;
 	perspective: convertToREM(1000);
 	background-color: $grey-snow;
+
+	p {
+		position: absolute;
+		top: -3rem;
+		left: 1rem;
+		font-size: 1.5rem;
+		color: $brand-black;
+	}
 
 	.card {
 		position: relative;

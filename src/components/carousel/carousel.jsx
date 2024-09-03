@@ -1,12 +1,18 @@
 import React from "react"
 import Slider from "react-slick"
 
+import { useNavigate } from "react-router-dom"
+
+import Cross from "../../assets/icons/cross.svg?react"
+
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 import "./carousel.scss"
 
 const Carousel = ({ images }) => {
+	const navigate = useNavigate()
+
 	const settings = {
 		dots: true,
 		speed: 600,
@@ -17,18 +23,19 @@ const Carousel = ({ images }) => {
 		autoplaySpeed: 4000,
 	}
 
+	const handleClose = () => {
+		navigate(-1)
+	}
+
 	return (
 		<div className="content-carousel">
 			<div className="container-carousel">
+				<Cross className="cross" onClick={handleClose} />
 				<Slider {...settings}>
 					{images.map((item, key) => (
 						<div key={key}>
 							<div className="img-body">
 								<img src={item.imageUrl} alt={item.title} />
-							</div>
-							<div className="container-text">
-								<h2>{item.title}</h2>
-								<p>{item.desc}</p>
 							</div>
 						</div>
 					))}
