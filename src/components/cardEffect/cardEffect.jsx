@@ -1,15 +1,21 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
+
+import IMGImmeuble from "../../assets/images/pictures/L'IMMEUBLE/IMG_2628.jpg"
 
 import "./cardEffect.scss"
 
 const CardEffect = () => {
-	const cards = [
-		{ id: 1, color: "#FF5733" },
-		{ id: 2, color: "#33FF57" },
-		{ id: 3, color: "#3357FF" },
-		{ id: 4, color: "#F333FF" },
-		{ id: 5, color: "#FF33B5" },
-	]
+	const navigate = useNavigate()
+
+	const images = {
+		1: IMGImmeuble,
+		2: IMGImmeuble,
+		3: IMGImmeuble,
+		4: IMGImmeuble,
+		5: IMGImmeuble,
+		6: IMGImmeuble,
+	}
 
 	const handleMouseOver = (e) => {
 		const card = e.currentTarget
@@ -20,19 +26,26 @@ const CardEffect = () => {
 	const handleMouseOut = (e, index) => {
 		const card = e.currentTarget
 		card.style.zIndex = index
-		card.style.transform = `rotate(${(index - 2) * 10}deg) scale(1)`
+		card.style.transform = `scale(1)`
+	}
+
+	const handleCardClick = (id) => {
+		navigate(`/image/${id}`)
 	}
 
 	return (
 		<div className="card-container">
-			{cards.map((card, index) => (
+			{Object.keys(images).map((id, index) => (
 				<div
-					key={card.id}
+					key={id}
 					className="card"
-					style={{ backgroundColor: card.color, zIndex: index }}
+					style={{ zIndex: index }}
 					onMouseOver={(e) => handleMouseOver(e, index)}
 					onMouseOut={(e) => handleMouseOut(e, index)}
-				/>
+					onClick={() => handleCardClick(id)}
+				>
+					<img src={images[id]} alt="Marseille" />
+				</div>
 			))}
 		</div>
 	)
