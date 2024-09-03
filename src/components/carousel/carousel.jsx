@@ -24,7 +24,7 @@ const Carousel = ({ images }) => {
 	}
 
 	const handleClose = () => {
-		navigate(-1)
+		navigate("/")
 	}
 
 	return (

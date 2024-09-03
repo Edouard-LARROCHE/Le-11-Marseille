@@ -115,7 +115,7 @@ const picturesData = {
 	dressroom: [
 		{
 			id: generateId(),
-			title: "La salle de coiffure",
+			title: "Le dressing",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicDressroom3280,
 			key: "dressroom",

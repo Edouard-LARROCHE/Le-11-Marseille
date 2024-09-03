@@ -21,8 +21,8 @@ const ImagePage = () => {
 			<Nav />
 			<LogoLe11 className="logo" />
 			<div className="container-text">
-				<h2>{item.title}</h2>
-				<p>{item.desc}</p>
+				<h2>{item?.title}</h2>
+				<p>{item?.desc}</p>
 			</div>
 			<div className="carousel-container">
 				<Carousel images={images} />
