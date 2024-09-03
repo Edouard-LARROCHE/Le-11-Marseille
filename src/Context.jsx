@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useState, useEffect } from "react"
 
 const AnimationContext = createContext()
 
@@ -10,6 +10,10 @@ export const AnimationProvider = ({ children }) => {
 		setHasAnimatedState(value)
 		localStorage.setItem("hasAnimated", value)
 	}
+
+	useEffect(() => {
+		setHasAnimated(false)
+	}, [])
 
 	return (
 		<AnimationContext.Provider value={{ hasAnimated, setHasAnimated }}>

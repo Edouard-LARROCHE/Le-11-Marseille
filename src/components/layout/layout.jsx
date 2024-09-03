@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react"
-
 import { useAnimation } from "../../Context"
-
 import CardEffect from "../cardEffect/cardEffect"
 import Description from "../../pages/description/description"
+import Contact from "../../pages/contact/contact"
 
 import IMGSejour from "../../assets/images/pictures/SEJOUR/IMG_3283.jpg"
 import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
@@ -20,6 +19,7 @@ import "./layout.scss"
 const Layout = () => {
 	const [showTopBar, setShowTopBar] = useState(false)
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
+	const [lastScrollY, setLastScrollY] = useState(0)
 	const { hasAnimated, setHasAnimated } = useAnimation()
 
 	const smoothScroll = (targetPosition, duration) => {
@@ -60,13 +60,16 @@ const Layout = () => {
 		}
 
 		const handleScroll = () => {
-			setShowTopBar(true)
+			const currentScrollY = window.scrollY
 
-			if (window.scrollY === 0) {
-				setIsScrolledToTop(true)
-			} else if (window.scrollY > 50) {
+			if (currentScrollY > lastScrollY && currentScrollY > 50) {
+				setShowTopBar(true)
 				setIsScrolledToTop(false)
+			} else if (currentScrollY < lastScrollY) {
+				setShowTopBar(false)
 			}
+
+			setLastScrollY(currentScrollY)
 		}
 
 		window.addEventListener("scroll", handleScroll)
@@ -74,22 +77,12 @@ const Layout = () => {
 		return () => {
 			window.removeEventListener("scroll", handleScroll)
 		}
-	}, [hasAnimated, setHasAnimated])
+	}, [hasAnimated, setHasAnimated, lastScrollY])
 
 	return (
 		<div className="container">
 			{showTopBar && (
 				<div
-					onMouseEnter={() => {
-						if (window.scrollY !== 0) {
-							setIsScrolledToTop(true)
-						}
-					}}
-					onMouseLeave={() => {
-						if (window.scrollY !== 0) {
-							setIsScrolledToTop(false)
-						}
-					}}
 					className={`topBar ${isScrolledToTop ? "visible" : "hidden"}`}
 				/>
 			)}
@@ -147,8 +140,9 @@ const Layout = () => {
 					</div>
 				</div>
 				<CardEffect />
+				<Description />
+				<Contact />
 			</div>
-			<Description />
 		</div>
 	)
 }

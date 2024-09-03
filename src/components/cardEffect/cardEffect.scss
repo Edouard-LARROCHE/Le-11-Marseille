@@ -1,23 +1,12 @@
 @use "../../scss//config/functions" as *;
 @use "../../scss//config/primitives" as *;
 
-.card-container {
+.container-card {
 	position: relative;
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: 1fr;
-	grid-gap: 1rem;
-	align-items: center;
-	width: 100%;
-	padding: 0 1rem;
-	height: convertToREM(300);
-	margin: convertToREM(100) auto;
-	perspective: convertToREM(1000);
-	background-color: $grey-snow;
 
 	p {
 		position: absolute;
-		top: -2.5rem;
+		top: -3.5rem;
 		left: 1rem;
 		font-size: 1.4rem;
 		color: $brand-black;
@@ -27,43 +16,58 @@
 		}
 	}
 
-	.card {
+	.card-container {
 		position: relative;
-		cursor: pointer;
-		height: convertToREM(250);
-		transition:
-			transform 0.3s ease,
-			z-index 0.3s ease;
-		border-radius: 0.2rem;
-
-		.title {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			font-size: 1.2rem;
-			color: $white;
-			font-weight: bold;
-		}
-
-		p {
-			position: absolute;
-			bottom: 0.3rem;
-			right: 0.3rem;
-			font-size: 0.8rem;
-			color: $white;
-			font-weight: normal;
-		}
-	}
-
-	img {
+		display: flex;
+		align-items: center;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
+		overflow: hidden;
+		padding: 0 1rem;
+		height: convertToREM(300);
+		margin: convertToREM(100) auto;
+		background-color: $grey-snow;
 
-		&.filter {
-			filter: blur(0.05rem);
+		.card {
+			position: relative;
+			flex: 0 0 convertToREM(300);
+			cursor: pointer;
+			height: convertToREM(250);
+			border-radius: 0.2rem;
+			margin: 0 convertToREM(10);
+			transition:
+				transform 0.3s ease,
+				z-index 0.3s ease;
+
+			.title {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 1.2rem;
+				color: $white;
+				font-weight: bold;
+			}
+
+			p {
+				position: absolute;
+				top: 60%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 0.8rem;
+				color: $white;
+				font-weight: normal;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+
+			&.filter {
+				filter: blur(0.05rem);
+			}
 		}
 	}
 }

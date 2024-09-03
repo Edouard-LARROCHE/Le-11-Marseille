@@ -236,8 +236,7 @@
 		opacity: 0;
 		transform: translateY(-100%);
 		z-index: 3;
-		animation: fadeInDown 2s forwards;
-		animation-delay: 1s;
+		animation: fadeInDown 0.5s forwards;
 		transition: 0.3s ease-in-out;
 
 		&.visible {
