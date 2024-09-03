@@ -4,35 +4,36 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-// import "./carousel.scss"
+import "./carousel.scss"
 
-const Carousel = () => {
+const Carousel = ({ images }) => {
 	const settings = {
 		dots: true,
-		fade: true,
+		speed: 600,
+		slidesToShow: 2,
+		slidesToScroll: 2,
 		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		waitForAnimate: false,
+		autoplay: true,
+		autoplaySpeed: 4000,
 	}
 
 	return (
-		<div className="slider-container">
-			<Slider {...settings}>
-				<div>
-					<img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-				</div>
-				<div>
-					<img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-				</div>
-				<div>
-					<img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-				</div>
-				<div>
-					<img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-				</div>
-			</Slider>
+		<div className="content-carousel">
+			<div className="container-carousel">
+				<Slider {...settings}>
+					{images.map((item, key) => (
+						<div key={key}>
+							<div className="img-body">
+								<img src={item.imageUrl} alt={item.title} />
+							</div>
+							<div className="container-text">
+								<h2>{item.title}</h2>
+								<p>{item.desc}</p>
+							</div>
+						</div>
+					))}
+				</Slider>
+			</div>
 		</div>
 	)
 }

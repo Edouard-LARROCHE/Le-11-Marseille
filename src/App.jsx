@@ -12,7 +12,7 @@ function App() {
 				<AnimationProvider>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/image/:id" element={<ImagePage />} />
+						<Route path="/image/:key" element={<ImagePage />} />
 					</Routes>
 				</AnimationProvider>
 			</Router>

@@ -1,50 +1,66 @@
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import IMGImmeuble from "../../assets/images/pictures/L'IMMEUBLE/IMG_2628.jpg"
+import picturesData from "../../data/picturesData"
 
 import "./cardEffect.scss"
 
 const CardEffect = () => {
 	const navigate = useNavigate()
 
-	const images = {
-		1: IMGImmeuble,
-		2: IMGImmeuble,
-		3: IMGImmeuble,
-		4: IMGImmeuble,
-		5: IMGImmeuble,
-		6: IMGImmeuble,
-	}
+	const [contentChange, setContentChange] = useState(null)
 
-	const handleMouseOver = (e) => {
+	const selectedImageIds = [
+		{ key: "neighborhood", image: picturesData.neighborhood[0] },
+		{ key: "balcony", image: picturesData.balcony[1] },
+		{ key: "box", image: picturesData.box[0] },
+		{ key: "room", image: picturesData.room[1] },
+		{ key: "neighborhood", image: picturesData.neighborhood[1] },
+		{ key: "balcony", image: picturesData.balcony[0] },
+	]
+
+	const handleMouseOver = (e, index) => {
 		const card = e.currentTarget
 		card.style.zIndex = 10
 		card.style.transform = `rotate(0deg) scale(1.1)`
+
+		setContentChange(index)
 	}
 
 	const handleMouseOut = (e, index) => {
 		const card = e.currentTarget
 		card.style.zIndex = index
 		card.style.transform = `scale(1)`
+
+		setContentChange(null)
 	}
 
-	const handleCardClick = (id) => {
-		navigate(`/image/${id}`)
+	const handleCardClick = (key) => {
+		navigate(`/image/${key}`)
 	}
 
 	return (
 		<div className="card-container">
-			{Object.keys(images).map((id, index) => (
+			{selectedImageIds.map((item, index) => (
 				<div
-					key={id}
+					key={item.image.id}
 					className="card"
 					style={{ zIndex: index }}
 					onMouseOver={(e) => handleMouseOver(e, index)}
 					onMouseOut={(e) => handleMouseOut(e, index)}
-					onClick={() => handleCardClick(id)}
+					onClick={() => handleCardClick(item.key)}
 				>
-					<img src={images[id]} alt="Marseille" />
+					<img
+						className={`${contentChange === index ? "filter" : ""}`}
+						src={item.image.imageUrl}
+						alt={item.image.title}
+					/>
+					{contentChange === index && (
+						<>
+							<div className="title">{item.image.title}</div>
+							<p>Voir la galerie</p>
+						</>
+					)}
 				</div>
 			))}
 		</div>

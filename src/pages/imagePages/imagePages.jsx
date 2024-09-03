@@ -1,24 +1,20 @@
 import React from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
-import IMGImmeuble from "../../assets/images/pictures/L'IMMEUBLE/IMG_2628.jpg"
+import Carousel from "../../components/carousel/carousel"
+
+import Cross from "../../assets/icons/cross.svg?react"
+import LogoLe11 from "../../assets/logo/le11.svg?react"
+
+import picturesData from "../../data/picturesData"
 
 import "./imagePages.scss"
 
-const images = {
-	1: IMGImmeuble,
-	2: IMGImmeuble,
-	3: IMGImmeuble,
-	4: IMGImmeuble,
-	5: IMGImmeuble,
-	6: IMGImmeuble,
-}
-
 const ImagePage = () => {
-	const { id } = useParams()
+	const { key } = useParams()
 	const navigate = useNavigate()
 
-	const imageUrl = images[id]
+	const images = picturesData[key] || []
 
 	const handleClose = () => {
 		navigate(-1)
@@ -26,9 +22,10 @@ const ImagePage = () => {
 
 	return (
 		<div className="image-page">
-			<button onClick={handleClose}>Close</button>
-			<div className="image-container">
-				<img src={imageUrl} alt={`Large view ${id}`} />
+			<LogoLe11 className="logo" />
+			<Cross className="cross" onClick={handleClose} />
+			<div className="carousel-container">
+				<Carousel images={images} />
 			</div>
 		</div>
 	)

@@ -1,15 +1,54 @@
-.swiper {
+@use "../../scss/config/primitives" as *;
+@use "../../scss/config/functions" as *;
+
+.content-carousel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.img-body img {
+	display: flex;
+	margin: 0 auto;
+	object-fit: cover;
 	width: 100%;
 	height: 100%;
+}
 
-	.swiper-slide {
-		background-position: center;
-		background-size: cover;
+.img-body {
+	margin: 0 0.5rem;
+	width: auto;
+	aspect-ratio: 1/1;
+	display: inline-block;
+}
 
-		.swiper-slide img {
-			display: block;
-			width: 100%;
-		}
+.container-carousel {
+	padding: 2rem;
+	margin: 0 auto;
+	width: 70%;
+	background-color: $smoth-white;
+	border-radius: 0.5rem;
+}
+
+.container-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.3rem;
+		color: $gold-yellow;
+		font-weight: bold;
+	}
+
+	p {
+		text-align: center;
+		font-size: 0.8rem;
+		color: $brand-black;
+		font-weight: normal;
 	}
 }
 
