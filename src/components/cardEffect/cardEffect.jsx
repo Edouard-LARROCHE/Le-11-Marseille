@@ -26,7 +26,7 @@ const CardEffect = () => {
 	const handleMouseOver = (e, index) => {
 		const card = e.currentTarget
 		card.style.zIndex = 10
-		card.style.transform = `rotate(0deg) scale(1.1)`
+		card.style.transform = `rotate(0deg) scale(1.05)`
 
 		setContentChange(index)
 	}
@@ -45,7 +45,9 @@ const CardEffect = () => {
 
 	return (
 		<div className="card-container">
-			<p className="title">Accéder à la galerie photo</p>
+			<p className="title">
+				Accéder aux <span className="highlight">galeries photo</span>
+			</p>
 			{selectedImages.map((item, index) => (
 				<div
 					key={item.id}

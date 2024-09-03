@@ -17,10 +17,14 @@
 
 	p {
 		position: absolute;
-		top: -3rem;
+		top: -2.5rem;
 		left: 1rem;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 		color: $brand-black;
+
+		.highlight {
+			color: $gold-yellow;
+		}
 	}
 
 	.card {
@@ -30,8 +34,6 @@
 		transition:
 			transform 0.3s ease,
 			z-index 0.3s ease;
-		background-color: antiquewhite;
-		border: 0.05rem solid $black-smouth;
 		border-radius: 0.2rem;
 
 		.title {
@@ -61,7 +63,7 @@
 		object-position: center;
 
 		&.filter {
-			filter: blur(0.1rem);
+			filter: blur(0.05rem);
 		}
 	}
 }
