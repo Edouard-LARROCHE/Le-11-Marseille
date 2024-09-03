@@ -65,6 +65,15 @@
 						left: 0;
 						transition: width 0.3s ease-in-out;
 					}
+
+					&.active {
+						opacity: 1;
+
+						.line {
+							width: 100%;
+							background-color: $gold-yellow;
+						}
+					}
 				}
 			}
 		}
