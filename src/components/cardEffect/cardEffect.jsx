@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+
+import { shuffleArray } from "../../utils/utils"
 
 import picturesData from "../../data/picturesData"
 
@@ -9,15 +11,17 @@ const CardEffect = () => {
 	const navigate = useNavigate()
 
 	const [contentChange, setContentChange] = useState(null)
+	const [selectedImages, setSelectedImages] = useState([])
 
-	const selectedImageIds = [
-		{ key: "neighborhood", image: picturesData.neighborhood[0] },
-		{ key: "balcony", image: picturesData.balcony[1] },
-		{ key: "box", image: picturesData.box[0] },
-		{ key: "room", image: picturesData.room[1] },
-		{ key: "neighborhood", image: picturesData.neighborhood[1] },
-		{ key: "balcony", image: picturesData.balcony[0] },
-	]
+	useEffect(() => {
+		const allImages = getAllImages()
+		const shuffledImages = shuffleArray(allImages).slice(0, 6)
+		setSelectedImages(shuffledImages)
+	}, [])
+
+	const getAllImages = () => {
+		return Object.values(picturesData).flat()
+	}
 
 	const handleMouseOver = (e, index) => {
 		const card = e.currentTarget
@@ -41,9 +45,9 @@ const CardEffect = () => {
 
 	return (
 		<div className="card-container">
-			{selectedImageIds.map((item, index) => (
+			{selectedImages.map((item, index) => (
 				<div
-					key={item.image.id}
+					key={item.id}
 					className="card"
 					style={{ zIndex: index }}
 					onMouseOver={(e) => handleMouseOver(e, index)}
@@ -52,12 +56,12 @@ const CardEffect = () => {
 				>
 					<img
 						className={`${contentChange === index ? "filter" : ""}`}
-						src={item.image.imageUrl}
-						alt={item.image.title}
+						src={item.imageUrl}
+						alt={item.title}
 					/>
 					{contentChange === index && (
 						<>
-							<div className="title">{item.image.title}</div>
+							<div className="title">{item.title}</div>
 							<p>Voir la galerie</p>
 						</>
 					)}
