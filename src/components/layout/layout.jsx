@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useAnimation } from "../../Context"
 
 import CardEffect from "../cardEffect/cardEffect"
+import Description from "../../pages/description/description"
 
 import IMGSejour from "../../assets/images/pictures/SEJOUR/IMG_3283.jpg"
 import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
@@ -14,9 +15,9 @@ import Le11Vertical3 from "../../assets/logo/Le11-vertical-3.svg?react"
 import Le11Vertical4 from "../../assets/logo/Le11-vertical-4.svg?react"
 import WaveLine from "../../assets/icons/wave-line.svg?react"
 
-import "./pictureHome.scss"
+import "./layout.scss"
 
-const PictureHome = () => {
+const Layout = () => {
 	const [showTopBar, setShowTopBar] = useState(false)
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const { hasAnimated, setHasAnimated } = useAnimation()
@@ -147,9 +148,10 @@ const PictureHome = () => {
 				</div>
 				<CardEffect />
 			</div>
+			<Description />
 		</div>
 	)
 }
 
-export default PictureHome
+export default Layout
 

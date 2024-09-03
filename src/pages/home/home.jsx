@@ -1,6 +1,6 @@
 import React from "react"
 
-import PictureHome from "../../components/pictureHome/pictureHome"
+import Layout from "../../components/layout/layout"
 
 import "./home.scss"
 
@@ -8,7 +8,7 @@ const Home = () => {
 	return (
 		<div className="homePage">
 			<div className="container">
-				<PictureHome />
+				<Layout />
 			</div>
 		</div>
 	)
