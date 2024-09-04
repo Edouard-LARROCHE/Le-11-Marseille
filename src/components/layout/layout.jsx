@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+
 import { useAnimation } from "../../Context"
+
+import picturesData from "../../data/picturesData"
 import CardEffect from "../cardEffect/cardEffect"
 import Description from "../../pages/description/description"
 import Contact from "../../pages/contact/contact"
@@ -13,6 +17,7 @@ import Le11Vertical2 from "../../assets/logo/Le11-vertical-2.svg?react"
 import Le11Vertical3 from "../../assets/logo/Le11-vertical-3.svg?react"
 import Le11Vertical4 from "../../assets/logo/Le11-vertical-4.svg?react"
 import WaveLine from "../../assets/icons/wave-line.svg?react"
+import Chevron from "../../assets/icons/chevron.svg?react"
 
 import "./layout.scss"
 
@@ -20,6 +25,7 @@ const Layout = () => {
 	const [showTopBar, setShowTopBar] = useState(false)
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
+	const [isHovered, setIsHovered] = useState(false)
 	const { hasAnimated, setHasAnimated } = useAnimation()
 
 	const smoothScroll = (targetPosition, duration) => {
@@ -79,12 +85,59 @@ const Layout = () => {
 		}
 	}, [hasAnimated, setHasAnimated, lastScrollY])
 
+	const getFirstTitlesAndKeys = () => {
+		return Object.values(picturesData).map((category) => ({
+			title: category[0]?.title,
+			key: category[0]?.key,
+		}))
+	}
+
+	const titleData = getFirstTitlesAndKeys()
+
 	return (
 		<div className="container">
 			{showTopBar && (
 				<div
-					className={`topBar ${isScrolledToTop ? "visible" : "hidden"}`}
-				/>
+					className={`topBar ${isScrolledToTop ? "visible" : "hidden"} ${isHovered ? "hovered" : ""}`}
+					onMouseLeave={() => setIsHovered(false)}
+				>
+					<div className="topBar-content">
+						<ul>
+							<li>
+								<Link to="/">A propos</Link>
+								<div className="line" />
+							</li>
+							<li
+								className={`pics-link ${isHovered ? "hovered" : ""}`}
+								onMouseEnter={() => setIsHovered(true)}
+							>
+								<Link to="/">Galeries photo</Link>
+								<div className="line" />
+								<Chevron className="chevron" />
+							</li>
+							<li>
+								<Link to="/">Contact</Link>
+								<div className="line" />
+							</li>
+						</ul>
+						{isHovered && (
+							<ul className="ul-hovered">
+								{titleData.map(({ title, key }, index) => (
+									<li
+										className="li-hovered"
+										key={index}
+										onClick={() => switchGallery(key)}
+									>
+										<span className="title-text">
+											{title}
+										</span>
+										<div className="line" />
+									</li>
+								))}
+							</ul>
+						)}
+					</div>
+				</div>
 			)}
 			<div className="containerImage">
 				<div className="containerImage1">

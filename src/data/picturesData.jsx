@@ -1,8 +1,21 @@
 import PicNeighborhood3469 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3469.jpg"
 import PicNeighborhood3470 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3470.jpg"
+import PicNeighborhood3472 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3472.jpg"
+import PicNeighborhood3473 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3473.jpg"
+import PicNeighborhood3475 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3475.jpg"
+import PicNeighborhood3481 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3481.jpg"
+import PicNeighborhood3483 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3483.jpg"
 
 import PicBalcony3213 from "../assets/images/pictures/BALCON/IMG_3213.jpg"
-import PicBalcony3214 from "../assets/images/pictures/BALCON/IMG_3332.jpg"
+import PicBalcony3332 from "../assets/images/pictures/BALCON/IMG_3332.jpg"
+import PicBalcony3337 from "../assets/images/pictures/BALCON/IMG_3337.jpg"
+import PicBalcony3516 from "../assets/images/pictures/BALCON/IMG_3516.jpg"
+import PicBalcony3517 from "../assets/images/pictures/BALCON/IMG_3517.jpg"
+import PicBalcony3518 from "../assets/images/pictures/BALCON/IMG_3518.jpg"
+import PicBalcony3519 from "../assets/images/pictures/BALCON/IMG_3519.jpg"
+import PicBalcony3526 from "../assets/images/pictures/BALCON/IMG_3526.jpg"
+import PicBalcony3527 from "../assets/images/pictures/BALCON/IMG_3527.jpg"
+import PicBalcony3528 from "../assets/images/pictures/BALCON/IMG_3528.jpg"
 
 import PicBox3276 from "../assets/images/pictures/BOX/IMG_3276.jpg"
 import PicBox3277 from "../assets/images/pictures/BOX/IMG_3277.jpg"
@@ -47,6 +60,41 @@ const picturesData = {
 			imageUrl: PicNeighborhood3470,
 			key: "neighborhood",
 		},
+		{
+			id: generateId(),
+			title: "A Proximité, le quartier",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicNeighborhood3472,
+			key: "neighborhood",
+		},
+		{
+			id: generateId(),
+			title: "A Proximité, le quartier",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicNeighborhood3473,
+			key: "neighborhood",
+		},
+		{
+			id: generateId(),
+			title: "A Proximité, le quartier",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicNeighborhood3475,
+			key: "neighborhood",
+		},
+		{
+			id: generateId(),
+			title: "A Proximité, le quartier",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicNeighborhood3481,
+			key: "neighborhood",
+		},
+		{
+			id: generateId(),
+			title: "A Proximité, le quartier",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicNeighborhood3483,
+			key: "neighborhood",
+		},
 	],
 	balcony: [
 		{
@@ -60,7 +108,63 @@ const picturesData = {
 			id: generateId(),
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3214,
+			imageUrl: PicBalcony3332,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3337,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3516,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3517,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3518,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3519,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3526,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3527,
+			key: "balcony",
+		},
+		{
+			id: generateId(),
+			title: "Le balcon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBalcony3528,
 			key: "balcony",
 		},
 	],
@@ -112,15 +216,15 @@ const picturesData = {
 			key: "kitchen",
 		},
 	],
-	dressroom: [
-		{
-			id: generateId(),
-			title: "Le dressing",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicDressroom3280,
-			key: "dressroom",
-		},
-	],
+	// dressroom: [
+	// 	{
+	// 		id: generateId(),
+	// 		title: "Le dressing",
+	// 		desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+	// 		imageUrl: PicDressroom3280,
+	// 		key: "dressroom",
+	// 	},
+	// ],
 	entrance: [
 		{
 			id: generateId(),

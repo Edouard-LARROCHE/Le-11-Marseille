@@ -23,15 +23,20 @@
 		width: 100%;
 		overflow: hidden;
 		padding: 0 1rem;
-		height: convertToREM(300);
+		height: convertToREM(400);
 		margin: convertToREM(100) auto;
-		background-color: $grey-snow;
+
+		.bg-color {
+			position: fixed;
+			width: 100%;
+			height: 18rem;
+			background-color: $grey-snow;
+		}
 
 		.card {
 			position: relative;
 			flex: 0 0 convertToREM(300);
 			cursor: pointer;
-			height: convertToREM(250);
 			border-radius: 0.2rem;
 			margin: 0 convertToREM(10);
 			transition:
@@ -61,7 +66,7 @@
 
 		img {
 			width: 100%;
-			height: 100%;
+			height: auto;
 			object-fit: cover;
 			object-position: center;
 

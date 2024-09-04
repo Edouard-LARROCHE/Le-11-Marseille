@@ -21,7 +21,7 @@ const CardEffect = () => {
 
 	useEffect(() => {
 		const allImages = getAllImages()
-		const shuffledImages = shuffleArray(allImages).slice(0, 6)
+		const shuffledImages = shuffleArray(allImages)
 		setSelectedImages(shuffledImages)
 	}, [])
 
@@ -136,6 +136,7 @@ const CardEffect = () => {
 						)}
 					</div>
 				))}
+				<div className="bg-color" />
 			</div>
 		</div>
 	)
