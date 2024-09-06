@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
+import gsap from "gsap"
 
 import { shuffleArray } from "../../utils/utils"
-
 import picturesData from "../../data/picturesData"
-
 import "./cardEffect.scss"
 
 const CardEffect = () => {
@@ -13,11 +12,10 @@ const CardEffect = () => {
 	const [contentChange, setContentChange] = useState(null)
 	const [selectedImages, setSelectedImages] = useState([])
 	const [scrollDirection, setScrollDirection] = useState(1)
-	const [isCardHovered, setIsCardHovered] = useState(false)
-	const [isScrolling, setIsScrolling] = useState(false)
+	const [delta, setDelta] = useState(null)
 
 	const containerRef = useRef(null)
-	const scrollTimeoutRef = useRef(null)
+	const scrollAnimationRef = useRef(null)
 
 	useEffect(() => {
 		const allImages = getAllImages()
@@ -26,82 +24,92 @@ const CardEffect = () => {
 	}, [])
 
 	useEffect(() => {
-		const handleScroll = (event) => {
-			setIsScrolling(true)
+		startAutoScroll()
 
-			if (scrollTimeoutRef.current) {
-				clearTimeout(scrollTimeoutRef.current)
-			}
+		const handleScroll = () => {
+			getScrollDirection()
 
-			scrollTimeoutRef.current = setTimeout(() => {
-				setIsScrolling(false)
-			}, 100)
-
-			const scrollY = window.scrollY
-			const scrollDelta = event.deltaY || scrollY
-			const container = containerRef.current
-
-			if (scrollDelta > 0) {
+			if (delta > 0) {
 				setScrollDirection(1)
-			} else if (scrollDelta < 0) {
+			} else if (delta < 0) {
 				setScrollDirection(-1)
-			}
-
-			if (container) {
-				const maxScrollLeft =
-					container.scrollWidth - container.clientWidth
-				if (container.scrollLeft <= 0) {
-					setScrollDirection(1)
-				} else if (container.scrollLeft >= maxScrollLeft) {
-					setScrollDirection(-1)
-				}
 			}
 		}
 
 		window.addEventListener("scroll", handleScroll)
 
 		return () => {
+			stopAutoScroll()
 			window.removeEventListener("scroll", handleScroll)
-			clearTimeout(scrollTimeoutRef.current)
 		}
-	}, [])
+	}, [delta])
 
-	useEffect(() => {
-		let animationFrame
-		const animate = () => {
-			if (containerRef.current && !isCardHovered && !isScrolling) {
-				containerRef.current.scrollLeft += scrollDirection * 2
-			}
-			animationFrame = requestAnimationFrame(animate)
+	const getScrollDirection = () => {
+		const scrollTop = window.scrollY || document.documentElement.scrollTop
+		const windowHeight = window.innerHeight
+		const documentHeight = document.body.offsetHeight
+
+		let newDelta = 0
+		if (scrollTop + windowHeight >= documentHeight) {
+			newDelta = -1
+		} else if (scrollTop === 0) {
+			newDelta = 1
 		}
 
-		animate()
-
-		return () => {
-			cancelAnimationFrame(animationFrame)
-		}
-	}, [scrollDirection, isCardHovered, isScrolling])
+		setDelta(newDelta)
+	}
 
 	const getAllImages = () => {
 		return Object.values(picturesData).flat()
 	}
 
-	const handleMouseOver = (e, index) => {
-		setIsCardHovered(true)
-		const card = e.currentTarget
-		card.style.zIndex = 10
-		card.style.transform = `rotate(0deg) scale(1.05)`
+	const startAutoScroll = () => {
+		const container = containerRef.current
+		const maxScrollLeft = container.scrollWidth - container.clientWidth
 
+		const animateScroll = () => {
+			const scrollAmount = scrollDirection * 1
+			const currentScroll = container.scrollLeft + scrollAmount
+
+			if (currentScroll >= maxScrollLeft || currentScroll <= 0) {
+				setScrollDirection((prev) => prev * -1)
+			}
+
+			container.scrollLeft += scrollAmount
+		}
+
+		scrollAnimationRef.current = gsap.ticker.add(animateScroll)
+	}
+
+	const stopAutoScroll = () => {
+		if (scrollAnimationRef.current) {
+			gsap.ticker.remove(scrollAnimationRef.current)
+			scrollAnimationRef.current = null
+		}
+	}
+
+	const handleMouseOver = (e, index) => {
 		setContentChange(index)
+		stopAutoScroll()
+
+		gsap.to(e.currentTarget, {
+			zIndex: 10,
+			scale: 1.05,
+			duration: 0.3,
+			ease: "power3.out",
+		})
 	}
 
 	const handleMouseOut = (e, index) => {
-		setIsCardHovered(false)
-		const card = e.currentTarget
-		card.style.zIndex = index
-		card.style.transform = `scale(1)`
-
 		setContentChange(null)
+		startAutoScroll()
+
+		gsap.to(e.currentTarget, {
+			zIndex: index,
+			scale: 1,
+			duration: 0.3,
+			ease: "power3.out",
+		})
 	}
 
 	const handleCardClick = (key) => {
@@ -118,7 +126,6 @@ const CardEffect = () => {
 					<div
 						key={item.id}
 						className="card"
-						style={{ zIndex: index }}
 						onMouseOver={(e) => handleMouseOver(e, index)}
 						onMouseOut={(e) => handleMouseOut(e, index)}
 						onClick={() => handleCardClick(item.key)}

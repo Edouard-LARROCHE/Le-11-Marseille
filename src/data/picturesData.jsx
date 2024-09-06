@@ -47,49 +47,49 @@ import { generateId } from "../utils/utils"
 const picturesData = {
 	neighborhood: [
 		{
-			id: generateId(),
+			id: 1,
 			title: "A Proximité, le quartier",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicNeighborhood3469,
 			key: "neighborhood",
 		},
 		{
-			id: generateId(),
+			id: 2,
 			title: "A Proximité, le quartier",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicNeighborhood3470,
 			key: "neighborhood",
 		},
 		{
-			id: generateId(),
+			id: 3,
 			title: "A Proximité, le quartier",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicNeighborhood3472,
 			key: "neighborhood",
 		},
 		{
-			id: generateId(),
+			id: 4,
 			title: "A Proximité, le quartier",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicNeighborhood3473,
 			key: "neighborhood",
 		},
 		{
-			id: generateId(),
+			id: 5,
 			title: "A Proximité, le quartier",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicNeighborhood3475,
 			key: "neighborhood",
 		},
 		{
-			id: generateId(),
+			id: 6,
 			title: "A Proximité, le quartier",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicNeighborhood3481,
 			key: "neighborhood",
 		},
 		{
-			id: generateId(),
+			id: 7,
 			title: "A Proximité, le quartier",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicNeighborhood3483,
@@ -98,70 +98,70 @@ const picturesData = {
 	],
 	balcony: [
 		{
-			id: generateId(),
+			id: 8,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3213,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 9,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3332,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 10,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3337,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 11,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3516,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 12,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3517,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 13,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3518,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 14,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3519,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 15,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3526,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 16,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3527,
 			key: "balcony",
 		},
 		{
-			id: generateId(),
+			id: 17,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBalcony3528,
@@ -170,14 +170,14 @@ const picturesData = {
 	],
 	box: [
 		{
-			id: generateId(),
+			id: 18,
 			title: "Le box",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBox3276,
 			key: "box",
 		},
 		{
-			id: generateId(),
+			id: 19,
 			title: "Le box",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBox3277,
@@ -186,14 +186,14 @@ const picturesData = {
 	],
 	room: [
 		{
-			id: generateId(),
+			id: 20,
 			title: "La chambre",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicRoom3289,
 			key: "room",
 		},
 		{
-			id: generateId(),
+			id: 21,
 			title: "La chambre",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicRoom3290,
@@ -202,14 +202,14 @@ const picturesData = {
 	],
 	kitchen: [
 		{
-			id: generateId(),
+			id: 22,
 			title: "La cuisine",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicKitchen3195,
 			key: "kitchen",
 		},
 		{
-			id: generateId(),
+			id: 23,
 			title: "La cuisine",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicKitchen3196,
@@ -227,14 +227,14 @@ const picturesData = {
 	// ],
 	entrance: [
 		{
-			id: generateId(),
+			id: 24,
 			title: "L'entrée",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicEntrance3279,
 			key: "entrance",
 		},
 		{
-			id: generateId(),
+			id: 25,
 			title: "L'entrée",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicEntrance3281,
@@ -243,14 +243,14 @@ const picturesData = {
 	],
 	building: [
 		{
-			id: generateId(),
+			id: 26,
 			title: "L'immeuble",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBuilding2628,
 			key: "building",
 		},
 		{
-			id: generateId(),
+			id: 27,
 			title: "L'immeuble",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBuilding2629,
@@ -259,14 +259,14 @@ const picturesData = {
 	],
 	loggia: [
 		{
-			id: generateId(),
+			id: 28,
 			title: "La loggia",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicLogia3353,
 			key: "loggia",
 		},
 		{
-			id: generateId(),
+			id: 29,
 			title: "La loggia",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicLogia3354,
@@ -275,14 +275,14 @@ const picturesData = {
 	],
 	bathroom: [
 		{
-			id: generateId(),
+			id: 30,
 			title: "La salle de bain",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBathroom3218,
 			key: "bathroom",
 		},
 		{
-			id: generateId(),
+			id: 31,
 			title: "La salle de bain",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicBathroom3219,
@@ -291,7 +291,7 @@ const picturesData = {
 	],
 	livingroom: [
 		{
-			id: generateId(),
+			id: 32,
 			title: "Le salon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicLivingroom3283,

@@ -36,27 +36,47 @@
 				position: absolute;
 				top: -7rem;
 				left: 0;
+
+				g {
+					g {
+						g {
+							#g240,
+							#g236,
+							#g228,
+							#g224,
+							#g220,
+							#g216,
+							#g212,
+							#g208,
+							#g232,
+							#g244,
+							#g280 {
+								path {
+									stroke: $gold-yellow !important;
+								}
+							}
+
+							#g136,
+							#g132,
+							#g140,
+							#g144 {
+								path {
+									stroke: $grey-snow !important;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
 
 	.content {
-		position: absolute;
-		top: 50vh;
+		position: relative;
 		z-index: 2;
-		margin-top: 100vh;
 		background-color: $white;
 		color: $brand-black;
 		padding: 2rem 0;
-		opacity: 0;
-		transform: translateY(convertToREM(20));
-		animation: fadeInUp 1s forwards;
-		animation-delay: 2s;
-
-		&.animated {
-			animation: fadeInUp 1s forwards;
-			animation-delay: 0s;
-		}
 
 		.content-top {
 			width: 100%;
@@ -82,71 +102,71 @@
 					object-position: center;
 				}
 
-				.le11Vertical {
-					width: 15rem;
-					height: 15rem;
-					position: absolute;
-					top: 25%;
-					left: -10rem;
-					z-index: 1;
-				}
+				// .le11Vertical {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 25%;
+				// 	left: -10rem;
+				// 	z-index: 1;
+				// }
 
-				.waveLine {
-					width: 15rem;
-					height: 15rem;
-					position: absolute;
-					top: 32%;
-					left: -13.5rem;
-					z-index: 1;
-					transform: rotate(260deg);
-				}
+				// .waveLine {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 32%;
+				// 	left: -13.5rem;
+				// 	z-index: 1;
+				// 	transform: rotate(260deg);
+				// }
 
-				.le11Vertical2 {
-					width: 15rem;
-					height: 15rem;
-					position: absolute;
-					top: 45%;
-					left: -10rem;
-					z-index: 1;
-				}
+				// .le11Vertical2 {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 45%;
+				// 	left: -10rem;
+				// 	z-index: 1;
+				// }
 
-				.waveLine-extended {
-					width: 15rem;
-					height: 25rem;
-					position: absolute;
-					top: 45%;
-					left: -13.5rem;
-					z-index: 1;
-					transform: rotate(260deg) scaleY(-1);
-				}
+				// .waveLine-extended {
+				// 	width: 15rem;
+				// 	height: 25rem;
+				// 	position: absolute;
+				// 	top: 45%;
+				// 	left: -13.5rem;
+				// 	z-index: 1;
+				// 	transform: rotate(260deg) scaleY(-1);
+				// }
 
-				.le11Vertical3 {
-					width: 15rem;
-					height: 15rem;
-					position: absolute;
-					top: 65%;
-					left: -7.2rem;
-					z-index: 1;
-				}
+				// .le11Vertical3 {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 65%;
+				// 	left: -7.2rem;
+				// 	z-index: 1;
+				// }
 
-				.waveLine-extended-2 {
-					width: 15rem;
-					height: 30rem;
-					position: absolute;
-					top: 65%;
-					left: -8.5rem;
-					z-index: 1;
-					transform: rotate(260deg);
-				}
+				// .waveLine-extended-2 {
+				// 	width: 15rem;
+				// 	height: 30rem;
+				// 	position: absolute;
+				// 	top: 65%;
+				// 	left: -8.5rem;
+				// 	z-index: 1;
+				// 	transform: rotate(260deg);
+				// }
 
-				.le11Vertical4 {
-					width: 15rem;
-					height: 15rem;
-					position: absolute;
-					top: 90%;
-					left: -5.5rem;
-					z-index: 1;
-				}
+				// .le11Vertical4 {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 90%;
+				// 	left: -5.5rem;
+				// 	z-index: 1;
+				// }
 			}
 
 			.content-top-right {
@@ -205,13 +225,12 @@
 			}
 
 			.text-content {
-				width: 60%;
+				width: 50%;
 				height: 100%;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				margin-left: 7rem;
 
 				p {
 					margin-top: 2rem;
@@ -238,6 +257,11 @@
 		z-index: 3;
 		animation: fadeInDown 0.5s forwards;
 		transition: 0.3s ease-in-out;
+
+		&.hovered {
+			height: 8rem;
+			transition: height 0.2s ease-in-out;
+		}
 
 		&.visible {
 			background-color: rgba(255, 255, 255, 1);
@@ -342,10 +366,5 @@
 			}
 		}
 	}
-}
-
-.topBar.hovered {
-	height: auto;
-	transition: height 0.4s ease-in-out;
 }
 

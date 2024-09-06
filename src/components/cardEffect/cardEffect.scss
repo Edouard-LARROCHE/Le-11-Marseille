@@ -23,8 +23,9 @@
 		width: 100%;
 		overflow: hidden;
 		padding: 0 1rem;
-		height: convertToREM(400);
+		height: convertToREM(250);
 		margin: convertToREM(100) auto;
+		overflow: hidden;
 
 		.bg-color {
 			position: fixed;
@@ -38,10 +39,7 @@
 			flex: 0 0 convertToREM(300);
 			cursor: pointer;
 			border-radius: 0.2rem;
-			margin: 0 convertToREM(10);
-			transition:
-				transform 0.3s ease,
-				z-index 0.3s ease;
+			margin: 0 convertToREM(1);
 
 			.title {
 				position: absolute;

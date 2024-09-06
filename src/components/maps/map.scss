@@ -1,0 +1,15 @@
+@use "../../scss//config/functions" as *;
+@use "../../scss/config/primitives" as *;
+
+.map-container {
+	width: 23rem;
+	height: 50%;
+}
+
+.sidebar {
+	padding: 0.2rem;
+	background-color: $brand-black;
+	color: $white;
+	font-size: 0.8rem;
+}
+

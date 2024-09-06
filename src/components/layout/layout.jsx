@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { Link } from "react-router-dom"
-
-import { useAnimation } from "../../Context"
+import gsap from "gsap"
 
 import picturesData from "../../data/picturesData"
 import CardEffect from "../cardEffect/cardEffect"
 import Description from "../../pages/description/description"
 import Contact from "../../pages/contact/contact"
+import Footer from "../../pages/footer/footer"
 
 import IMGSejour from "../../assets/images/pictures/SEJOUR/IMG_3283.jpg"
 import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
@@ -26,49 +26,16 @@ const Layout = () => {
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isHovered, setIsHovered] = useState(false)
-	const { hasAnimated, setHasAnimated } = useAnimation()
 
-	const smoothScroll = (targetPosition, duration) => {
-		const startPosition = window.scrollY
-		const distance = targetPosition - startPosition
-		let startTime = null
+	const contentRef = useRef(null)
 
-		const animation = (currentTime) => {
-			if (startTime === null) {
-				startTime = currentTime
-			}
-			const timeElapsed = currentTime - startTime
-			const run = ease(timeElapsed, startPosition, distance, duration)
-			window.scrollTo(0, run)
-			if (timeElapsed < duration) {
-				requestAnimationFrame(animation)
-			}
-		}
-
-		const ease = (t, b, c, d) => {
-			t /= d / 2
-			if (t < 1) return (c / 2) * t * t + b
-			t--
-			return (-c / 2) * (t * (t - 2) - 1) + b
-		}
-
-		requestAnimationFrame(animation)
-	}
+	useEffect(() => setShowTopBar(true), [])
 
 	useEffect(() => {
-		if (!hasAnimated) {
-			const timer = setTimeout(() => {
-				smoothScroll(window.innerHeight, 3000)
-				setHasAnimated(true)
-			}, 1000)
-
-			return () => clearTimeout(timer)
-		}
-
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY
 
-			if (currentScrollY > lastScrollY && currentScrollY > 50) {
+			if (currentScrollY > lastScrollY && currentScrollY > 0) {
 				setShowTopBar(true)
 				setIsScrolledToTop(false)
 			} else if (currentScrollY < lastScrollY) {
@@ -83,7 +50,15 @@ const Layout = () => {
 		return () => {
 			window.removeEventListener("scroll", handleScroll)
 		}
-	}, [hasAnimated, setHasAnimated, lastScrollY])
+	}, [lastScrollY])
+
+	useEffect(() => {
+		gsap.fromTo(
+			contentRef.current,
+			{ top: "100vh", opacity: 0 },
+			{ top: "72vh", opacity: 1, duration: 2.5, ease: "power3.out" },
+		)
+	}, [])
 
 	const getFirstTitlesAndKeys = () => {
 		return Object.values(picturesData).map((category) => ({
@@ -145,7 +120,7 @@ const Layout = () => {
 					<LogoLe11 />
 				</div>
 			</div>
-			<div className={`content ${hasAnimated ? "animated" : ""}`}>
+			<div className="content" ref={contentRef}>
 				<div className="content-top">
 					<div className="content-top-right">
 						<div className="content-top-right-title">
@@ -174,13 +149,13 @@ const Layout = () => {
 					</div>
 					<div className="content-top-left">
 						<img src={IMGBalcon} alt="Marseille" />
-						<Le11Vertical className="le11Vertical" />
+						{/* <Le11Vertical className="le11Vertical" />
 						<WaveLine className="waveLine" />
 						<Le11Vertical2 className="le11Vertical2" />
 						<WaveLine className="waveLine-extended" />
 						<Le11Vertical3 className="le11Vertical3" />
 						<WaveLine className="waveLine-extended-2" />
-						<Le11Vertical4 className="le11Vertical4" />
+						<Le11Vertical4 className="le11Vertical4" /> */}
 					</div>
 					<div className="text-content">
 						<p>
@@ -195,6 +170,7 @@ const Layout = () => {
 				<CardEffect />
 				<Description />
 				<Contact />
+				<Footer />
 			</div>
 		</div>
 	)
