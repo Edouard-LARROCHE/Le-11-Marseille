@@ -1,3 +1,5 @@
+import React from "react"
+
 import PicNeighborhood3469 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3469.jpg"
 import PicNeighborhood3470 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3470.jpg"
 import PicNeighborhood3472 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3472.jpg"
