@@ -1,0 +1,47 @@
+@use "../../scss/config/primitives" as *;
+@use "../../scss/config/functions" as *;
+
+.content-carousel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.img-body img {
+	display: flex;
+	margin: 0 auto;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.img-body {
+	margin: 0 0.5rem;
+	width: auto;
+	aspect-ratio: 1/1;
+	display: inline-block;
+}
+
+.container-carousel {
+	position: relative;
+	padding: 2rem;
+	margin: 0 auto;
+	width: 70%;
+	background-color: $smoth-white;
+	border-radius: 0.5rem;
+}
+
+.cross {
+	width: 2.5rem;
+	height: 2.5rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+
+	rect {
+		fill: $gold-yellow;
+	}
+}
+

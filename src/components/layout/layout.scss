@@ -1,0 +1,370 @@
+@use "../../scss/animations/animations.scss" as *;
+@use "../../scss/config/functions" as *;
+@use "../../scss/config/primitives" as *;
+
+.container {
+	width: 100%;
+	overflow-x: hidden;
+
+	.containerImage {
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		overflow: hidden;
+
+		.containerImage1 {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			svg {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: -7rem;
+				left: 0;
+
+				g {
+					g {
+						g {
+							#g240,
+							#g236,
+							#g228,
+							#g224,
+							#g220,
+							#g216,
+							#g212,
+							#g208,
+							#g232,
+							#g244,
+							#g280 {
+								path {
+									stroke: $gold-yellow !important;
+								}
+							}
+
+							#g136,
+							#g132,
+							#g140,
+							#g144 {
+								path {
+									stroke: $grey-snow !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+		position: relative;
+		z-index: 2;
+		background-color: $white;
+		color: $brand-black;
+		padding: 2rem 0;
+
+		.content-top {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.content-top-left {
+				position: relative;
+				width: 70%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				img {
+					border-radius: 1.5rem;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+
+				// .le11Vertical {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 25%;
+				// 	left: -10rem;
+				// 	z-index: 1;
+				// }
+
+				// .waveLine {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 32%;
+				// 	left: -13.5rem;
+				// 	z-index: 1;
+				// 	transform: rotate(260deg);
+				// }
+
+				// .le11Vertical2 {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 45%;
+				// 	left: -10rem;
+				// 	z-index: 1;
+				// }
+
+				// .waveLine-extended {
+				// 	width: 15rem;
+				// 	height: 25rem;
+				// 	position: absolute;
+				// 	top: 45%;
+				// 	left: -13.5rem;
+				// 	z-index: 1;
+				// 	transform: rotate(260deg) scaleY(-1);
+				// }
+
+				// .le11Vertical3 {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 65%;
+				// 	left: -7.2rem;
+				// 	z-index: 1;
+				// }
+
+				// .waveLine-extended-2 {
+				// 	width: 15rem;
+				// 	height: 30rem;
+				// 	position: absolute;
+				// 	top: 65%;
+				// 	left: -8.5rem;
+				// 	z-index: 1;
+				// 	transform: rotate(260deg);
+				// }
+
+				// .le11Vertical4 {
+				// 	width: 15rem;
+				// 	height: 15rem;
+				// 	position: absolute;
+				// 	top: 90%;
+				// 	left: -5.5rem;
+				// 	z-index: 1;
+				// }
+			}
+
+			.content-top-right {
+				width: 50%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				.content-top-right-title {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-bottom: 1rem;
+
+					h1 {
+						position: relative;
+						color: $brand-black;
+						font-size: 2.5rem;
+						font-style: italic;
+						letter-spacing: 0.4rem;
+
+						.line {
+							background-color: $gold-yellow;
+							position: absolute;
+							bottom: 0.2rem;
+							left: 0;
+							height: 0.05rem;
+							animation: expendLine 2.3s ease-in-out;
+							animation-fill-mode: forwards;
+							animation-delay: 2s;
+						}
+					}
+				}
+
+				.content-top-right-description {
+					p {
+						margin-bottom: 1rem;
+						font-size: 1.2rem;
+						text-align: center;
+
+						.highLight {
+							color: $gold-yellow;
+							font-weight: bold;
+						}
+
+						&:nth-child(2) {
+							width: calc(100% - 10rem);
+							margin-left: 5rem;
+						}
+					}
+				}
+			}
+
+			.text-content {
+				width: 50%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				p {
+					margin-top: 2rem;
+					font-size: 1.2rem;
+					text-align: center;
+
+					.highLight {
+						color: $gold-yellow;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+
+	.topBar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3.5rem;
+		opacity: 0;
+		transform: translateY(-100%);
+		z-index: 3;
+		animation: fadeInDown 0.5s forwards;
+		transition: 0.3s ease-in-out;
+
+		&.hovered {
+			height: 8rem;
+			transition: height 0.2s ease-in-out;
+		}
+
+		&.visible {
+			background-color: rgba(255, 255, 255, 1);
+		}
+
+		&.hidden {
+			background-color: rgba(255, 255, 255);
+		}
+
+		.topBar-content {
+			width: 100%;
+			height: 100%;
+			position: relative;
+
+			ul {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				list-style: none;
+				padding: 0;
+				margin-top: 0.8rem;
+
+				li {
+					position: relative;
+					margin-right: 3rem;
+					font-size: 1.2rem;
+					text-align: center;
+					opacity: 0.7;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					.line {
+						width: 0;
+						height: 0.05rem;
+						background-color: transparent;
+						position: absolute;
+						bottom: -0.2rem;
+						left: 0;
+						transition: width 0.4s ease-in-out;
+					}
+
+					a {
+						color: $brand-black;
+						text-decoration: none;
+					}
+
+					&:hover {
+						opacity: 1;
+
+						.line {
+							width: 100%;
+							background-color: $gold-yellow;
+						}
+
+						.chevron {
+							transform: rotate(180deg);
+						}
+					}
+				}
+
+				.pics-link {
+					cursor: pointer;
+					display: flex;
+					flex-direction: row;
+
+					.chevron {
+						margin-left: 0.5rem;
+						width: 0.8rem;
+						height: 0.8rem;
+						opacity: 0.7;
+					}
+
+					&.hovered {
+						.line {
+							width: 100%;
+							background-color: $gold-yellow;
+						}
+
+						.chevron {
+							opacity: 1;
+							transform: rotate(180deg);
+						}
+					}
+				}
+
+				&.ul-hovered {
+					margin-top: 2rem;
+					flex-wrap: wrap;
+
+					.li-hovered {
+						cursor: pointer;
+						margin: 0 2rem 1rem 0;
+						font-size: 1rem;
+						opacity: 0.7;
+						display: flex;
+						justify-content: space-around;
+						align-items: center;
+					}
+				}
+			}
+		}
+	}
+}
+

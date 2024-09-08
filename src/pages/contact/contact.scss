@@ -1,0 +1,31 @@
+@use "../../scss/config/primitives" as *;
+@use "../../scss/config/functions" as *;
+
+.ant-form-item-required {
+	&::before {
+		display: none;
+	}
+}
+
+.ant-form {
+	background-color: $grey-steam;
+	padding: 2rem;
+	border-radius: 0.5rem;
+}
+
+.ant-picker {
+	width: 17rem;
+}
+
+.ant-form-item {
+	margin-bottom: 0.5rem;
+}
+
+// .custom-input .ant-input:hover {
+// 	border-color: $brand-black;
+// }
+
+// .custom-input .ant-input:focus {
+// 	border-color: $gold-yellow;
+// }
+
