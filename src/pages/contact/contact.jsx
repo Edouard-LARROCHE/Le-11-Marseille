@@ -44,7 +44,7 @@ const Contact = () => {
 	}
 
 	const handleSubmit = (values) => {
-		console.log("Form values:", values)
+		console.log("Values:", values)
 		antdMessage.success("Formulaire soumis avec succès !")
 
 		form.resetFields()
