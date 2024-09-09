@@ -42,7 +42,8 @@ import PicLogia3354 from "../assets/images/pictures/LOGGIA/IMG_3355.jpg"
 import PicBathroom3218 from "../assets/images/pictures/SDB/IMG_3218.jpg"
 import PicBathroom3219 from "../assets/images/pictures/SDB/IMG_3219.jpg"
 
-import PicLivingroom3283 from "../assets/images/pictures/SEJOUR/IMG_3283.jpg"
+// import PicLivingroom3283 from "../assets/images/pictures/SEJOUR/IMG_3283.jpg"
+import PicLivingroom3283 from "/IMG_3283.jpg"
 
 import { generateId } from "../utils/utils"
 
