@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react"
 import { Link } from "react-router-dom"
 import gsap from "gsap"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
 import picturesData from "../../data/picturesData"
 import CardEffect from "../cardEffect/cardEffect"
@@ -8,19 +9,15 @@ import Description from "../../pages/description/description"
 import Contact from "../../pages/contact/contact"
 import Footer from "../../pages/footer/footer"
 
-// import IMGSejour from "../../assets/images/pictures/SEJOUR/IMG_3283.jpg"
 import IMGSejour from "/images/IMG_3283.jpg"
 import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
 
 import LogoLe11 from "../../assets/logo/le11.svg?react"
-import Le11Vertical from "../../assets/logo/le11-vertical.svg?react"
-import Le11Vertical2 from "../../assets/logo/Le11-vertical-2.svg?react"
-import Le11Vertical3 from "../../assets/logo/Le11-vertical-3.svg?react"
-import Le11Vertical4 from "../../assets/logo/Le11-vertical-4.svg?react"
-import WaveLine from "../../assets/icons/wave-line.svg?react"
 import Chevron from "../../assets/icons/chevron.svg?react"
 
 import "./layout.scss"
+
+gsap.registerPlugin(ScrollToPlugin)
 
 const Layout = () => {
 	const [showTopBar, setShowTopBar] = useState(false)
@@ -29,6 +26,8 @@ const Layout = () => {
 	const [isHovered, setIsHovered] = useState(false)
 
 	const contentRef = useRef(null)
+	const descriptionRef = useRef(null)
+	const contactRef = useRef(null)
 
 	useEffect(() => setShowTopBar(true), [])
 
@@ -61,6 +60,22 @@ const Layout = () => {
 		)
 	}, [])
 
+	const scrollToDescription = () => {
+		gsap.to(window, {
+			scrollTo: { y: descriptionRef.current, offsetY: 50 },
+			duration: 1.5,
+			ease: "power2.inOut",
+		})
+	}
+
+	const scrollToContact = () => {
+		gsap.to(window, {
+			scrollTo: { y: contactRef.current, offsetY: 50 },
+			duration: 1.5,
+			ease: "power2.inOut",
+		})
+	}
+
 	const getFirstTitlesAndKeys = () => {
 		return Object.values(picturesData).map((category) => ({
 			title: category[0]?.title,
@@ -80,7 +95,9 @@ const Layout = () => {
 					<div className="topBar-content">
 						<ul>
 							<li>
-								<Link to="/">A propos</Link>
+								<a href="#" onClick={scrollToDescription}>
+									A propos
+								</a>
 								<div className="line" />
 							</li>
 							<li
@@ -92,7 +109,9 @@ const Layout = () => {
 								<Chevron className="chevron" />
 							</li>
 							<li>
-								<Link to="/">Contact</Link>
+								<a href="#" onClick={scrollToContact}>
+									Contact
+								</a>
 								<div className="line" />
 							</li>
 						</ul>
@@ -150,13 +169,6 @@ const Layout = () => {
 					</div>
 					<div className="content-top-left">
 						<img src={IMGBalcon} alt="Marseille" />
-						{/* <Le11Vertical className="le11Vertical" />
-						<WaveLine className="waveLine" />
-						<Le11Vertical2 className="le11Vertical2" />
-						<WaveLine className="waveLine-extended" />
-						<Le11Vertical3 className="le11Vertical3" />
-						<WaveLine className="waveLine-extended-2" />
-						<Le11Vertical4 className="le11Vertical4" /> */}
 					</div>
 					<div className="text-content">
 						<p>
@@ -169,8 +181,12 @@ const Layout = () => {
 					</div>
 				</div>
 				<CardEffect />
-				<Description />
-				<Contact />
+				<div ref={descriptionRef}>
+					<Description />
+				</div>
+				<div ref={contactRef}>
+					<Contact />
+				</div>
 				<Footer />
 			</div>
 		</div>

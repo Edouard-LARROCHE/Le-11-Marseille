@@ -61,6 +61,18 @@ const Contact = () => {
 				padding: "2rem",
 			}}
 		>
+			<div className="title-desc">
+				<p className="title">Sur devis,</p>
+				<p className="desc">
+					Nous nous engageons à vous répondre dans les plus brefs
+					délais avec une proposition personnalisée au meilleur tarif
+				</p>
+				<p className="final-desc">Cordialement, l'équipe du 11.</p>
+				<p className="desc">
+					Pour toutes demandes d’informations et de réservations, nous
+					vous invitons à REMPLIR le FORMULAIRE DE CONTACT ci-dessous.
+				</p>
+			</div>
 			<Form
 				layout="vertical"
 				onFinish={handleSubmit}
