@@ -9,7 +9,7 @@ import Contact from "../../pages/contact/contact"
 import Footer from "../../pages/footer/footer"
 
 // import IMGSejour from "../../assets/images/pictures/SEJOUR/IMG_3283.jpg"
-import IMGSejour from "/IMG_3283.jpg"
+import IMGSejour from "/images/IMG_3283.jpg"
 import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
 
 import LogoLe11 from "../../assets/logo/le11.svg?react"
