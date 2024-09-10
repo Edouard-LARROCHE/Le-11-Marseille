@@ -10,7 +10,7 @@ import Contact from "../../pages/contact/contact"
 import Footer from "../../pages/footer/footer"
 
 import IMGSejour from "/images/livingRoom/PAGE_1.jpg"
-import IMGBalcon from "../../assets/images/pictures/BALCON/IMG_3516.jpg"
+import IMGBalcon from "/images/balcony/PAGE_1.jpg"
 
 import LogoLe11 from "../../assets/logo/le11.svg?react"
 import Chevron from "../../assets/icons/chevron.svg?react"

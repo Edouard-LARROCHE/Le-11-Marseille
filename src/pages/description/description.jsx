@@ -7,6 +7,11 @@ import Equipment from "../../assets/icons/equipment.svg?react"
 import Door from "../../assets/icons/door.svg?react"
 import Cross from "../../assets/icons/cross.svg?react"
 
+import Car from "../../assets/icons/car.svg?react"
+import Train from "../../assets/icons/train.svg?react"
+import Cyclist from "../../assets/icons/cyclist.svg?react"
+import RunningMan from "../../assets/icons/runningMan.svg?react"
+
 import "./description.scss"
 
 const Description = () => {
@@ -85,7 +90,32 @@ const Description = () => {
 							)}
 						</div>
 						{index === 0 && showMap ? (
-							<MapboxMap />
+							<>
+								<MapboxMap />
+								<div className="map-container">
+									Distance depuis la Gare Routière St Charles
+									<br />
+									<ul>
+										<li>
+											<Car />
+											<span>6 min</span>
+										</li>
+										<li>
+											<Train />
+											<span>20 min</span>
+										</li>
+										<li>
+											<Cyclist />
+											<span>8 min</span>
+										</li>
+										<li>
+											<RunningMan />
+											<span>27 min</span>
+										</li>
+									</ul>
+									Tram T2 à 2 min à pied du logement
+								</div>
+							</>
 						) : (
 							<div
 								className={`card-content ${index === 0 ? (showEquipments ? "show-equipments" : "hide-equipments") : ""}`}
