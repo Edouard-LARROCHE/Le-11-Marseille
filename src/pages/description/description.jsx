@@ -7,6 +7,11 @@ import Equipment from "../../assets/icons/equipment.svg?react"
 import Door from "../../assets/icons/door.svg?react"
 import Cross from "../../assets/icons/cross.svg?react"
 
+import Car from "../../assets/icons/car.svg?react"
+import Train from "../../assets/icons/train.svg?react"
+import Cyclist from "../../assets/icons/cyclist.svg?react"
+import RunningMan from "../../assets/icons/runningMan.svg?react"
+
 import "./description.scss"
 
 const Description = () => {
@@ -85,7 +90,44 @@ const Description = () => {
 							)}
 						</div>
 						{index === 0 && showMap ? (
-							<MapboxMap />
+							<>
+								<MapboxMap />
+								<div className="map-container">
+									<p>
+										Distance depuis la Gare Routière St
+										Charles:
+									</p>
+									<ul>
+										<li>
+											<div className="icon-container">
+												<Car />
+											</div>
+											<span>6 min</span>
+										</li>
+										<li>
+											<div className="icon-container">
+												<Train />
+											</div>
+											<span>20 min</span>
+										</li>
+										<li>
+											<div className="icon-container">
+												<Cyclist />
+											</div>
+											<span>8 min</span>
+										</li>
+										<li>
+											<div className="icon-container">
+												<RunningMan />
+											</div>
+											<span>27 min</span>
+										</li>
+									</ul>
+									<p className="tram-container">
+										Tram T2 à 2 min à pied du logement
+									</p>
+								</div>
+							</>
 						) : (
 							<div
 								className={`card-content ${index === 0 ? (showEquipments ? "show-equipments" : "hide-equipments") : ""}`}

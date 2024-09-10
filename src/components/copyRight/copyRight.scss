@@ -27,18 +27,28 @@
 	.ul-bottom {
 		list-style: none;
 		padding: 0;
-		margin-top: 1rem;
+		margin-top: 1.2rem;
 		display: flex;
 		flex-direction: row !important;
 
 		li {
-			cursor: pointer;
-			font-size: 0.9rem !important;
-			color: $brand-black;
-			margin: 0 1.5rem -0.6rem 1.5rem !important;
+			margin: 0 1.5rem -1.5rem 1.5rem !important;
 
-			&:hover {
-				color: $gold-yellow;
+			.custom-link {
+				cursor: pointer;
+				font-size: 0.9rem !important;
+				color: $brand-black;
+				text-decoration: none;
+
+				&:hover {
+					color: $gold-yellow;
+				}
+			}
+
+			&.custom-link-adress {
+				margin: 0.2rem 0 0 1.5rem !important;
+				font-size: 0.9rem !important;
+				color: $brand-black;
 			}
 		}
 	}

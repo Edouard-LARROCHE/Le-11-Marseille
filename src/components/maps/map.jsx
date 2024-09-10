@@ -10,9 +10,9 @@ const MapboxMap = () => {
 
 	const mapContainer = useRef(null)
 	const map = useRef(null)
-	const [lng, setLng] = useState(5.3687)
-	const [lat, setLat] = useState(43.2965)
-	const [zoom, setZoom] = useState(9)
+	const [lng, setLng] = useState(5.3977)
+	const [lat, setLat] = useState(43.3018)
+	const [zoom, setZoom] = useState(15)
 
 	useEffect(() => {
 		if (map.current) return
@@ -24,12 +24,14 @@ const MapboxMap = () => {
 			zoom: zoom,
 		})
 
+		new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map.current)
+
 		map.current.on("move", () => {
 			setLng(map.current.getCenter().lng.toFixed(4))
 			setLat(map.current.getCenter().lat.toFixed(4))
 			setZoom(map.current.getZoom().toFixed(2))
 		})
-	})
+	}, [])
 
 	return (
 		<>
