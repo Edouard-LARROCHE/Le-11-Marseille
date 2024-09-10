@@ -23,7 +23,6 @@
 		width: 100%;
 		overflow: hidden;
 		padding: 0 1rem;
-		height: convertToREM(250);
 		margin: convertToREM(100) auto;
 		overflow: hidden;
 
@@ -63,9 +62,11 @@
 		}
 
 		img {
-			width: 100%;
+			width: auto;
 			height: auto;
-			object-fit: cover;
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
 			object-position: center;
 
 			&.filter {
