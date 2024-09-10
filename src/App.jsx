@@ -4,6 +4,9 @@ import { AnimationProvider } from "./Context"
 
 import Home from "./pages/home/home.jsx"
 import ImagePage from "./pages/imagePages/imagePages.jsx"
+import Confidentiality from "./pages/confidentiality/confidentiality.jsx"
+import CGL from "./pages/CGL/cgl.jsx"
+import LegalNotices from "./pages/legalNotices/legalNotices.jsx"
 
 function App() {
 	return (
@@ -13,6 +16,15 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/image/:key" element={<ImagePage />} />
+						<Route
+							path="/confidentiality"
+							element={<Confidentiality />}
+						/>
+						<Route path="/cgl" element={<CGL />} />
+						<Route
+							path="/legalNotices"
+							element={<LegalNotices />}
+						/>
 					</Routes>
 				</AnimationProvider>
 			</Router>
