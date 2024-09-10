@@ -5,7 +5,7 @@ import { AnimationProvider } from "./Context"
 import Home from "./pages/home/home.jsx"
 import ImagePage from "./pages/imagePages/imagePages.jsx"
 import Confidentiality from "./pages/confidentiality/confidentiality.jsx"
-import CGL from "./pages/CGL/cgl.jsx"
+import Cgl from "./pages/CGL/cgl.jsx"
 import LegalNotices from "./pages/legalNotices/legalNotices.jsx"
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 							path="/confidentiality"
 							element={<Confidentiality />}
 						/>
-						<Route path="/cgl" element={<CGL />} />
+						<Route path="/cgl" element={<Cgl />} />
 						<Route
 							path="/legalNotices"
 							element={<LegalNotices />}

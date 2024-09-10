@@ -10,8 +10,12 @@ const Confidentiality = () => {
 	return (
 		<div className="container-confidentiality">
 			<Le11Logo className="logoLe11" />
-			<div className="card-container-confidentiality">
+			<div className="container-confidentiality-content">
 				<div className="title">Politique de confidentialité</div>
+				<div className="sub-title">
+					La politique de confidentialité explique comment les données
+					des utilisateurs sont collectées, stockées, et utilisées.
+				</div>
 				<div className="description">
 					Nous attachons une grande importance à la protection de vos
 					données personnelles et nous nous engageons à respecter la
