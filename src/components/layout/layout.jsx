@@ -28,6 +28,8 @@ const Layout = () => {
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isHovered, setIsHovered] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
+	const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 
 	const contentRef = useRef(null)
 	const descriptionRef = useRef(null)
@@ -59,6 +61,19 @@ const Layout = () => {
 			window.removeEventListener("scroll", handleScroll)
 		}
 	}, [lastScrollY])
+
+	useEffect(() => {
+		const checkIsMobile = () => {
+			setIsMobile(window.innerWidth <= 391)
+		}
+
+		checkIsMobile()
+		window.addEventListener("resize", checkIsMobile)
+
+		return () => {
+			window.removeEventListener("resize", checkIsMobile)
+		}
+	}, [])
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -97,6 +112,10 @@ const Layout = () => {
 
 	const titleData = getFirstTitlesAndKeys()
 
+	const handleGalleryClick = () => {
+		setIsGalleryOpen(!isGalleryOpen)
+	}
+
 	return (
 		<div className="container">
 			{showTopBar && (
@@ -114,7 +133,12 @@ const Layout = () => {
 							</li>
 							<li
 								className={`pics-link ${isHovered ? "hovered" : ""}`}
-								onMouseEnter={() => setIsHovered(true)}
+								onMouseEnter={() =>
+									!isMobile && setIsHovered(true)
+								}
+								onClick={
+									isMobile ? handleGalleryClick : undefined
+								}
 							>
 								<Link to="/">Galeries photo</Link>
 								<div className="line" />
@@ -127,7 +151,7 @@ const Layout = () => {
 								<div className="line" />
 							</li>
 						</ul>
-						{isHovered && (
+						{(isHovered || (isMobile && isGalleryOpen)) && (
 							<ul className="ul-hovered">
 								{titleData.map(({ title, key }, index) => (
 									<li
