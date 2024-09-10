@@ -1,306 +1,270 @@
-import React from "react"
+import PicBalcony1 from "/images/balcony/IMG_3518.jpg"
+import PicBalcony2 from "/images/balcony/PAGE_1.jpg"
 
-import PicNeighborhood3469 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3469.jpg"
-import PicNeighborhood3470 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3470.jpg"
-import PicNeighborhood3472 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3472.jpg"
-import PicNeighborhood3473 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3473.jpg"
-import PicNeighborhood3475 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3475.jpg"
-import PicNeighborhood3481 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3481.jpg"
-import PicNeighborhood3483 from "../assets/images/pictures/A PROXIMITE, LE QUARTIER/IMG_3483.jpg"
+import PicBathroom1 from "/images/bathRoom/IMG_3348.jpg"
+import PicBathroom2 from "/images/bathRoom/IMG_3489.jpg"
+import PicBathroom3 from "/images/bathRoom/IMG_3491.jpg"
+import PicBathroom4 from "/images/bathRoom/IMG_3493.jpg"
+import PicBathroom5 from "/images/bathRoom/PAGE_1.jpg"
 
-import PicBalcony3213 from "../assets/images/pictures/BALCON/IMG_3213.jpg"
-import PicBalcony3332 from "../assets/images/pictures/BALCON/IMG_3332.jpg"
-import PicBalcony3337 from "../assets/images/pictures/BALCON/IMG_3337.jpg"
-import PicBalcony3516 from "../assets/images/pictures/BALCON/IMG_3516.jpg"
-import PicBalcony3517 from "../assets/images/pictures/BALCON/IMG_3517.jpg"
-import PicBalcony3518 from "../assets/images/pictures/BALCON/IMG_3518.jpg"
-import PicBalcony3519 from "../assets/images/pictures/BALCON/IMG_3519.jpg"
-import PicBalcony3526 from "../assets/images/pictures/BALCON/IMG_3526.jpg"
-import PicBalcony3527 from "../assets/images/pictures/BALCON/IMG_3527.jpg"
-import PicBalcony3528 from "../assets/images/pictures/BALCON/IMG_3528.jpg"
+import PicEntrance1 from "/images/entrance/IMG_3278.jpg"
+import PicEntrance2 from "/images/entrance/IMG_3544.jpg"
+import PicEntrance3 from "/images/entrance/IMG_3546.jpg"
+import PicEntrance4 from "/images/entrance/PAGE_1.jpg"
 
-import PicBox3276 from "../assets/images/pictures/BOX/IMG_3276.jpg"
-import PicBox3277 from "../assets/images/pictures/BOX/IMG_3277.jpg"
+import PicLivingroom1 from "/images/livingRoom/IMG_3282.jpg"
+import PicLivingroom2 from "/images/livingRoom/IMG_3285.jpg"
+import PicLivingroom3 from "/images/livingRoom/IMG_3286.jpg"
+import PicLivingroom4 from "/images/livingRoom/IMG_3347.jpg"
+import PicLivingroom5 from "/images/livingRoom/IMG_3520.jpg"
+import PicLivingroom6 from "/images/livingRoom/IMG_3538.jpg"
+import PicLivingroom7 from "/images/livingRoom/IMG_3540.jpg"
+import PicLivingroom8 from "/images/livingRoom/IMG_3542.jpg"
+import PicLivingroom9 from "/images/livingRoom/PAGE_1.jpg"
 
-import PicRoom3289 from "../assets/images/pictures/CHAMBRE/IMG_3289.jpg"
-import PicRoom3290 from "../assets/images/pictures/CHAMBRE/IMG_3291.jpg"
+import PicLoggia1 from "/images/loggia/IMG_3523.jpg"
+import PicLoggia2 from "/images/loggia/PAGE_1.jpg"
 
-import PicKitchen3195 from "../assets/images/pictures/CUISINE/IMG_3195.jpg"
-import PicKitchen3196 from "../assets/images/pictures/CUISINE/IMG_3196.jpg"
-
-import PicDressroom3280 from "../assets/images/pictures/DRESSING/IMG_3280.jpg"
-
-import PicEntrance3279 from "../assets/images/pictures/ENTREE/IMG_3279.jpg"
-import PicEntrance3281 from "../assets/images/pictures/ENTREE/IMG_3281.jpg"
-
-import PicBuilding2628 from "../assets/images/pictures/L'IMMEUBLE/IMG_2628.jpg"
-import PicBuilding2629 from "../assets/images/pictures/L'IMMEUBLE/IMG_2629.jpg"
-
-import PicLogia3353 from "../assets/images/pictures/LOGGIA/IMG_3353.jpg"
-import PicLogia3354 from "../assets/images/pictures/LOGGIA/IMG_3355.jpg"
-
-import PicBathroom3218 from "../assets/images/pictures/SDB/IMG_3218.jpg"
-import PicBathroom3219 from "../assets/images/pictures/SDB/IMG_3219.jpg"
-
-// import PicLivingroom3283 from "../assets/images/pictures/SEJOUR/IMG_3283.jpg"
-import PicLivingroom3283 from "/images/IMG_3283.jpg"
-
-// import { generateId } from "../utils/utils"
+import PicRoom1 from "/images/room/IMG_3201-1.jpg"
+import PicRoom2 from "/images/room/IMG_3201.jpg"
+import PicRoom3 from "/images/room/IMG_3289.jpg"
+import PicRoom4 from "/images/room/IMG_3291.jpg"
+import PicRoom5 from "/images/room/IMG_3547.jpg"
+import PicRoom6 from "/images/room/IMG_3548.jpg"
+import PicRoom7 from "/images/room/PAGE_1.jpg"
 
 const picturesData = {
-	neighborhood: [
+	balcony: [
 		{
 			id: 1,
-			title: "A Proximité, le quartier",
+			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicNeighborhood3469,
-			key: "neighborhood",
+			imageUrl: PicBalcony1,
+			key: "balcony",
 		},
 		{
 			id: 2,
-			title: "A Proximité, le quartier",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicNeighborhood3470,
-			key: "neighborhood",
-		},
-		{
-			id: 3,
-			title: "A Proximité, le quartier",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicNeighborhood3472,
-			key: "neighborhood",
-		},
-		{
-			id: 4,
-			title: "A Proximité, le quartier",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicNeighborhood3473,
-			key: "neighborhood",
-		},
-		{
-			id: 5,
-			title: "A Proximité, le quartier",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicNeighborhood3475,
-			key: "neighborhood",
-		},
-		{
-			id: 6,
-			title: "A Proximité, le quartier",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicNeighborhood3481,
-			key: "neighborhood",
-		},
-		{
-			id: 7,
-			title: "A Proximité, le quartier",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicNeighborhood3483,
-			key: "neighborhood",
-		},
-	],
-	balcony: [
-		{
-			id: 8,
 			title: "Le balcon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3213,
+			imageUrl: PicBalcony2,
 			key: "balcony",
-		},
-		{
-			id: 9,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3332,
-			key: "balcony",
-		},
-		{
-			id: 10,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3337,
-			key: "balcony",
-		},
-		{
-			id: 11,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3516,
-			key: "balcony",
-		},
-		{
-			id: 12,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3517,
-			key: "balcony",
-		},
-		{
-			id: 13,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3518,
-			key: "balcony",
-		},
-		{
-			id: 14,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3519,
-			key: "balcony",
-		},
-		{
-			id: 15,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3526,
-			key: "balcony",
-		},
-		{
-			id: 16,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3527,
-			key: "balcony",
-		},
-		{
-			id: 17,
-			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBalcony3528,
-			key: "balcony",
-		},
-	],
-	box: [
-		{
-			id: 18,
-			title: "Le box",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBox3276,
-			key: "box",
-		},
-		{
-			id: 19,
-			title: "Le box",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBox3277,
-			key: "box",
-		},
-	],
-	room: [
-		{
-			id: 20,
-			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicRoom3289,
-			key: "room",
-		},
-		{
-			id: 21,
-			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicRoom3290,
-			key: "room",
-		},
-	],
-	kitchen: [
-		{
-			id: 22,
-			title: "La cuisine",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicKitchen3195,
-			key: "kitchen",
-		},
-		{
-			id: 23,
-			title: "La cuisine",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicKitchen3196,
-			key: "kitchen",
-		},
-	],
-	// dressroom: [
-	// 	{
-	// 		id: generateId(),
-	// 		title: "Le dressing",
-	// 		desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-	// 		imageUrl: PicDressroom3280,
-	// 		key: "dressroom",
-	// 	},
-	// ],
-	entrance: [
-		{
-			id: 24,
-			title: "L'entrée",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicEntrance3279,
-			key: "entrance",
-		},
-		{
-			id: 25,
-			title: "L'entrée",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicEntrance3281,
-			key: "entrance",
-		},
-	],
-	building: [
-		{
-			id: 26,
-			title: "L'immeuble",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBuilding2628,
-			key: "building",
-		},
-		{
-			id: 27,
-			title: "L'immeuble",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBuilding2629,
-			key: "building",
-		},
-	],
-	loggia: [
-		{
-			id: 28,
-			title: "La loggia",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicLogia3353,
-			key: "loggia",
-		},
-		{
-			id: 29,
-			title: "La loggia",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicLogia3354,
-			key: "loggia",
 		},
 	],
 	bathroom: [
 		{
-			id: 30,
+			id: 3,
 			title: "La salle de bain",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBathroom3218,
+			imageUrl: PicBathroom1,
 			key: "bathroom",
 		},
 		{
-			id: 31,
+			id: 4,
 			title: "La salle de bain",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicBathroom3219,
+			imageUrl: PicBathroom2,
 			key: "bathroom",
+		},
+		{
+			id: 5,
+			title: "La salle de bain",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBathroom3,
+			key: "bathroom",
+		},
+		{
+			id: 6,
+			title: "La salle de bain",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBathroom4,
+			key: "bathroom",
+		},
+		{
+			id: 7,
+			title: "La salle de bain",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicBathroom5,
+			key: "bathroom",
+		},
+	],
+	entrance: [
+		{
+			id: 8,
+			title: "L'entrée",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicEntrance1,
+			key: "entrance",
+		},
+		{
+			id: 9,
+			title: "L'entrée",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicEntrance2,
+			key: "entrance",
+		},
+		{
+			id: 10,
+			title: "L'entrée",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicEntrance3,
+			key: "entrance",
+		},
+		{
+			id: 11,
+			title: "L'entrée",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicEntrance4,
+			key: "entrance",
 		},
 	],
 	livingroom: [
 		{
-			id: 32,
+			id: 12,
 			title: "Le salon",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicLivingroom3283,
+			imageUrl: PicLivingroom1,
+			key: "livingroom",
+		},
+		{
+			id: 13,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom2,
+			key: "livingroom",
+		},
+		{
+			id: 14,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom3,
+			key: "livingroom",
+		},
+		{
+			id: 15,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom4,
+			key: "livingroom",
+		},
+		{
+			id: 16,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom5,
+			key: "livingroom",
+		},
+		{
+			id: 17,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom6,
+			key: "livingroom",
+		},
+		{
+			id: 18,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom7,
+			key: "livingroom",
+		},
+		{
+			id: 19,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom8,
+			key: "livingroom",
+		},
+		{
+			id: 20,
+			title: "Le salon",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLivingroom9,
 			key: "livingroom",
 		},
 	],
+	loggia: [
+		{
+			id: 21,
+			title: "La loggia",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLoggia1,
+			key: "loggia",
+		},
+		{
+			id: 22,
+			title: "La loggia",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicLoggia2,
+			key: "loggia",
+		},
+	],
+	room: [
+		{
+			id: 23,
+			title: "La chambre",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicRoom1,
+			key: "room",
+		},
+		{
+			id: 24,
+			title: "La chambre",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicRoom2,
+			key: "room",
+		},
+		{
+			id: 25,
+			title: "La chambre",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicRoom3,
+			key: "room",
+		},
+		{
+			id: 26,
+			title: "La chambre",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicRoom4,
+			key: "room",
+		},
+		{
+			id: 27,
+			title: "La chambre",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicRoom5,
+			key: "room",
+		},
+		{
+			id: 28,
+			title: "La chambre",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicRoom6,
+			key: "room",
+		},
+		{
+			id: 29,
+			title: "La chambre",
+			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			imageUrl: PicRoom7,
+			key: "room",
+		},
+	],
+	// kitchen: [
+	// 	{
+	// 		id: 22,
+	// 		title: "La cuisine",
+	// 		desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+	// 		imageUrl: PicKitchen3195,
+	// 		key: "kitchen",
+	// 	},
+	// 	{
+	// 		id: 23,
+	// 		title: "La cuisine",
+	// 		desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+	// 		imageUrl: PicKitchen3196,
+	// 		key: "kitchen",
+	// 	},
+	// ],
 }
 
 export default picturesData
