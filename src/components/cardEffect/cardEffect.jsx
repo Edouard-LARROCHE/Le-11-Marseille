@@ -4,6 +4,7 @@ import gsap from "gsap"
 
 import { shuffleArray } from "../../utils/utils"
 import picturesData from "../../data/picturesData"
+
 import "./cardEffect.scss"
 
 const CardEffect = () => {

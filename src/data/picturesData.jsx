@@ -45,7 +45,7 @@ import PicBathroom3219 from "../assets/images/pictures/SDB/IMG_3219.jpg"
 // import PicLivingroom3283 from "../assets/images/pictures/SEJOUR/IMG_3283.jpg"
 import PicLivingroom3283 from "/images/IMG_3283.jpg"
 
-import { generateId } from "../utils/utils"
+// import { generateId } from "../utils/utils"
 
 const picturesData = {
 	neighborhood: [
