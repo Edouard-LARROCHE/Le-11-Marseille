@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import Footer from "../footer/footer"
 
@@ -10,6 +11,9 @@ const Cgl = () => {
 	return (
 		<div className="container-cgl">
 			<Le11Logo className="logoLe11" />
+			<div className="back-home">
+				<Link to="/">Retour à l'accueil</Link>
+			</div>
 			<div className="container-cgl-content">
 				<div className="title">Conditions Générales de Location</div>
 				<div className="sub-title">

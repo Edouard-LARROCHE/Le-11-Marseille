@@ -12,6 +12,31 @@
 		left: 0;
 	}
 
+	.back-home {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+
+		a {
+			color: $brand-black;
+			cursor: pointer;
+			text-decoration: none;
+
+			&:hover {
+				color: $gold-yellow;
+			}
+		}
+
+		svg {
+			width: 1.3rem;
+			height: 1.3rem;
+
+			path {
+				fill: $brand-black;
+			}
+		}
+	}
+
 	.container-cgl-content {
 		padding: 1rem;
 		width: 100%;

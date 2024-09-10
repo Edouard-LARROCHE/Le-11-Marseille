@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import Footer from "../footer/footer"
 
@@ -10,6 +11,9 @@ const Confidentiality = () => {
 	return (
 		<div className="container-confidentiality">
 			<Le11Logo className="logoLe11" />
+			<div className="back-home">
+				<Link to="/">Retour à l'accueil</Link>
+			</div>
 			<div className="container-confidentiality-content">
 				<div className="title">Politique de confidentialité</div>
 				<div className="sub-title">

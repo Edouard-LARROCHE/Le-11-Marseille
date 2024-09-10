@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import Footer from "../footer/footer"
 
@@ -10,6 +11,9 @@ const LegalNotices = () => {
 	return (
 		<div className="container-legal-notices">
 			<Le11Logo className="logoLe11" />
+			<div className="back-home">
+				<Link to="/">Retour à l'accueil</Link>
+			</div>
 			<div className="container-legal-notices-content">
 				<div className="title">Mentions légales</div>
 				<div className="sub-title">
