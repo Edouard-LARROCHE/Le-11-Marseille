@@ -26,7 +26,6 @@ import PicLoggia1 from "/images/loggia/IMG_3523.jpg"
 import PicLoggia2 from "/images/loggia/PAGE_1.jpg"
 
 import PicRoom1 from "/images/room/IMG_3201-1.jpg"
-import PicRoom2 from "/images/room/IMG_3201.jpg"
 import PicRoom3 from "/images/room/IMG_3289.jpg"
 import PicRoom4 from "/images/room/IMG_3291.jpg"
 import PicRoom5 from "/images/room/IMG_3547.jpg"
@@ -204,13 +203,6 @@ const picturesData = {
 			title: "La chambre",
 			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
 			imageUrl: PicRoom1,
-			key: "room",
-		},
-		{
-			id: 24,
-			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
-			imageUrl: PicRoom2,
 			key: "room",
 		},
 		{

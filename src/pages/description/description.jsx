@@ -93,27 +93,39 @@ const Description = () => {
 							<>
 								<MapboxMap />
 								<div className="map-container">
-									Distance depuis la Gare Routière St Charles
-									<br />
+									<p>
+										Distance depuis la Gare Routière St
+										Charles:
+									</p>
 									<ul>
 										<li>
-											<Car />
+											<div className="icon-container">
+												<Car />
+											</div>
 											<span>6 min</span>
 										</li>
 										<li>
-											<Train />
+											<div className="icon-container">
+												<Train />
+											</div>
 											<span>20 min</span>
 										</li>
 										<li>
-											<Cyclist />
+											<div className="icon-container">
+												<Cyclist />
+											</div>
 											<span>8 min</span>
 										</li>
 										<li>
-											<RunningMan />
+											<div className="icon-container">
+												<RunningMan />
+											</div>
 											<span>27 min</span>
 										</li>
 									</ul>
-									Tram T2 à 2 min à pied du logement
+									<p className="tram-container">
+										Tram T2 à 2 min à pied du logement
+									</p>
 								</div>
 							</>
 						) : (
