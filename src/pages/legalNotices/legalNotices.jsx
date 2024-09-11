@@ -27,27 +27,38 @@ const LegalNotices = () => {
 					<br />
 					<br />
 					Le site est hébergé par Vercel, Inc. et est hébergé en
-					France. Propriétaire du site :
+					France.
 					<br />
-					- Nom : [Nom]
+					Propriétaire du site :
 					<br />
-					- Adresse : [Adresse postale]
-					<br />- Téléphone : [Numéro de téléphone]
-					<br />- E-mail : [Adresse e-mail]
+					- Nom : MARTY Xavier
+					<br />
+					- Adresse : 11 rue FONDERE 13004 Marseille
+					<br />- E-mail : contact@le11amarseille.fr
 					<br />
 					<br />
-					- Hébergeur du site :
+					Hébergeur du site :
 					<br />
 					- Nom de l’hébergeur : Vercel
 					<br />
-					- Adresse : [Adresse de Vercel]
-					<br />- Téléphone : [Numéro de contact de Vercel]
+					<br />
+					Développeur du site :
+					<br />
+					- Nom du développeur : Edouard Larroche
+					<br />- Lien vers le site :
+					<a
+						href="https://portfolio-el-mu.vercel.app/home/projects"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						https://portfolio-el-mu.vercel.app/home/projects
+					</a>
 					<br />
 					<br />
 					Propriété intellectuelle : Tous les contenus présents sur ce
 					site (textes, images, logos, etc.) sont la propriété
-					exclusive de [Nom de la personne/entreprise] et sont
-					protégés par le droit d’auteur.
+					exclusive de Mr MARTY Xavier et sont protégés par le droit
+					d’auteur.
 				</div>
 			</div>
 			<div className="footer">
