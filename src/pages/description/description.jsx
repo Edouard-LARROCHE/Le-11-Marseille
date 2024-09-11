@@ -74,15 +74,13 @@ const Description = () => {
 		{
 			title: `Les <span class="plus">+</span> de l'appartement`,
 			description: `L'appartement est situé dans un quartier <span class="higtlight">calme et sécurisé</span>, à
-			proximité des transports en commun. Vous trouverez tous les commerces et supermarchés à moins de 5 minutes à pied.
+			proximité des transports en commun.Vous trouverez un très grand nombre de commerces, des supermarchés à 5 minutes à pied ainsi que plusieurs restaurants dans les environs.
 			<br/>
 			<br/>
 			`,
-			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine
-			complète, Wi-Fi, machine à laver, etc.
+			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine équipée, Wi-Fi, ventilateurs plafonniers, dressing, etc. (voir rubrique "équipements")
 			<br/>
-			Vous y trouverez également des draps, serviettes, et
-			produits d'accueil pour un séjour agréable.`,
+			Vous y trouverez également des draps, serviettes, et produits d'accueil pour un séjour agréable.`,
 			description3: `
 			<br/>
 			- <span class="higtlight">Ménage</span> de rafraichissement <span class="higtlight">hebdomadaire inclus</span> dans le forfait.
