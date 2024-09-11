@@ -8,6 +8,15 @@ import "./copyRight.scss"
 const CopyRight = () => {
 	const currentYear = new Date().getFullYear()
 
+	const handleEmailClick = () => {
+		const email = "contact@le11amarseille.fr"
+		const subject = encodeURIComponent("Information client")
+		const body = encodeURIComponent("Bonjour,")
+		const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`
+
+		window.location.href = mailtoLink
+	}
+
 	return (
 		<div className="containerCopyRight">
 			<Copyright />
@@ -30,7 +39,10 @@ const CopyRight = () => {
 						Mentions légales
 					</Link>
 				</li>
-				<li className="custom-link-adress">
+				<li
+					className="custom-link-adress"
+					onClick={() => handleEmailClick()}
+				>
 					contact@le11amarseille.fr
 				</li>
 			</ul>
