@@ -60,8 +60,8 @@ const Description = () => {
 			lieux et à l’inventaire approuvé lors de la signature du bail.
 			<br/>
 			<br/>
-			L’occupation des lieux doit être conforme au règlement de copropriété et au respect
-			du voisinage.
+			<span class="underline">L’occupation des lieux doit être conforme au règlement de copropriété et au respect
+			du voisinage.</span>
 			<br/>
 			<br/>
 			<span class="higtlight">2 formules de bail</span> vous sont proposées:
@@ -69,20 +69,18 @@ const Description = () => {
 			- Le <span class="higtlight">bail mobilité</span> : la formule idéale pour les déplacements professionnels.
 			<br/>
 			- Le <span class="higtlight">bail civil</span> : le contrat locatif adapté aux courtes durées.
-			La durée minimum de location est d’1 semaine.`,
+			<span class="underline">La durée minimum de location est d’1 semaine.</span>`,
 		},
 		{
 			title: `Les <span class="plus">+</span> de l'appartement`,
 			description: `L'appartement est situé dans un quartier <span class="higtlight">calme et sécurisé</span>, à
-			proximité des transports en commun. Vous trouverez tous les commerces et supermarchés à moins de 5 minutes à pied.
+			proximité des transports en commun.Vous trouverez un très grand nombre de commerces, des supermarchés à 5 minutes à pied ainsi que plusieurs restaurants dans les environs.
 			<br/>
 			<br/>
 			`,
-			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine
-			complète, Wi-Fi, machine à laver, etc.
+			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine équipée, Wi-Fi, ventilateurs plafonniers, dressing, etc. (voir rubrique "équipements")
 			<br/>
-			Vous y trouverez également des draps, serviettes, et
-			produits d'accueil pour un séjour agréable.`,
+			Vous y trouverez également des draps, serviettes, et produits d'accueil pour un séjour agréable.`,
 			description3: `
 			<br/>
 			- <span class="higtlight">Ménage</span> de rafraichissement <span class="higtlight">hebdomadaire inclus</span> dans le forfait.
