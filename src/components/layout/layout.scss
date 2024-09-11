@@ -224,8 +224,69 @@
 				}
 			}
 
+			.content-center-info {
+				padding: 2rem 10rem;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.title-info {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					align-items: center;
+
+					h1 {
+						margin-right: 0.5rem;
+						font-size: 1.5rem;
+						color: $brand-black;
+					}
+
+					.date-info {
+						margin-top: 0.4rem;
+						font-size: 1.2rem;
+						color: $brand-black;
+					}
+				}
+
+				.text-content-center {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+					p {
+						margin-top: 2rem;
+						font-size: 1rem;
+					}
+				}
+
+				.final-text {
+					display: flex;
+					align-self: baseline;
+
+					p {
+						margin-top: 1.5rem;
+						font-size: 1rem;
+						color: $brand-black;
+
+						.highLight {
+							letter-spacing: 0.2rem;
+							font-style: italic;
+							color: $gold-yellow;
+							font-weight: bold;
+							font-size: 1.2rem;
+						}
+					}
+				}
+			}
+
 			.text-content {
-				width: 50%;
+				width: 80%;
 				height: 100%;
 				display: flex;
 				flex-direction: column;

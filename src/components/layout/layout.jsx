@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
@@ -20,6 +20,8 @@ import "./layout.scss"
 gsap.registerPlugin(ScrollToPlugin)
 
 const Layout = () => {
+	const navigate = useNavigate()
+
 	const [showTopBar, setShowTopBar] = useState(false)
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
@@ -28,6 +30,10 @@ const Layout = () => {
 	const contentRef = useRef(null)
 	const descriptionRef = useRef(null)
 	const contactRef = useRef(null)
+
+	const date = new Date()
+	const options = { weekday: "long", day: "numeric", month: "long" }
+	const dateLocale = date.toLocaleDateString("fr-FR", options)
 
 	useEffect(() => setShowTopBar(true), [])
 
@@ -81,6 +87,10 @@ const Layout = () => {
 			title: category[0]?.title,
 			key: category[0]?.key,
 		}))
+	}
+
+	const switchGallery = (activeKey) => {
+		navigate(`/image/${activeKey}`)
 	}
 
 	const titleData = getFirstTitlesAndKeys()
@@ -167,16 +177,64 @@ const Layout = () => {
 							</p>
 						</div>
 					</div>
+					<div className="content-center-info">
+						<div className="title-info">
+							<h1>Marseille, le</h1>
+							<div className="date-info">{dateLocale}</div>
+						</div>
+						<div className="text-content-center">
+							<p>
+								Ici, des peintres ont travaillé une palettes de
+								couleurs diverses afin de proposer un
+								environement à la fois apaisant, lumineux et
+								rafiné. Les matériaux ainsi que le mobilié ont
+								été selectionnés avec le plus grand soin pour
+								concevoir l'ameublement et la décoration
+								d'intérieur de ce magnifique cocon au coeur de
+								la Cité phocéenne.
+								<br />
+								<br />
+								Cet appartement dispose également d'une literie
+								complète, de draps et de serviettes de qualité
+								hôtelière, d'un dressing et d'un service de
+								ménage hebdomadaire.
+							</p>
+						</div>
+						<div className="final-text">
+							<p>
+								Cordialement, l'équipe du{" "}
+								<span className="highLight">11</span>
+							</p>
+						</div>
+					</div>
 					<div className="content-top-left">
 						<img src={IMGBalcon} alt="Marseille" />
 					</div>
 					<div className="text-content">
 						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing
-							elit. Ea unde possimus ratione nemo maiores
-							obcaecati fuga error culpa maxime vel esse,
-							repellendus in id consequuntur dolor doloremque
-							corporis voluptatum aliquam.
+							Situé à proximité du Parc Longchamp et à quelques
+							mètres de toutes commodités (supermarchés,
+							transports en communs, marché quotidien, cinéma,
+							piscine) ce deux pièces de{" "}
+							<span className="highLight">75m2</span> est un
+							véritable cocon en plein cœur de Marseille, aux{" "}
+							<span className="highLight">
+								intérieurs raffinés
+							</span>{" "}
+							et aux prestations de{" "}
+							<span className="highLight">grand confort</span>.
+							<br />
+							<br />
+							C’est un bel appartement{" "}
+							<span className="highLight">traversant</span>, son
+							exposition <span className="highLight">nord</span> /{" "}
+							<span className="highLight">sud</span> permet une
+							très belle luminosité dans les pièces de vie. Nous
+							vous proposons à la location courte ou moyenne durée
+							cet appartement{" "}
+							<span className="highLight">luxueux</span> au centre
+							de Marseille, Idéal pour des actifs en déplacements
+							professionnels.
 						</p>
 					</div>
 				</div>
