@@ -106,3 +106,27 @@
 		}
 	}
 }
+
+@media screen and (min-width: 391px) and (max-width: 768px) {
+	.container-confidentiality {
+		.container-confidentiality-content {
+			padding: 0;
+
+			.title {
+				margin-top: 7rem;
+				margin-right: 25rem;
+				font-size: 1.6rem;
+			}
+
+			.sub-title {
+				font-size: 1.2rem;
+				margin-left: 1rem;
+			}
+
+			.description {
+				padding: 1rem;
+				margin-top: 0.5rem;
+			}
+		}
+	}
+}

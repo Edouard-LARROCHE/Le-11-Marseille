@@ -93,3 +93,22 @@
 		}
 	}
 }
+
+@media screen and (min-width: 391px) and (max-width: 768px) {
+	.container-contact {
+		.title-desc {
+			padding: 0;
+			.title {
+				font-size: 1.3rem;
+			}
+
+			.desc {
+				font-size: 1rem;
+			}
+
+			.final-desc {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}

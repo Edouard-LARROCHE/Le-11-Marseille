@@ -99,3 +99,27 @@
 		}
 	}
 }
+
+@media screen and (min-width: 391px) and (max-width: 768px) {
+	.container-cgl {
+		.container-cgl-content {
+			padding: 0;
+
+			.title {
+				margin-top: 7rem;
+				margin-right: 20rem;
+				font-size: 1.6rem;
+			}
+
+			.sub-title {
+				font-size: 1.2rem;
+				margin-right: 2rem;
+			}
+
+			.description {
+				padding: 1rem;
+				margin-top: 0.5rem;
+			}
+		}
+	}
+}

@@ -64,7 +64,7 @@ const Layout = () => {
 
 	useEffect(() => {
 		const checkIsMobile = () => {
-			setIsMobile(window.innerWidth <= 600)
+			setIsMobile(window.innerWidth <= 770)
 		}
 
 		checkIsMobile()

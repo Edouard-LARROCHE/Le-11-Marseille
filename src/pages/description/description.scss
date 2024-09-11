@@ -357,3 +357,16 @@
 		}
 	}
 }
+
+@media screen and (min-width: 391px) and (max-width: 768px) {
+	.container-description {
+		.card-container-description {
+			.card {
+				max-width: 40rem;
+				min-width: 40rem;
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
