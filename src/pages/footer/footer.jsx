@@ -34,10 +34,16 @@ const Footer = () => {
 						</li>
 						<li onClick={handleScroll}>Nous contacter</li>
 						<li className="li-social">
-							Nous suivre sur
-							<div className="container-social">
-								<Insta className="instagram" />
-							</div>
+							<a
+								href="https://www.instagram.com/locationle11"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Nous suivre sur
+								<div className="container-social">
+									<Insta className="instagram" />
+								</div>
+							</a>
 						</li>
 						<li className="note">Laisser un avis</li>
 					</ul>
