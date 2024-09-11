@@ -107,3 +107,44 @@
 	}
 }
 
+@media screen and (max-width: 391px) {
+	.container-footer {
+		.footer-content {
+			display: grid;
+			padding: 0;
+
+			.footer-content-left {
+				ul {
+					display: grid;
+					margin-left: 2rem;
+
+					li {
+						font-size: 0.9rem;
+						margin: 0.3rem 0.4rem 0.3rem 0.5rem;
+					}
+
+					.li-social {
+						.container-social {
+							svg {
+								width: 1rem;
+								height: 1rem;
+							}
+						}
+					}
+				}
+
+				.container-logo {
+
+					svg {
+						height: 5rem;
+					}
+
+					p {
+						font-size: 1rem;
+						margin: -0.5rem 0 0 -2.5rem;
+					}
+				}
+			}
+		}
+	}
+}

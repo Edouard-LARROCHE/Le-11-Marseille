@@ -75,3 +75,20 @@
 // 	border-color: $gold-yellow;
 // }
 
+@media screen and (max-width: 391px) {
+	.container-contact {
+		.title-desc {
+			.title {
+				font-size: 1.3rem;
+			}
+
+			.desc {
+				font-size: 1rem;
+			}
+
+			.final-desc {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
