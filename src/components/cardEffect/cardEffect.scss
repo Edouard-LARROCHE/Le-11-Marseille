@@ -88,7 +88,15 @@
 @media screen and (max-width: 391px) {
 	.container-card {
 		p {
-			left: 2.5rem;
+			font-size: 1.1rem;
+		}
+	}
+}
+
+@media screen and (min-width: 391px) and (max-width: 768px) {
+	.container-card {
+		p {
+			font-size: 1.2rem;
 		}
 	}
 }
