@@ -29,6 +29,10 @@ const Layout = () => {
 	const descriptionRef = useRef(null)
 	const contactRef = useRef(null)
 
+	const date = new Date()
+	const options = { weekday: "long", day: "numeric", month: "long" }
+	const dateLocale = date.toLocaleDateString("fr-FR", options)
+
 	useEffect(() => setShowTopBar(true), [])
 
 	useEffect(() => {
@@ -164,6 +168,36 @@ const Layout = () => {
 								</span>{" "}
 								aux déplacements professionnels de courte et
 								moyenne durée.
+							</p>
+						</div>
+					</div>
+					<div className="content-center-info">
+						<div className="title-info">
+							<h1>Marseille, le</h1>
+							<div className="date-info">{dateLocale}</div>
+						</div>
+						<div className="text-content-center">
+							<p>
+								Ici, des peintres ont travaillé une palettes de
+								couleurs diverses afin de proposer un
+								environement à la fois apaisant, lumineux et
+								rafiné. Les matériaux ainsi que le mobilié ont
+								été selectionnés avec le plus grand soin pour
+								concevoir l'ameublement et la décoration
+								d'intérieur de ce magnifique cocon au coeur de
+								la Cité phocéenne.
+								<br />
+								<br />
+								Cet appartement dispose également d'une literie
+								complète, de draps et de serviettes de qualité
+								hôtelière, d'un dressing et d'un service de
+								ménage hebdomadaire.
+							</p>
+						</div>
+						<div className="final-text">
+							<p>
+								Cordialement, l'équipe du{" "}
+								<span className="highLight">11</span>
 							</p>
 						</div>
 					</div>
