@@ -342,3 +342,11 @@
 	}
 }
 
+@media screen and (max-width: 391px) {
+	.container-description {
+		.card-container-description {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
+	}
+}

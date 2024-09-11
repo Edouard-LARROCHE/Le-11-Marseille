@@ -54,3 +54,13 @@
 	}
 }
 
+@media screen and (max-width: 391px) {
+	.containerCopyRight {
+		.ul-bottom {
+			li {
+				font-size: 0.8rem !important;
+				margin-bottom: 0.2rem !important;
+			}
+		}
+	}
+}

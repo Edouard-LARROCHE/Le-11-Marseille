@@ -433,8 +433,39 @@
 @media screen and (max-width: 391px) {
 	.container {
 
+		.content {
+			.content-top {
+				.text-content {
+					p {
+						font-size: 1rem;
+					}
+				}
+
+				.content-top-right {
+					.content-top-right-title {
+						h1 {
+							font-size: 1.5rem;
+							letter-spacing: 0;
+						}
+					}
+
+					.content-top-right-description {
+						p {
+							font-size: 1rem;
+
+							&:nth-child(2) {
+								width: auto;
+								margin-left: 0;
+								margin-bottom: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
 		.topBar {
-			height: 4rem;
+			height: 3rem;
 
 			.topBar-content {
 				background-color: rgb(255, 255, 255);
@@ -451,11 +482,13 @@
 
 						.li-hovered {
 							margin: 0.25rem 0 0.25rem 0;
+							padding-bottom: 0.5rem;
+							font-size: 0.9rem;
 						}
 					}
 
 					li {
-						font-size: 1.1rem;
+						font-size: 0.9rem;
 						margin: 0;
 					}
 				}
