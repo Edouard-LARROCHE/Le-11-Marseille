@@ -5,6 +5,8 @@ import gsap from "gsap"
 import { shuffleArray } from "../../utils/utils"
 import picturesData from "../../data/picturesData"
 
+import LogoTampon from "../../assets/logo/logo-tampon.svg?react"
+
 import "./cardEffect.scss"
 
 const CardEffect = () => {
@@ -142,6 +144,7 @@ const CardEffect = () => {
 								<p>Voir la galerie</p>
 							</>
 						)}
+						<LogoTampon className="logo-tampon" />
 					</div>
 				))}
 				<div className="bg-color" />

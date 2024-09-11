@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
+import { useScrollTarget } from "../../Context"
+
 import picturesData from "../../data/picturesData"
 import CardEffect from "../cardEffect/cardEffect"
 import Description from "../../pages/description/description"
@@ -29,7 +31,7 @@ const Layout = () => {
 
 	const contentRef = useRef(null)
 	const descriptionRef = useRef(null)
-	const contactRef = useRef(null)
+	const targetRef = useScrollTarget()
 
 	const date = new Date()
 	const options = { weekday: "long", day: "numeric", month: "long" }
@@ -76,7 +78,7 @@ const Layout = () => {
 
 	const scrollToContact = () => {
 		gsap.to(window, {
-			scrollTo: { y: contactRef.current, offsetY: 50 },
+			scrollTo: { y: targetRef.current, offsetY: 50 },
 			duration: 1.5,
 			ease: "power2.inOut",
 		})
@@ -242,7 +244,7 @@ const Layout = () => {
 				<div ref={descriptionRef}>
 					<Description />
 				</div>
-				<div ref={contactRef}>
+				<div ref={targetRef}>
 					<Contact />
 				</div>
 				<Footer />

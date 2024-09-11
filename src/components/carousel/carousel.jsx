@@ -4,6 +4,7 @@ import Slider from "react-slick"
 import { useNavigate } from "react-router-dom"
 
 import Cross from "../../assets/icons/cross.svg?react"
+import LogoTampon from "../../assets/logo/logo-tampon.svg?react"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -36,6 +37,7 @@ const Carousel = ({ images }) => {
 						<div key={key}>
 							<div className="img-body">
 								<img src={item.imageUrl} alt={item.title} />
+								<LogoTampon className="logo-tampon" />
 							</div>
 						</div>
 					))}

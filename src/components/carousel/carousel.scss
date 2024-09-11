@@ -17,10 +17,20 @@
 }
 
 .img-body {
+	position: relative;
 	margin: 0 0.5rem;
 	width: auto;
 	aspect-ratio: 1/1;
 	display: inline-block;
+
+	.logo-tampon {
+		position: absolute;
+		top: -4rem;
+		left: -4rem;
+		width: 15rem;
+		height: 15rem;
+		opacity: 0.5;
+	}
 }
 
 .container-carousel {

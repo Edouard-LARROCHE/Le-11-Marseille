@@ -7,6 +7,11 @@ import Equipment from "../../assets/icons/equipment.svg?react"
 import Door from "../../assets/icons/door.svg?react"
 import Cross from "../../assets/icons/cross.svg?react"
 
+import Bluetooth from "../../assets/icons/equipment/bluetooth.svg?react"
+import Coofee from "../../assets/icons/equipment/coofee.svg?react"
+import KitchenSet from "../../assets/icons/equipment/kitchen-set.svg?react"
+import Wifi from "../../assets/icons/equipment/wifi.svg?react"
+
 import Car from "../../assets/icons/car.svg?react"
 import Train from "../../assets/icons/train.svg?react"
 import Cyclist from "../../assets/icons/cyclist.svg?react"
@@ -30,37 +35,143 @@ const Description = () => {
 		{
 			title: "Caractéristiques du logement",
 			titleMap: "Localisation du logement",
-			descriptionTitle: "Description du logement",
-			description: `Situé à proximité du Parc Longchamp et à quelques mètres
-			de toutes les commodités nécessaires (supermarchés,
-			transports en communs, etc..) ce deux pièces de 75m2 est
-			un véritable cocon en plein cœur de Marseille, aux
-			intérieurs raffinés et aux prestations de grand confort.
-			<br />
-			<br />
-			- C’est un appartement traversant, exposition nord sud,
-			permettant une belle luminosité dans les pièces de vie.
-			<br />
-			<br />
-			- Nous vous proposons à la location courte ou moyenne
-			durée cet appartement luxueux au centre de Marseille,
-			Idéal pour des actifs en déplacements professionnels.`,
+			descriptionTitle: "Accès voyageurs",
+			descriptionTitle2: "En option",
+			description: `- Tram T2 à 2 mn à pied
+			<br/>
+			- Appartement situé au sixième étage avec ascenseur 
+			<br/>
+			- Accès badge Vigick
+			<br/>
+			- Porte blindée 7 points à l’entrée.`,
+			description2: `Mise à dispo d’un <span class="higtlight">BOX VOITURE</span> (facturation supplémentaire à la journée) à 4mn à
+			pieds de l’appartement`,
 		},
 		{
 			title: "Informations générales",
-			description: `L'appartement est équipé de tout le confort moderne : cuisine
-			équipée, Wi-Fi, climatisation, machine à laver, etc.
-			Vous y trouverez également des draps, serviettes, et
-			produits d'accueil pour un séjour agréable.`,
+			description: `Les <span class="higtlight">tarifs</span> sont proposés à la demande, sur devis à la <span class="higtlight">semaine ou au mois</span>.
+			<br/>
+			<br/>
+			Le <span class="higtlight">forfait ménage</span> hebdomadaire sera <span class="higtlight">compris dans le tarif</span>, et fait en fonction de vos
+			disponibilités.
+			<br/>
+			Nous vous informons que l’organisation de fêtes ou tous événements festifs est
+			formellement interdite, nous restons très stricts à ce sujet, conformément à l’état des
+			lieux et à l’inventaire approuvé lors de la signature du bail.
+			<br/>
+			<br/>
+			L’occupation des lieux doit être conforme au règlement de copropriété et au respect
+			du voisinage.
+			<br/>
+			<br/>
+			<span class="higtlight">2 formules de bail</span> vous sont proposées:
+			<br/>
+			- Le <span class="higtlight">bail mobilité</span> : la formule idéale pour les déplacements professionnels
+			<br/>
+			- Le <span class="higtlight">bail civil</span> : le contrat locatif adapté aux courtes durées
+			La durée minimum de location est d’1 semaine.`,
 		},
 		{
 			title: `Les <span class="plus">+</span> de l'appartement`,
-			description: `L'appartement est situé dans un quartier calme et sécurisé, à
+			description: `L'appartement est situé dans un quartier <span class="higtlight">calme et sécurisé</span>, à
 			proximité des transports en commun. Vous trouverez un
 			supermarché à 5 minutes à pied et plusieurs restaurants
-			dans les environs.`,
+			dans les environs.
+			<br/>
+			<br/>
+			`,
+			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine
+			équipée, Wi-Fi, climatisation, machine à laver, etc.
+			<br/>
+			Vous y trouverez également des draps, serviettes, et
+			produits d'accueil pour un séjour agréable.`,
+			description3: `
+			<br/>
+			- <span class="higtlight">Ménage</span> de rafraichissement <span class="higtlight">hebdomadaire inclus</span> dans le forfait.
+			<br/>
+			- Assistance disponible tout au long de votre séjour.`,
 		},
 	]
+
+	const renderEquipments = () => {
+		return (
+			<div className="">
+				<ul>
+					<li>
+						<div className="icon-container">
+							<Wifi />
+						</div>
+						<div className="text-container">
+							<p>Wi-Fi haut débit / fibre</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<Equipment />
+						</div>
+						<div className="text-container">
+							<p>TV murale</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<Bluetooth />
+						</div>
+						<div className="text-container">
+							<p>Système audio bluetooth</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<Coofee />
+						</div>
+						<div className="text-container">
+							<p>Machine à café Nespresso</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<KitchenSet />
+						</div>
+						<div className="text-container">
+							<p>
+								Kit ustensils de cuisine complet, lave linge,
+								four, micro ondes, plaque de cuisson à
+								induction, lave vaisselle, frigo-congélateur.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>Produits de toilette</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>
+								Ventilateurs plafonniers (double séjour et
+								chambre)
+							</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>Kit de ménage et repassage</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>Serviette de toilette et parures de lit</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		)
+	}
 
 	return (
 		<div className="container-description">
@@ -169,7 +280,7 @@ const Description = () => {
 															<p>
 																75 m2 au total
 															</p>
-															<p>{`3 pièces (1 salle d'eau, etc)`}</p>
+															<p>{`2 pièces (1 salle d'eau, cuisine, loggia, balcon, dressing)`}</p>
 														</div>
 													</li>
 													<li>
@@ -178,12 +289,13 @@ const Description = () => {
 														</div>
 														<div className="text-container">
 															<p>
-																Télévison, Four,
-																plaque de
-																cuisson, etc...
+																Télévison
+																murale, Wi-Fi
+																haut débit /
+																fibre etc...
 															</p>
 															<p>
-																15 équipements
+																16 équipements
 																au total{" "}
 																<span
 																	className="link"
@@ -209,6 +321,7 @@ const Description = () => {
 												Détails des équipements
 												<Cross />
 											</div>
+											{renderEquipments()}
 										</div>
 									))}
 								{showEquipments && index === 0 ? (
@@ -225,6 +338,23 @@ const Description = () => {
 												__html: card.description,
 											}}
 										/>
+										{index === 0 && (
+											<p className="desc-title">
+												{card.descriptionTitle2}
+											</p>
+										)}
+										<p
+											dangerouslySetInnerHTML={{
+												__html: card.description2,
+											}}
+										/>
+										{index === 2 && (
+											<p
+												dangerouslySetInnerHTML={{
+													__html: card.description3,
+												}}
+											/>
+										)}
 									</>
 								)}
 							</div>

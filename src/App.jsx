@@ -1,6 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { AnimationProvider } from "./Context"
+import { ScrollProvider } from "./Context"
 
 import ScrollToTop from "./components/scrollToTop/scrollToTop.jsx"
 
@@ -15,7 +15,7 @@ function App() {
 		<div className="App">
 			<Router>
 				<ScrollToTop />
-				<AnimationProvider>
+				<ScrollProvider>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/image/:key" element={<ImagePage />} />
@@ -29,7 +29,7 @@ function App() {
 							element={<LegalNotices />}
 						/>
 					</Routes>
-				</AnimationProvider>
+				</ScrollProvider>
 			</Router>
 		</div>
 	)
