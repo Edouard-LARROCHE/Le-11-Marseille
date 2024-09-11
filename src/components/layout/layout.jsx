@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
@@ -20,6 +20,8 @@ import "./layout.scss"
 gsap.registerPlugin(ScrollToPlugin)
 
 const Layout = () => {
+	const navigate = useNavigate()
+
 	const [showTopBar, setShowTopBar] = useState(false)
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
@@ -85,6 +87,10 @@ const Layout = () => {
 			title: category[0]?.title,
 			key: category[0]?.key,
 		}))
+	}
+
+	const switchGallery = (activeKey) => {
+		navigate(`/image/${activeKey}`)
 	}
 
 	const titleData = getFirstTitlesAndKeys()
