@@ -62,16 +62,20 @@ const Contact = () => {
 			}}
 		>
 			<div className="title-desc">
-				<p className="title">Sur devis,</p>
+				<h1>Sur devis,</h1>
 				<p className="desc">
 					Nous nous engageons à vous répondre dans les plus brefs
-					délais avec une proposition personnalisée au meilleur tarif
-				</p>
-				<p className="final-desc">Cordialement, l'équipe du 11.</p>
-				<p className="desc">
+					délais avec une proposition personnalisée au meilleur tarif.
+					<br />
 					Pour toutes demandes d’informations et de réservations, nous
 					vous invitons à REMPLIR le FORMULAIRE DE CONTACT ci-dessous.
 				</p>
+				<div className="final-text">
+					<p>
+						Cordialement, l'équipe du{" "}
+						<span className="highLight">11</span>
+					</p>
+				</div>
 			</div>
 			<Form
 				layout="vertical"

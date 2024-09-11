@@ -13,27 +13,36 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-		text-align: center;
 		margin-bottom: 1.5rem;
+		padding: 0 15rem;
 
-		.title {
-			padding: 0 10rem;
+		h1 {
 			font-size: 1.5rem;
-			font-weight: bold;
+			color: $brand-black;
 		}
 
 		.desc {
-			padding: 0 15rem;
-			font-size: 1.2rem;
-			font-weight: normal;
+			font-size: 1rem;
 			margin-top: 0.5rem;
 		}
 
-		.final-desc {
-			font-size: 1.2rem;
-			font-weight: normal;
-			margin-bottom: 0;
+		.final-text {
+			display: flex;
+			align-self: baseline;
+
+			p {
+				margin-top: 1rem;
+				font-size: 1rem;
+				color: $brand-black;
+
+				.highLight {
+					letter-spacing: 0.2rem;
+					font-style: italic;
+					color: $gold-yellow;
+					font-weight: bold;
+					font-size: 1.2rem;
+				}
+			}
 		}
 	}
 }

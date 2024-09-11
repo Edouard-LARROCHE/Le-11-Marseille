@@ -206,11 +206,29 @@ const Layout = () => {
 					</div>
 					<div className="text-content">
 						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing
-							elit. Ea unde possimus ratione nemo maiores
-							obcaecati fuga error culpa maxime vel esse,
-							repellendus in id consequuntur dolor doloremque
-							corporis voluptatum aliquam.
+							Situé à proximité du Parc Longchamp et à quelques
+							mètres de toutes commodités (supermarchés,
+							transports en communs, marché quotidien, cinéma,
+							piscine) ce deux pièces de{" "}
+							<span className="highLight">75m2</span> est un
+							véritable cocon en plein cœur de Marseille, aux{" "}
+							<span className="highLight">
+								intérieurs raffinés
+							</span>{" "}
+							et aux prestations de{" "}
+							<span className="highLight">grand confort</span>.
+							<br />
+							<br />
+							C’est un bel appartement{" "}
+							<span className="highLight">traversant</span>, son
+							exposition <span className="highLight">nord</span> /{" "}
+							<span className="highLight">sud</span> permet une
+							très belle luminosité dans les pièces de vie. Nous
+							vous proposons à la location courte ou moyenne durée
+							cet appartement{" "}
+							<span className="highLight">luxueux</span> au centre
+							de Marseille, Idéal pour des actifs en déplacements
+							professionnels.
 						</p>
 					</div>
 				</div>
