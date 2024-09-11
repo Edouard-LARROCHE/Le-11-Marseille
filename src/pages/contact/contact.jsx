@@ -115,17 +115,11 @@ const Contact = () => {
 						<Input />
 					</Form.Item>
 
-					<Form.Item
-						label="Téléphone"
-						name="phone"
-						rules={[
-							{
-								required: true,
-								message:
-									"Merci de renseigner votre numéro de téléphone",
-							},
-						]}
-					>
+					<Form.Item label="Société" name="company">
+						<Input />
+					</Form.Item>
+
+					<Form.Item label="Téléphone" name="phone">
 						<Input />
 					</Form.Item>
 

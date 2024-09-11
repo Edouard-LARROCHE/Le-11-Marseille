@@ -60,8 +60,8 @@ const Description = () => {
 			lieux et à l’inventaire approuvé lors de la signature du bail.
 			<br/>
 			<br/>
-			L’occupation des lieux doit être conforme au règlement de copropriété et au respect
-			du voisinage.
+			<span class="underline">L’occupation des lieux doit être conforme au règlement de copropriété et au respect
+			du voisinage.</span>
 			<br/>
 			<br/>
 			<span class="higtlight">2 formules de bail</span> vous sont proposées:
@@ -69,7 +69,7 @@ const Description = () => {
 			- Le <span class="higtlight">bail mobilité</span> : la formule idéale pour les déplacements professionnels.
 			<br/>
 			- Le <span class="higtlight">bail civil</span> : le contrat locatif adapté aux courtes durées.
-			La durée minimum de location est d’1 semaine.`,
+			<span class="underline">La durée minimum de location est d’1 semaine.</span>`,
 		},
 		{
 			title: `Les <span class="plus">+</span> de l'appartement`,

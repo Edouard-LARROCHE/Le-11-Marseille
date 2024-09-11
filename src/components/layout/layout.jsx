@@ -12,6 +12,7 @@ import Contact from "../../pages/contact/contact"
 import Footer from "../../pages/footer/footer"
 
 import IMGSejour from "/images/livingRoom/PAGE_1.jpg"
+import IMGSejour2 from "/images/livingRoom/IMG_3538.jpg"
 import IMGBalcon from "/images/balcony/PAGE_1.jpg"
 
 import LogoLe11 from "../../assets/logo/le11.svg?react"
@@ -36,7 +37,12 @@ const Layout = () => {
 	const targetRef = useScrollTarget()
 
 	const date = new Date()
-	const options = { weekday: "long", day: "numeric", month: "long" }
+	const options = {
+		weekday: "long",
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+	}
 	const dateLocale = date.toLocaleDateString("fr-FR", options)
 
 	useEffect(() => setShowTopBar(true), [])
@@ -206,7 +212,7 @@ const Layout = () => {
 					<div className="content-center-info">
 						<div className="title-info">
 							<h1>Marseille, le</h1>
-							<div className="date-info">{dateLocale}</div>
+							<h1>{dateLocale}</h1>
 						</div>
 						<div className="text-content-center">
 							<p>
@@ -234,7 +240,7 @@ const Layout = () => {
 						</div>
 					</div>
 					<div className="content-top-left">
-						<img src={IMGBalcon} alt="Marseille" />
+						<img src={IMGSejour2} alt="Marseille" />
 					</div>
 					<div className="text-content">
 						<p>

@@ -40,7 +40,6 @@
 				g {
 					g {
 						g {
-
 							#g240,
 							#g236,
 							#g228,
@@ -244,12 +243,6 @@
 						font-size: 1.5rem;
 						color: $brand-black;
 					}
-
-					.date-info {
-						margin-top: 0.4rem;
-						font-size: 1.2rem;
-						color: $brand-black;
-					}
 				}
 
 				.text-content-center {
@@ -432,7 +425,6 @@
 
 @media screen and (max-width: 391px) {
 	.container {
-
 		.content {
 			.content-top {
 				.content-top-right {
@@ -535,7 +527,6 @@
 
 @media screen and (min-width: 391px) and (max-width: 768px) {
 	.container {
-
 		.content {
 			.content-top {
 				.content-top-right {
@@ -632,7 +623,6 @@
 							margin: 0.25rem 0 0.25rem 0;
 							padding: 0.5rem;
 							font-size: 1.1rem;
-
 						}
 					}
 
