@@ -37,14 +37,14 @@ const picturesData = {
 		{
 			id: 1,
 			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Profiter de l'ens...",
 			imageUrl: PicBalcony1,
 			key: "balcony",
 		},
 		{
 			id: 2,
 			title: "Le balcon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Profiter de l'ens...",
 			imageUrl: PicBalcony2,
 			key: "balcony",
 		},
@@ -52,36 +52,41 @@ const picturesData = {
 	bathroom: [
 		{
 			id: 3,
-			title: "La salle de bain",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			title: "La salle d'eau",
+			desc: `Ambiance marbre et Terrazzo est équipé d’une grande douche
+italienne en ardoise noire.`,
 			imageUrl: PicBathroom1,
 			key: "bathroom",
 		},
 		{
 			id: 4,
-			title: "La salle de bain",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			title: "La salle d'eau",
+			desc: `Ambiance marbre et Terrazzo est équipé d’une grande douche
+italienne en ardoise noire.`,
 			imageUrl: PicBathroom2,
 			key: "bathroom",
 		},
 		{
 			id: 5,
-			title: "La salle de bain",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			title: "La salle d'eau",
+			desc: `Ambiance marbre et Terrazzo est équipé d’une grande douche
+italienne en ardoise noire.`,
 			imageUrl: PicBathroom3,
 			key: "bathroom",
 		},
 		{
 			id: 6,
-			title: "La salle de bain",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			title: "La salle d'eau",
+			desc: `Ambiance marbre et Terrazzo est équipé d’une grande douche
+italienne en ardoise noire.`,
 			imageUrl: PicBathroom4,
 			key: "bathroom",
 		},
 		{
 			id: 7,
-			title: "La salle de bain",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			title: "La salle d'eau",
+			desc: `Ambiance marbre et Terrazzo est équipé d’une grande douche
+italienne en ardoise noire.`,
 			imageUrl: PicBathroom5,
 			key: "bathroom",
 		},
@@ -90,28 +95,28 @@ const picturesData = {
 		{
 			id: 8,
 			title: "L'entrée",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Dessert toutes les pièces de vie.",
 			imageUrl: PicEntrance1,
 			key: "entrance",
 		},
 		{
 			id: 9,
 			title: "L'entrée",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Dessert toutes les pièces de vie.",
 			imageUrl: PicEntrance2,
 			key: "entrance",
 		},
 		{
 			id: 10,
 			title: "L'entrée",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Dessert toutes les pièces de vie.",
 			imageUrl: PicEntrance3,
 			key: "entrance",
 		},
 		{
 			id: 11,
 			title: "L'entrée",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Dessert toutes les pièces de vie.",
 			imageUrl: PicEntrance4,
 			key: "entrance",
 		},
@@ -120,63 +125,81 @@ const picturesData = {
 		{
 			id: 12,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+d’appoint.`,
 			imageUrl: PicLivingroom1,
 			key: "livingroom",
 		},
 		{
 			id: 13,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+			donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+			d’appoint.`,
 			imageUrl: PicLivingroom2,
 			key: "livingroom",
 		},
 		{
 			id: 14,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+			donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+			d’appoint.`,
 			imageUrl: PicLivingroom3,
 			key: "livingroom",
 		},
 		{
 			id: 15,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+d’appoint.`,
 			imageUrl: PicLivingroom4,
 			key: "livingroom",
 		},
 		{
 			id: 16,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+d’appoint.`,
 			imageUrl: PicLivingroom5,
 			key: "livingroom",
 		},
 		{
 			id: 17,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+d’appoint.`,
 			imageUrl: PicLivingroom6,
 			key: "livingroom",
 		},
 		{
 			id: 18,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+d’appoint.`,
 			imageUrl: PicLivingroom7,
 			key: "livingroom",
 		},
 		{
 			id: 19,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+d’appoint.`,
 			imageUrl: PicLivingroom8,
 			key: "livingroom",
 		},
 		{
 			id: 20,
 			title: "Le salon",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Exposé sud, composé d’un salon et d’une salle à manger
+donnant sur le balcon ensoleillé. Un canapé convertible est à disposition comme lit
+d’appoint.`,
 			imageUrl: PicLivingroom9,
 			key: "livingroom",
 		},
@@ -185,14 +208,16 @@ const picturesData = {
 		{
 			id: 21,
 			title: "La loggia",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Située en retrait, accessible par la chambre et la cuisine, est un lieu de
+repos avec une large baie vitrée qui découvre une vue calme et dégagée.`,
 			imageUrl: PicLoggia1,
 			key: "loggia",
 		},
 		{
 			id: 22,
 			title: "La loggia",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: `Située en retrait, accessible par la chambre et la cuisine, est un lieu de
+repos avec une large baie vitrée qui découvre une vue calme et dégagée.`,
 			imageUrl: PicLoggia2,
 			key: "loggia",
 		},
@@ -201,42 +226,42 @@ const picturesData = {
 		{
 			id: 23,
 			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Très au calme, orientée nord, elle donne sur la loggia.",
 			imageUrl: PicRoom1,
 			key: "room",
 		},
 		{
 			id: 25,
 			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Très au calme, orientée nord, elle donne sur la loggia.",
 			imageUrl: PicRoom3,
 			key: "room",
 		},
 		{
 			id: 26,
 			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Très au calme, orientée nord, elle donne sur la loggia.",
 			imageUrl: PicRoom4,
 			key: "room",
 		},
 		{
 			id: 27,
 			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Très au calme, orientée nord, elle donne sur la loggia.",
 			imageUrl: PicRoom5,
 			key: "room",
 		},
 		{
 			id: 28,
 			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Très au calme, orientée nord, elle donne sur la loggia.",
 			imageUrl: PicRoom6,
 			key: "room",
 		},
 		{
 			id: 29,
 			title: "La chambre",
-			desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quidem.",
+			desc: "Très au calme, orientée nord, elle donne sur la loggia.",
 			imageUrl: PicRoom7,
 			key: "room",
 		},
