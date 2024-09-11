@@ -8,6 +8,15 @@ import Le11Logo from "../../assets/logo/le11.svg?react"
 import "./confidentiality.scss"
 
 const Confidentiality = () => {
+	const handleEmailClick = () => {
+		const email = "contact@le11amarseille.fr"
+		const subject = encodeURIComponent("Information client")
+		const body = encodeURIComponent("Bonjour,")
+		const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`
+
+		window.location.href = mailtoLink
+	}
+
 	return (
 		<div className="container-confidentiality">
 			<Le11Logo className="logoLe11" />
@@ -62,7 +71,12 @@ const Confidentiality = () => {
 					personnelles.
 					<br />
 					Pour toute question, contactez-nous à l’adresse suivante :
-					<span className="highLight">contact@le11amarseille.fr</span>
+					<span
+						className="highLight"
+						onClick={() => handleEmailClick()}
+					>
+						contact@le11amarseille.fr
+					</span>
 				</div>
 			</div>
 			<div className="footer">

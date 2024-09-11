@@ -36,7 +36,7 @@ const Cgl = () => {
 					<br />
 					Durée de séjour :
 					<br />
-					- La durée minimale de séjour est de [nombre] nuits. L’heure
+					- La durée minimale de séjour est de 6 nuits. L’heure
 					d’arrivée est fixée à [heure] et le départ à [heure].
 					<br />
 					<br />

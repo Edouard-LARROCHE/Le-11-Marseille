@@ -40,7 +40,7 @@
 	.container-legal-notices-content {
 		padding: 1rem;
 		width: 100%;
-		height: 56rem;
+		height: 57rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -64,7 +64,20 @@
 			font-size: 0.9rem;
 			color: $brand-black;
 			margin-top: 1rem;
-			// text-align: center;
+
+			a {
+				margin-left: 0.5rem;
+				color: $brand-black;
+				text-decoration: none;
+				cursor: pointer;
+				transition: 0.3s ease-in-out;
+				font-size: 0.8rem;
+
+				&:hover {
+					color: $gold-yellow;
+					transition: 0.3s ease-in-out;
+				}
+			}
 		}
 	}
 
