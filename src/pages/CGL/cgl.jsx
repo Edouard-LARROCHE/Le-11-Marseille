@@ -27,34 +27,31 @@ const Cgl = () => {
 					<br />
 					Réservation et paiement :
 					<br />
-					- Une caution de [montant] est exigée lors de la
-					réservation.
+					- Une caution sera exigée lors de la réservation.
 					<br />
-					- Le paiement complet doit être effectué [jours] avant
+					- Le paiement complet doit être effectué trois jours avant
 					l'arrivée.
 					<br />
 					<br />
 					Durée de séjour :
 					<br />
-					- La durée minimale de séjour est de 6 nuits. L’heure
-					d’arrivée est fixée à [heure] et le départ à [heure].
+					- La durée minimale de séjour est de 6 nuits.
 					<br />
 					<br />
 					Règles d’utilisation de l’appartement :
 					<br />
 					- Il est interdit de fumer dans l'appartement.
-					<br />- Les animaux de compagnie ne sont pas admis, sauf
-					accord préalable.
+					<br />- Les animaux de compagnie ne sont pas admis.
 					<br />
 					Toute dégradation de l’appartement ou des équipements sera
-					facturée.
+					facturée conformément à l'état des lieux et à l'inventaire
+					approuvé lors de la signature du bail.
 					<br />
 					<br />
 					Annulation :
 					<br />
-					Les annulations effectuées [nombre] jours avant l’arrivée
-					sont remboursées à 100 %. En cas d’annulation tardive,
-					[pourcentage] du montant total sera facturé.
+					Les annulations effectuées trois jours avant l’arrivée sont
+					remboursées à 100 %.
 				</div>
 			</div>
 			<div className="footer">

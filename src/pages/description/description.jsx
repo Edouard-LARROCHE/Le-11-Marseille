@@ -66,22 +66,20 @@ const Description = () => {
 			<br/>
 			<span class="higtlight">2 formules de bail</span> vous sont proposées:
 			<br/>
-			- Le <span class="higtlight">bail mobilité</span> : la formule idéale pour les déplacements professionnels
+			- Le <span class="higtlight">bail mobilité</span> : la formule idéale pour les déplacements professionnels.
 			<br/>
-			- Le <span class="higtlight">bail civil</span> : le contrat locatif adapté aux courtes durées
+			- Le <span class="higtlight">bail civil</span> : le contrat locatif adapté aux courtes durées.
 			La durée minimum de location est d’1 semaine.`,
 		},
 		{
 			title: `Les <span class="plus">+</span> de l'appartement`,
 			description: `L'appartement est situé dans un quartier <span class="higtlight">calme et sécurisé</span>, à
-			proximité des transports en commun. Vous trouverez un
-			supermarché à 5 minutes à pied et plusieurs restaurants
-			dans les environs.
+			proximité des transports en commun. Vous trouverez tous les commerces et supermarchés à moins de 5 minutes à pied.
 			<br/>
 			<br/>
 			`,
 			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine
-			équipée, Wi-Fi, climatisation, machine à laver, etc.
+			complète, Wi-Fi, machine à laver, etc.
 			<br/>
 			Vous y trouverez également des draps, serviettes, et
 			produits d'accueil pour un séjour agréable.`,
@@ -135,7 +133,7 @@ const Description = () => {
 						</div>
 						<div className="text-container">
 							<p>
-								Kit ustensils de cuisine complet, lave linge,
+								Kit ustensiles de cuisine complet, lave linge,
 								four, micro ondes, plaque de cuisson à
 								induction, lave vaisselle, frigo-congélateur.
 							</p>
@@ -254,8 +252,8 @@ const Description = () => {
 														</div>
 														<div className="text-container">
 															<p>
-																8 Rue Brochier,
-																13005 Marseille,
+																11 rue FONDERE,
+																13004 Marseille,
 																France
 															</p>
 															<p>
