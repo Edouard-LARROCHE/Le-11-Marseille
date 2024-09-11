@@ -435,6 +435,40 @@
 
 		.content {
 			.content-top {
+				.content-top-right {
+					width: auto;
+					margin-bottom: 1rem;
+				}
+
+				.content-center-info {
+					padding: 0;
+					margin-bottom: 1rem;
+
+					.title-info {
+						margin-left: 1rem;
+
+						h1 {
+							font-size: 1.2rem;
+							margin-left: 1rem;
+						}
+
+						.date-info {
+							font-size: 1.1rem;
+						}
+					}
+
+					.text-content-center {
+						p {
+							margin: 0.5rem 1rem 0 1rem;
+							text-align: center;
+							width: auto;
+						}
+					}
+					.final-text{
+						margin-left: 1.5rem;
+					}
+				}
+
 				.text-content {
 					p {
 						font-size: 1rem;
@@ -452,6 +486,7 @@
 					.content-top-right-description {
 						p {
 							font-size: 1rem;
+							width: 100%;
 
 							&:nth-child(2) {
 								width: auto;
