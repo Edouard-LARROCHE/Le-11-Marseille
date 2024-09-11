@@ -42,7 +42,7 @@ const LegalNotices = () => {
 					- Nom de l’hébergeur : Vercel
 					<br />
 					<br />
-					Développeur du site :
+					Editeur du site :
 					<br />
 					- Nom du développeur : Edouard Larroche
 					<br />- Lien vers le site :
