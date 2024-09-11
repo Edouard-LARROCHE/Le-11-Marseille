@@ -1,26 +1,18 @@
-import React, { createContext, useContext, useState, useEffect } from "react"
+import React, { createContext, useContext, useRef } from "react"
 
-const AnimationContext = createContext()
+const ScrollContext = createContext()
 
-export const AnimationProvider = ({ children }) => {
-	const initialAnimationState = localStorage.getItem("hasAnimated") === "true"
-	const [hasAnimated, setHasAnimatedState] = useState(initialAnimationState)
-
-	const setHasAnimated = (value) => {
-		setHasAnimatedState(value)
-		localStorage.setItem("hasAnimated", value)
-	}
-
-	useEffect(() => {
-		setHasAnimated(false)
-	}, [])
+export const ScrollProvider = ({ children }) => {
+	const targetRef = useRef(null)
 
 	return (
-		<AnimationContext.Provider value={{ hasAnimated, setHasAnimated }}>
+		<ScrollContext.Provider value={targetRef}>
 			{children}
-		</AnimationContext.Provider>
+		</ScrollContext.Provider>
 	)
 }
 
-export const useAnimation = () => useContext(AnimationContext)
+export const useScrollTarget = () => {
+	return useContext(ScrollContext)
+}
 

@@ -51,9 +51,22 @@
 					font-weight: normal;
 					margin: 0 0 0.5rem 3rem;
 
-					&:hover {
+					&:hover:not(.note) {
 						color: $gold-yellow;
 					}
+
+					a {
+						color: $brand-black;
+						text-decoration: none;
+
+						&:hover {
+							color: $gold-yellow;
+						}
+					}
+				}
+
+				.note {
+					opacity: 0.5;
 				}
 
 				.li-social {
