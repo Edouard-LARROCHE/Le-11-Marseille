@@ -7,6 +7,11 @@ import Equipment from "../../assets/icons/equipment.svg?react"
 import Door from "../../assets/icons/door.svg?react"
 import Cross from "../../assets/icons/cross.svg?react"
 
+import Bluetooth from "../../assets/icons/equipment/bluetooth.svg?react"
+import Coofee from "../../assets/icons/equipment/coofee.svg?react"
+import KitchenSet from "../../assets/icons/equipment/kitchen-set.svg?react"
+import Wifi from "../../assets/icons/equipment/wifi.svg?react"
+
 import Car from "../../assets/icons/car.svg?react"
 import Train from "../../assets/icons/train.svg?react"
 import Cyclist from "../../assets/icons/cyclist.svg?react"
@@ -61,6 +66,86 @@ const Description = () => {
 			dans les environs.`,
 		},
 	]
+
+	const renderEquipments = () => {
+		return (
+			<div className="">
+				<ul>
+					<li>
+						<div className="icon-container">
+							<Wifi />
+						</div>
+						<div className="text-container">
+							<p>Wi-Fi haut débit / fibre</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<Equipment />
+						</div>
+						<div className="text-container">
+							<p>TV murale</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<Bluetooth />
+						</div>
+						<div className="text-container">
+							<p>Système audio bluetooth</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<Coofee />
+						</div>
+						<div className="text-container">
+							<p>Machine à café Nespresso</p>
+						</div>
+					</li>
+					<li>
+						<div className="icon-container">
+							<KitchenSet />
+						</div>
+						<div className="text-container">
+							<p>
+								Kit ustensils de cuisine complet, lave linge,
+								four, micro ondes, plaque de cuisson à
+								induction, lave vaisselle, frigo-congélateur.
+							</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>Produits de toilette</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>
+								Ventilateurs plafonniers (double séjour et
+								chambre)
+							</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>Kit de ménage et repassage</p>
+						</div>
+					</li>
+					<li>
+						<div className="text-container-other">
+							<div className="dot" />
+							<p>Serviette de toilette et parures de lit</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		)
+	}
 
 	return (
 		<div className="container-description">
@@ -169,7 +254,7 @@ const Description = () => {
 															<p>
 																75 m2 au total
 															</p>
-															<p>{`3 pièces (1 salle d'eau, etc)`}</p>
+															<p>{`2 pièces (1 salle d'eau, cuisine, loggia, balcon, dressing)`}</p>
 														</div>
 													</li>
 													<li>
@@ -178,12 +263,13 @@ const Description = () => {
 														</div>
 														<div className="text-container">
 															<p>
-																Télévison, Four,
-																plaque de
-																cuisson, etc...
+																Télévison
+																murale, Wi-Fi
+																haut débit /
+																fibre etc...
 															</p>
 															<p>
-																15 équipements
+																16 équipements
 																au total{" "}
 																<span
 																	className="link"
@@ -209,6 +295,7 @@ const Description = () => {
 												Détails des équipements
 												<Cross />
 											</div>
+											{renderEquipments()}
 										</div>
 									))}
 								{showEquipments && index === 0 ? (
