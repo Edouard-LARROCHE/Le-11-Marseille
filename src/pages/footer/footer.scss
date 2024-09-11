@@ -107,7 +107,7 @@
 	}
 }
 
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 576px) {
 	.container-footer {
 		.footer-content {
 			display: grid;
@@ -134,7 +134,6 @@
 				}
 
 				.container-logo {
-
 					svg {
 						height: 5rem;
 					}
