@@ -23,6 +23,15 @@ const Carousel = ({ images }) => {
 		infinite: true,
 		autoplay: true,
 		autoplaySpeed: 4000,
+		responsive: [
+			{
+				breakpoint: 392,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
 	}
 
 	const handleImageClick = (imageUrl) => {

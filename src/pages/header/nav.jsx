@@ -24,8 +24,6 @@ const Nav = () => {
 
 	return (
 		<div className="nav">
-			<div className="item-container">
-				<div className="item">
 					<ul>
 						{titleData.map(({ title, key }, index) => (
 							<li
@@ -39,8 +37,6 @@ const Nav = () => {
 						))}
 					</ul>
 				</div>
-			</div>
-		</div>
 	)
 }
 
