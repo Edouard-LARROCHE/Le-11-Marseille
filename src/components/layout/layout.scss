@@ -27,15 +27,15 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				object-position: center;
+				object-position: center 80%;
 			}
 
 			svg {
 				width: 100%;
 				height: 100%;
 				position: absolute;
-				top: -7rem;
-				left: 0;
+				top: -5rem;
+				left: 3rem;
 
 				g {
 					g {
@@ -53,15 +53,14 @@
 							#g280 {
 								path {
 									stroke: $gold-yellow !important;
+									stroke-width: 0.3rem !important;
 								}
 							}
 
-							#g136,
-							#g132,
-							#g140,
-							#g144 {
+							> {
 								path {
-									stroke: $grey-snow !important;
+									stroke: $vanta-black !important;
+									stroke-width: 0.2rem !important;
 								}
 							}
 						}
@@ -76,7 +75,7 @@
 		z-index: 2;
 		background-color: $white;
 		color: $brand-black;
-		padding: 2rem 0 0 0;
+		padding: 0;
 
 		.content-top {
 			width: 100%;
@@ -191,6 +190,11 @@
 						font-size: 2.5rem;
 						font-style: italic;
 						letter-spacing: 0.4rem;
+						line-height: 4rem;
+
+						.custom-size {
+							font-size: 6rem;
+						}
 
 						.line {
 							background-color: $gold-yellow;
@@ -636,3 +640,4 @@
 		}
 	}
 }
+

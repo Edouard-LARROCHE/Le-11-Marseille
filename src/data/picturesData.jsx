@@ -151,72 +151,72 @@ const picturesData = {
 	livingroom: [
 		{
 			id: 12,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom1,
 			key: "livingroom",
 		},
 		{
 			id: 13,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom2,
 			key: "livingroom",
 		},
 		{
 			id: 14,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom3,
 			key: "livingroom",
 		},
 		{
 			id: 15,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom4,
 			key: "livingroom",
 		},
 		{
 			id: 16,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom5,
 			key: "livingroom",
 		},
 		{
 			id: 17,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom6,
 			key: "livingroom",
 		},
 		{
 			id: 18,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom7,
 			key: "livingroom",
 		},
 		{
 			id: 19,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom8,
 			key: "livingroom",
 		},
 		{
 			id: 20,
-			title: "Le salon",
-			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux
+			title: "DOUBLE LIVING",
+			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom9,
 			key: "livingroom",
@@ -226,7 +226,7 @@ const picturesData = {
 		{
 			id: 21,
 			title: "La loggia",
-			desc: `Située en retrait, accessible par la chambre et la cuisine, est un lieu de
+			desc: `Située en retrait, accessible par la chambre et la cuisine, cet espace est un lieu de
 			repos avec une large baie vitrée qui découvre une vue calme et dégagée.`,
 			imageUrl: PicLoggia1,
 			key: "loggia",
@@ -234,7 +234,7 @@ const picturesData = {
 		{
 			id: 22,
 			title: "La loggia",
-			desc: `Située en retrait, accessible par la chambre et la cuisine, est un lieu de
+			desc: `Située en retrait, accessible par la chambre et la cuisine, cet espace est un lieu de
 			repos avec une large baie vitrée qui découvre une vue calme et dégagée.`,
 			imageUrl: PicLoggia2,
 			key: "loggia",
@@ -242,7 +242,7 @@ const picturesData = {
 		{
 			id: 23,
 			title: "La loggia",
-			desc: `Située en retrait, accessible par la chambre et la cuisine, est un lieu de
+			desc: `Située en retrait, accessible par la chambre et la cuisine, cet espace est un lieu de
 			repos avec une large baie vitrée qui découvre une vue calme et dégagée.`,
 			imageUrl: PicLoggia3,
 			key: "loggia",

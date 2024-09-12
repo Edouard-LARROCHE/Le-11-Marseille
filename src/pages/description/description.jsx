@@ -44,8 +44,8 @@ const Description = () => {
 			- Accès badge Vigick
 			<br/>
 			- Porte blindée 7 points à l’entrée.`,
-			description2: `Mise à dispo d’un <span class="higtlight">BOX VOITURE</span> (facturation supplémentaire à la journée) à 4mn à
-			pieds de l’appartement`,
+			description2: `Un <span class="higtlight">box privatif</span> pour votre voiture, à 300 mètres de l’appartement
+			Accès direct sur la rue, <span class="higtlight">ouverture télécommandée</span>`,
 		},
 		{
 			title: "Informations générales",
@@ -69,6 +69,7 @@ const Description = () => {
 			- Le <span class="higtlight">bail mobilité</span> : la formule idéale pour les déplacements professionnels.
 			<br/>
 			- Le <span class="higtlight">bail civil</span> : le contrat locatif adapté aux courtes durées.
+			<br/>
 			<span class="underline">La durée minimum de location est d’1 semaine.</span>`,
 		},
 		{
@@ -215,7 +216,7 @@ const Description = () => {
 											<div className="icon-container">
 												<Train />
 											</div>
-											<span>20 min</span>
+											<span>10 min</span>
 										</li>
 										<li>
 											<div className="icon-container">
@@ -227,7 +228,7 @@ const Description = () => {
 											<div className="icon-container">
 												<RunningMan />
 											</div>
-											<span>27 min</span>
+											<span>20 min</span>
 										</li>
 									</ul>
 									<p className="tram-container">

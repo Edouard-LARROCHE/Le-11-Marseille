@@ -187,7 +187,8 @@ const Layout = () => {
 					<div className="content-top-right">
 						<div className="content-top-right-title">
 							<h1>
-								Le 11 à Marseille <div className="line" />
+								Le <span className="custom-size">11</span> à
+								Marseille <div className="line" />
 							</h1>
 						</div>
 						<div className="content-top-right-description">
@@ -219,7 +220,7 @@ const Layout = () => {
 								Ici, des peintres ont travaillé une palettes de
 								couleurs diverses afin de proposer un
 								environement à la fois apaisant, lumineux et
-								rafiné. Les matériaux ainsi que le mobilié ont
+								rafiné. Les matériaux ainsi que le mobilier ont
 								été selectionnés avec le plus grand soin pour
 								concevoir l'ameublement et la décoration
 								d'intérieur de ce magnifique cocon au coeur de
