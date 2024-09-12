@@ -24,19 +24,19 @@ const Nav = () => {
 
 	return (
 		<div className="nav">
-					<ul>
-						{titleData.map(({ title, key }, index) => (
-							<li
-								key={index}
-								onClick={() => switchGallery(key)}
-								className={key === activeKey ? "active" : ""}
-							>
-								<span className="title-text">{title}</span>
-								<div className="line" />
-							</li>
-						))}
-					</ul>
-				</div>
+			<ul>
+				{titleData.map(({ title, key }, index) => (
+					<li
+						key={index}
+						onClick={() => switchGallery(key)}
+						className={key === activeKey ? "active" : ""}
+					>
+						<span className="title-text">{title}</span>
+						<div className="line" />
+					</li>
+				))}
+			</ul>
+		</div>
 	)
 }
 
