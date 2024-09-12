@@ -25,7 +25,7 @@ const Carousel = ({ images }) => {
 		autoplaySpeed: 4000,
 		responsive: [
 			{
-				breakpoint: 392,
+				breakpoint: 769,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
