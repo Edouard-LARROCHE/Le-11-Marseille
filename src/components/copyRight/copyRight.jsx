@@ -19,8 +19,8 @@ const CopyRight = () => {
 
 	return (
 		<div className="containerCopyRight">
-			<Copyright />
 			<div className="text">
+				<Copyright />
 				{currentYear} Le 11 à Marseille - Tout droit réservé
 			</div>
 			<ul className="ul-bottom">

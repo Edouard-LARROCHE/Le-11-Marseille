@@ -154,7 +154,7 @@ const picturesData = {
 	livingroom: [
 		{
 			id: 12,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom1,
@@ -162,7 +162,7 @@ const picturesData = {
 		},
 		{
 			id: 13,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom2,
@@ -170,7 +170,7 @@ const picturesData = {
 		},
 		{
 			id: 14,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom3,
@@ -178,7 +178,7 @@ const picturesData = {
 		},
 		{
 			id: 15,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom4,
@@ -186,7 +186,7 @@ const picturesData = {
 		},
 		{
 			id: 16,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom5,
@@ -194,7 +194,7 @@ const picturesData = {
 		},
 		{
 			id: 17,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom6,
@@ -202,7 +202,7 @@ const picturesData = {
 		},
 		{
 			id: 18,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom7,
@@ -210,7 +210,7 @@ const picturesData = {
 		},
 		{
 			id: 19,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom8,
@@ -218,7 +218,7 @@ const picturesData = {
 		},
 		{
 			id: 20,
-			title: "DOUBLE LIVING",
+			title: "Le DOUBLE LIVING",
 			desc: `Le séjour et la salle à manger, deux beaux espaces de vie plein sud, chics et lumineux.
 			Un canapé convertible en lit d'appoint`,
 			imageUrl: PicLivingroom9,

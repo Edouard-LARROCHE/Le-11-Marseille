@@ -10,6 +10,7 @@
 	opacity: 1;
 
 	svg {
+		margin-right: 0.3rem;
 		width: 1.3rem;
 		height: 1.3rem;
 
@@ -19,6 +20,8 @@
 	}
 
 	.text {
+		display: flex;
+		align-items: center;
 		font-size: 0.9rem;
 		color: $brand-black;
 		margin: 0 0.5rem 0.3rem;
@@ -54,13 +57,3 @@
 	}
 }
 
-@media screen and (max-width: 391px) {
-	.containerCopyRight {
-		.ul-bottom {
-			li {
-				font-size: 0.7rem !important;
-				margin-bottom: 0.2rem !important;
-			}
-		}
-	}
-}
