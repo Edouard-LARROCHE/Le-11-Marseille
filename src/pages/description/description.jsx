@@ -1,6 +1,9 @@
 import React, { useState } from "react"
+import { Modal } from "antd"
 
 import MapboxMap from "../../components/maps/map"
+
+import Plan from "/images/plan/plan.jpg"
 
 import Loca from "../../assets/icons/loca.svg?react"
 import Equipment from "../../assets/icons/equipment.svg?react"
@@ -22,6 +25,7 @@ import "./description.scss"
 const Description = () => {
 	const [showMap, setShowMap] = useState(false)
 	const [showEquipments, setShowEquipments] = useState(false)
+	const [isModalVisible, setIsModalVisible] = useState(false)
 
 	const toggleMap = () => {
 		setShowMap(!showMap)
@@ -29,6 +33,14 @@ const Description = () => {
 
 	const toggleEquipments = () => {
 		setShowEquipments(!showEquipments)
+	}
+
+	const showPlan = () => {
+		setIsModalVisible(true)
+	}
+
+	const handleModalClose = () => {
+		setIsModalVisible(false)
 	}
 
 	const cardData = [
@@ -299,7 +311,15 @@ const Description = () => {
 														</div>
 														<div className="text-container">
 															<p>
-																75 m2 au total
+																75 m2 au total{" "}
+																<span
+																	className="link"
+																	onClick={
+																		showPlan
+																	}
+																>
+																	Voir le plan
+																</span>
 															</p>
 															<p>{`2 pièces (1 salle d'eau, cuisine, loggia, balcon, dressing)`}</p>
 														</div>
@@ -383,6 +403,21 @@ const Description = () => {
 					</div>
 				))}
 			</div>
+			{isModalVisible && (
+				<Modal
+					open={isModalVisible}
+					onCancel={handleModalClose}
+					footer={null}
+					centered
+					width={900}
+				>
+					<img
+						src={Plan}
+						alt="biggerImage"
+						style={{ width: "100%" }}
+					/>
+				</Modal>
+			)}
 		</div>
 	)
 }
