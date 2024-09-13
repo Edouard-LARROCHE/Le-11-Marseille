@@ -46,7 +46,7 @@ const Footer = () => {
 						>
 							Nous contacter
 						</li>
-						<li className="li-social">
+						<li className="li-social" translate="no">
 							<a
 								href="https://www.instagram.com/locationle11"
 								target="_blank"

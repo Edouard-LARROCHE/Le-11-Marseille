@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
-import { Link, useNavigate, useLocation } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
@@ -24,7 +24,7 @@ gsap.registerPlugin(ScrollToPlugin)
 
 const Layout = () => {
 	const navigate = useNavigate()
-	const location = useLocation()
+	// const location = useLocation()
 
 	const [showTopBar, setShowTopBar] = useState(false)
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
@@ -142,7 +142,7 @@ const Layout = () => {
 				>
 					<div className="topBar-content">
 						<ul>
-							<li>
+							<li translate="no">
 								<a href="#" onClick={scrollToDescription}>
 									A propos
 								</a>
@@ -176,7 +176,10 @@ const Layout = () => {
 										key={index}
 										onClick={() => switchGallery(key)}
 									>
-										<span className="title-text">
+										<span
+											className="title-text"
+											translate="no"
+										>
 											{title}
 										</span>
 										<div className="line" />

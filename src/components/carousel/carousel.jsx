@@ -12,6 +12,7 @@ import "./carousel.scss"
 
 const Carousel = ({ images }) => {
 	const navigate = useNavigate()
+
 	const [selectedImage, setSelectedImage] = useState(null)
 	const [isModalVisible, setIsModalVisible] = useState(false)
 

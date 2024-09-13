@@ -33,7 +33,9 @@ const Nav = () => {
 								onClick={() => switchGallery(key)}
 								className={key === activeKey ? "active" : ""}
 							>
-								<span className="title-text">{title}</span>
+								<span className="title-text" translate="no">
+									{title}
+								</span>
 								<div className="line" />
 							</li>
 						))}
