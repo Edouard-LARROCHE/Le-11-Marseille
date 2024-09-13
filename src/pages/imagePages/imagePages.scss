@@ -8,7 +8,7 @@
 		width: 15rem;
 		height: 15rem;
 		position: absolute;
-		top: -1rem;
+		top: 0;
 		left: 0;
 
 		g {
@@ -53,6 +53,23 @@
 			font-size: 0.8rem;
 			color: $brand-black;
 			font-weight: normal;
+		}
+	}
+
+	.carousel-container {
+		margin-bottom: 3rem;
+	}
+}
+
+@media screen and (min-width: 100px) and (max-width: 844px) {
+	.image-page {
+		.logo {
+			display: none;
+		}
+
+		.container-text {
+			margin: 2rem;
+			padding: 0 0.5rem;
 		}
 	}
 }

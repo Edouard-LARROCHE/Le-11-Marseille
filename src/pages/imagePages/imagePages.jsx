@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 
 import Nav from "../header/nav"
 import Carousel from "../../components/carousel/carousel"
+import Footer from "../footer/footer"
 
 import LogoLe11 from "../../assets/logo/le11.svg?react"
 
@@ -27,6 +28,7 @@ const ImagePage = () => {
 			<div className="carousel-container">
 				<Carousel images={images} />
 			</div>
+			<Footer />
 		</div>
 	)
 }

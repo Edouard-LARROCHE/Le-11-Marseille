@@ -80,3 +80,24 @@
 	}
 }
 
+@media screen and (min-width: 100px) and (max-width: 844px) {
+	.nav {
+		position: relative;
+		height: auto;
+		padding: 0.5rem 0;
+
+		.item-container {
+			.item {
+				ul {
+					flex-direction: column;
+
+					li {
+						font-size: 0.9rem;
+						margin: 0.2rem 0.5rem;
+					}
+				}
+			}
+		}
+	}
+}
+
