@@ -54,16 +54,7 @@ const Contact = () => {
 	}
 
 	return (
-		<div
-			className="container-contact"
-			style={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				minHeight: "100vh",
-				padding: "2rem",
-			}}
-		>
+		<div className="container-contact">
 			<div className="title-desc">
 				<h1>Sur devis,</h1>
 				<p className="desc">
@@ -184,6 +175,7 @@ const Contact = () => {
 
 					<Form.Item wrapperCol={{ offset: 20, span: 24 }}>
 						<Button
+							className="button-form"
 							type="primary"
 							htmlType="submit"
 							style={{ marginTop: "1rem" }}
