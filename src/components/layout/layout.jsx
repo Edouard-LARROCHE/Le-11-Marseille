@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom"
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
@@ -24,6 +24,7 @@ gsap.registerPlugin(ScrollToPlugin)
 
 const Layout = () => {
 	const navigate = useNavigate()
+	const location = useLocation()
 
 	const [showTopBar, setShowTopBar] = useState(false)
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
@@ -31,6 +32,7 @@ const Layout = () => {
 	const [isHovered, setIsHovered] = useState(false)
 	const [isMobile, setIsMobile] = useState(false)
 	const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+	// const [cameFromAnotherPage, setCameFromAnotherPage] = useState(false)
 
 	const contentRef = useRef(null)
 	const descriptionRef = useRef(null)
@@ -80,6 +82,15 @@ const Layout = () => {
 			window.removeEventListener("resize", checkIsMobile)
 		}
 	}, [])
+
+	// useEffect(() => {
+	// 	if (location.pathname === "/" && cameFromAnotherPage) {
+	// 		if (targetRef.current) {
+	// 			gsap.to(window, { duration: 1, scrollTo: targetRef.current })
+	// 		}
+	// 		setCameFromAnotherPage(false)
+	// 	}
+	// }, [location.pathname, cameFromAnotherPage, targetRef])
 
 	useEffect(() => {
 		gsap.fromTo(

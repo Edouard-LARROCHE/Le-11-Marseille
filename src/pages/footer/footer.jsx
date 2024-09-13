@@ -1,6 +1,6 @@
 import React from "react"
 import { gsap } from "gsap"
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { useScrollTarget } from "../../Context"
 
@@ -12,11 +12,17 @@ import Insta from "../../assets/icons/instagram.svg?react"
 import "./footer.scss"
 
 const Footer = () => {
+	const navigate = useNavigate()
+	const location = useLocation()
 	const targetRef = useScrollTarget()
 
 	const handleScroll = () => {
-		if (targetRef.current) {
-			gsap.to(window, { duration: 1, scrollTo: targetRef.current })
+		if (location.pathname !== "/") {
+			navigate("/")
+		} else {
+			if (targetRef.current) {
+				gsap.to(window, { duration: 1, scrollTo: targetRef.current })
+			}
 		}
 	}
 
@@ -30,9 +36,16 @@ const Footer = () => {
 					</div>
 					<ul>
 						<li>
-							<Link to="/image/balcony">Galeries photo</Link>
+							<Link to="/image/livingroom">Galeries photo</Link>
 						</li>
-						<li onClick={handleScroll}>Nous contacter</li>
+						<li
+							onClick={() => {
+								// props.setCameFromAnotherPage(true)
+								handleScroll()
+							}}
+						>
+							Nous contacter
+						</li>
 						<li className="li-social">
 							<a
 								href="https://www.instagram.com/locationle11"
