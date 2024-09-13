@@ -7,10 +7,10 @@ import Equipment from "../../assets/icons/equipment.svg?react"
 import Door from "../../assets/icons/door.svg?react"
 import Cross from "../../assets/icons/cross.svg?react"
 
-import Bluetooth from "../../assets/icons/equipment/bluetooth.svg?react"
-import Coofee from "../../assets/icons/equipment/coofee.svg?react"
-import KitchenSet from "../../assets/icons/equipment/kitchen-set.svg?react"
-import Wifi from "../../assets/icons/equipment/wifi.svg?react"
+// import Bluetooth from "../../assets/icons/equipment/bluetooth.svg?react"
+// import Coofee from "../../assets/icons/equipment/coofee.svg?react"
+// import KitchenSet from "../../assets/icons/equipment/kitchen-set.svg?react"
+// import Wifi from "../../assets/icons/equipment/wifi.svg?react"
 
 import Car from "../../assets/icons/car.svg?react"
 import Train from "../../assets/icons/train.svg?react"
@@ -90,83 +90,107 @@ const Description = () => {
 		},
 	]
 
+	const equipmentData = [
+		{
+			id: 1,
+			title: "Wifi haut débit / fibre",
+		},
+		{
+			id: 2,
+			title: "Système audio bluetooth",
+		},
+		{
+			id: 3,
+			title: "TV murale",
+		},
+		{
+			id: 4,
+			title: "Machine à café Nespresso",
+		},
+		{
+			id: 5,
+			title: "Electroménager complet SIEMENS",
+		},
+		{
+			id: 6,
+			title: "Induction",
+		},
+		{
+			id: 7,
+			title: "Four",
+		},
+		{
+			id: 8,
+			title: "Micro ondes",
+		},
+		{
+			id: 9,
+			title: "Lave vaiselle",
+		},
+		{
+			id: 10,
+			title: "Lave linge",
+		},
+		{
+			id: 11,
+			title: "Frigo-congélateur",
+		},
+		{
+			id: 12,
+			title: "Bouilloire",
+		},
+		{
+			id: 13,
+			title: "Grille pain",
+		},
+		{
+			id: 14,
+			title: "Kit ustensiles cuisine complet",
+		},
+		{
+			id: 15,
+			title: "Kit de ménage et repassage",
+		},
+		{
+			id: 16,
+			title: "Serviette de toilette",
+		},
+		{
+			id: 17,
+			title: "Produits de toilettes",
+		},
+		{
+			id: 18,
+			title: "Parures de lits",
+		},
+		{
+			id: 19,
+			title: "Ventilateurs plafonds chambre et séjour",
+		},
+		{
+			id: 20,
+			title: "Radiateurs électriques THERMOR haut de game",
+		},
+		{
+			id: 21,
+			title: "Ballon d'eau chaude 200 litres",
+		},
+	]
+
 	const renderEquipments = () => {
 		return (
-			<div className="">
-				<ul>
-					<li>
-						<div className="icon-container">
-							<Wifi />
-						</div>
-						<div className="text-container">
-							<p>Wi-Fi haut débit / fibre</p>
-						</div>
-					</li>
-					<li>
-						<div className="icon-container">
-							<Equipment />
-						</div>
-						<div className="text-container">
-							<p>TV murale</p>
-						</div>
-					</li>
-					<li>
-						<div className="icon-container">
-							<Bluetooth />
-						</div>
-						<div className="text-container">
-							<p>Système audio bluetooth</p>
-						</div>
-					</li>
-					<li>
-						<div className="icon-container">
-							<Coofee />
-						</div>
-						<div className="text-container">
-							<p>Machine à café Nespresso</p>
-						</div>
-					</li>
-					<li>
-						<div className="icon-container">
-							<KitchenSet />
-						</div>
-						<div className="text-container">
-							<p>
-								Kit ustensiles de cuisine complet, lave linge,
-								four, micro ondes, plaque de cuisson à
-								induction, lave vaisselle, frigo-congélateur.
-							</p>
-						</div>
-					</li>
-					<li>
-						<div className="text-container-other">
-							<div className="dot" />
-							<p>Produits de toilette</p>
-						</div>
-					</li>
-					<li>
-						<div className="text-container-other">
-							<div className="dot" />
-							<p>
-								Ventilateurs plafonniers (double séjour et
-								chambre)
-							</p>
-						</div>
-					</li>
-					<li>
-						<div className="text-container-other">
-							<div className="dot" />
-							<p>Kit de ménage et repassage</p>
-						</div>
-					</li>
-					<li>
-						<div className="text-container-other">
-							<div className="dot" />
-							<p>Serviette de toilette et parures de lit</p>
-						</div>
-					</li>
-				</ul>
-			</div>
+			<>
+				{equipmentData.map((equipment, index) => (
+					<ul key={index}>
+						<li>
+							<div className="text-container-other">
+								<div className="dot" />
+								<p>{equipment.title}</p>
+							</div>
+						</li>
+					</ul>
+				))}
+			</>
 		)
 	}
 

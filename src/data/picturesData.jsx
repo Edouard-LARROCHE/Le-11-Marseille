@@ -50,6 +50,9 @@ import PicHouse2 from "/images/house/IMG_3484.jpg"
 import PicHouse3 from "/images/house/IMG_3486.jpg"
 import PicHouse4 from "/images/house/IMG_3487.jpg"
 
+import PicBox1 from "/images/box/box1.jpg"
+import PicBox2 from "/images/box/box2.jpg"
+
 const picturesData = {
 	balcony: [
 		{
@@ -379,6 +382,22 @@ const picturesData = {
 			L'accès se fait par visiophone ou par badge Vigick. `,
 			imageUrl: PicHouse4,
 			key: "house",
+		},
+	],
+	box: [
+		{
+			id: 42,
+			title: "Le box",
+			desc: `Situé à 4 minutes à pied de l'appartement, avec l'accès direct sur rue. Ouverture télécommandée.`,
+			imageUrl: PicBox1,
+			key: "box",
+		},
+		{
+			id: 43,
+			title: "Le box",
+			desc: `Situé à 4 minutes à pied de l'appartement, avec l'accès direct sur rue. Ouverture télécommandée.`,
+			imageUrl: PicBox2,
+			key: "box",
 		},
 	],
 }

@@ -267,7 +267,6 @@
 
 				ul {
 					width: 100%;
-					height: 100%;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
@@ -282,7 +281,7 @@
 						display: flex;
 						flex-direction: row;
 						align-items: center;
-						margin: 0.5rem 0;
+						margin: 0.3rem 0;
 
 						.text-container {
 							display: flex;
@@ -315,7 +314,7 @@
 
 							p {
 								margin: 0;
-								font-size: 0.8rem;
+								font-size: 0.7rem;
 								color: $brand-black;
 								font-weight: bold;
 							}
@@ -374,3 +373,4 @@
 		}
 	}
 }
+
