@@ -2,6 +2,7 @@
 
 .container-legal-notices {
 	width: 100%;
+	height: 100%;
 	background-color: $smoth-white;
 	position: relative;
 
@@ -120,7 +121,7 @@
 
 		.container-legal-notices-content {
 			padding: 0;
-			height: 77rem;
+			height: 77rem !important;
 
 			.title {
 				margin-top: 7rem;

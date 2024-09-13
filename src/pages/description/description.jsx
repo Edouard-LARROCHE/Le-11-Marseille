@@ -330,14 +330,6 @@ const Description = () => {
 														</div>
 														<div className="text-container">
 															<p>
-																Télévison
-																murale, Wi-Fi
-																haut débit /
-																fibre etc...
-															</p>
-															<p>
-																16 équipements
-																au total{" "}
 																<span
 																	className="link"
 																	onClick={

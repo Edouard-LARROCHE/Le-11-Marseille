@@ -2,6 +2,7 @@
 
 .container-cgl {
 	width: 100%;
+	height: 100%;
 	background-color: $smoth-white;
 	position: relative;
 
@@ -107,7 +108,7 @@
 
 		.container-cgl-content {
 			padding: 0;
-			height: 78rem;
+			height: 78rem !important;
 
 			.title {
 				margin-top: 7rem;
