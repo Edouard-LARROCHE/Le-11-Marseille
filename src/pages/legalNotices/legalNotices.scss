@@ -113,8 +113,14 @@
 
 @media screen and (max-width: 391px) {
 	.container-legal-notices {
+		.logoLe11 {
+			width: 12rem;
+			top: -31.5rem;
+		}
+
 		.container-legal-notices-content {
 			padding: 0;
+			height: 77rem;
 
 			.title {
 				margin-top: 7rem;
@@ -137,8 +143,14 @@
 
 @media screen and (min-width: 391px) and (max-width: 768px) {
 	.container-legal-notices {
+		.logoLe11 {
+			width: 12rem;
+			top: -31rem;
+		}
+
 		.container-legal-notices-content {
 			padding: 0;
+			height: 68rem;
 
 			.title {
 				margin-top: 7rem;
@@ -158,3 +170,4 @@
 		}
 	}
 }
+

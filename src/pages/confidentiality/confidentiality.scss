@@ -107,8 +107,14 @@
 
 @media screen and (max-width: 391px) {
 	.container-confidentiality {
+		.logoLe11 {
+			width: 12rem;
+			top: -31.5rem;
+		}
+
 		.container-confidentiality-content {
 			padding: 0;
+			height: 92rem;
 
 			.title {
 				margin-top: 7rem;
@@ -131,8 +137,14 @@
 
 @media screen and (min-width: 391px) and (max-width: 768px) {
 	.container-confidentiality {
+		.logoLe11 {
+			width: 12rem;
+			top: -31rem;
+		}
+
 		.container-confidentiality-content {
 			padding: 0;
+			height: 75rem;
 
 			.title {
 				margin-top: 7rem;
@@ -152,3 +164,4 @@
 		}
 	}
 }
+
