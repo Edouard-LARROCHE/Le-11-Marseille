@@ -429,8 +429,51 @@
 
 @media screen and (max-width: 391px) {
 	.container {
+		.containerImage {
+			width: 100%;
+			height: 100vh;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			overflow: hidden;
+
+			.containerImage1 {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center 80%;
+				}
+
+				svg {
+					width: 35rem;
+					height: 35rem;
+					position: absolute;
+					top: -2rem;
+					left: -3rem;
+				}
+			}
+		}
+
 		.content {
 			.content-top {
+				.content-top-left {
+					img {
+						width: 130%;
+						height: 100%;
+						object-fit: cover;
+						object-position: center;
+					}
+				}
+
 				.content-top-right {
 					width: auto;
 					margin-bottom: 1rem;
@@ -441,14 +484,9 @@
 					margin-bottom: 1rem;
 
 					.title-info {
-						margin-left: 1rem;
+						margin-left: 2.5rem;
 
 						h1 {
-							font-size: 1.2rem;
-							margin-left: 1rem;
-						}
-
-						.date-info {
 							font-size: 1.1rem;
 						}
 					}
@@ -533,6 +571,15 @@
 	.container {
 		.content {
 			.content-top {
+				.content-top-left {
+					img {
+						width: 130%;
+						height: 100%;
+						object-fit: cover;
+						object-position: center;
+					}
+				}
+
 				.content-top-right {
 					width: auto;
 					margin-bottom: 3rem;
@@ -543,16 +590,10 @@
 					margin-bottom: 2rem;
 
 					.title-info {
-						margin-left: 2rem;
+						margin-left: 6rem;
 
 						h1 {
 							font-size: 1.2rem;
-							margin-left: 1.1rem;
-						}
-
-						.date-info {
-							font-size: 1.1rem;
-							margin-top: 0.3rem;
 						}
 					}
 
