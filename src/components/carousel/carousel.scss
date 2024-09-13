@@ -56,6 +56,23 @@
 	}
 }
 
+.slick-prev,
+.slick-next {
+	z-index: 1;
+	background: none !important;
+	border: none;
+
+	&:before {
+		display: flex;
+		justify-content: center;
+		width: 1rem;
+		height: 1rem;
+		color: $white;
+		background-color: $black-smouth;
+		border-radius: 50%;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.container-carousel {
 		width: 95%;
