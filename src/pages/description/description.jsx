@@ -169,7 +169,7 @@ const Description = () => {
 		},
 		{
 			id: 17,
-			title: "Produits de toilettes",
+			title: "Produits de toilette",
 		},
 		{
 			id: 18,
@@ -287,7 +287,7 @@ const Description = () => {
 														</div>
 														<div className="text-container">
 															<p>
-																11 rue FONDERE,
+																11 rue FONDÈRE,
 																13004 Marseille,
 																France
 															</p>

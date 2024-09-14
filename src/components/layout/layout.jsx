@@ -261,7 +261,7 @@ const Layout = () => {
 						<p>
 							Situé à proximité du Parc Longchamp et à quelques
 							mètres de toutes commodités (supermarchés,
-							transports en communs, marché quotidien, cinéma,
+							transports en commun, marché quotidien, cinéma,
 							piscine) ce deux pièces de{" "}
 							<span className="highLight">75m2</span> est un
 							véritable cocon en plein cœur de Marseille, aux{" "}

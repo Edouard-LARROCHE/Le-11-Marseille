@@ -1,8 +1,11 @@
 import React, { useState } from "react"
+import emailjs from "emailjs-com"
 import dayjs from "dayjs"
 import "dayjs/locale/fr"
+
 import { ConfigProvider } from "antd"
 import frFR from "antd/lib/locale/fr_FR"
+
 import {
 	Button,
 	DatePicker,
@@ -21,6 +24,10 @@ const { RangePicker } = DatePicker
 const Contact = () => {
 	const [form] = Form.useForm()
 	const [componentVariant, setComponentVariant] = useState("filled")
+
+	const serviceId = import.meta.env.VITE_API_SERVICE_ID
+	const templateId = import.meta.env.VITE_API_TEMPLATE_ID
+	const userId = import.meta.env.VITE_API_USER_ID
 
 	const onFormVariantChange = ({ variant }) => {
 		setComponentVariant(variant)
@@ -48,9 +55,28 @@ const Contact = () => {
 	}
 
 	const handleSubmit = (values) => {
-		console.log("Values:", values)
-		antdMessage.success("Formulaire soumis avec succès !")
-		form.resetFields()
+		const templateParams = {
+			firstName: values.firstName,
+			lastName: values.lastName,
+			company: values.company || "N/A",
+			phone: values.phone || "N/A",
+			email: values.email,
+			motif: values.motif,
+			dates: `${dayjs(values.dates[0]).format("DD/MM/YYYY")} - ${dayjs(values.dates[1]).format("DD/MM/YYYY")}`,
+			message: values.message || "N/A",
+		}
+
+		emailjs.send(serviceId, templateId, templateParams, userId).then(
+			() => {
+				antdMessage.success("Email envoyé avec succès !")
+				form.resetFields()
+			},
+			() => {
+				antdMessage.error(
+					"Une erreur s'est produite, veuillez réessayer.",
+				)
+			},
+		)
 	}
 
 	return (
