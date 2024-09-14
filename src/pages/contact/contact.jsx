@@ -65,7 +65,7 @@ const Contact = () => {
 				</p>
 				<div className="final-text">
 					<p>
-						Cordialement, l'équipe du{" "}
+						Cordialement. L'équipe du{" "}
 						<span className="highLight">11</span>
 					</p>
 				</div>

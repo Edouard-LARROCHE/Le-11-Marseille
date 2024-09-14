@@ -122,7 +122,7 @@ const CardEffect = () => {
 	return (
 		<div className="container-card">
 			<p className="title">
-				Accéder aux <span className="highlight">galeries photo</span>
+				Accéder aux <span className="highlight">galeries photos</span>
 			</p>
 			<div className="card-container" ref={containerRef}>
 				{selectedImages.map((item, index) => (

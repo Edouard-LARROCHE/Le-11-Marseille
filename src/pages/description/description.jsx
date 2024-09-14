@@ -82,16 +82,16 @@ const Description = () => {
 			<br/>
 			- Le <span class="higtlight">bail civil</span> : le contrat locatif adapté aux courtes durées.
 			<br/>
-			<span class="underline">La durée minimum de location est d’1 semaine.</span>`,
+			<span class="underline">La durée minimum de location est d’une semaine.</span>`,
 		},
 		{
 			title: `Les <span class="plus">+</span> de l'appartement`,
 			description: `L'appartement est situé dans un quartier <span class="higtlight">calme et sécurisé</span>, à
-			proximité des transports en commun.Vous trouverez un très grand nombre de commerces, des supermarchés à 5 minutes à pied ainsi que plusieurs restaurants dans les environs.
+			proximité des transports en commun. Vous trouverez un très grand nombre de commerces, des supermarchés à 5 minutes à pied ainsi que plusieurs restaurants dans les environs.
 			<br/>
 			<br/>
 			`,
-			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine équipée, Wi-Fi, ventilateurs plafonniers, dressing, etc. (voir rubrique "équipements")
+			description2: `L'appartement est équipé de tout le <span class="higtlight">confort moderne</span>: cuisine équipée, Wi-Fi, ventilateurs plafonniers, dressing, etc... (voir rubrique "équipements")
 			<br/>
 			Vous y trouverez également des draps, serviettes, et produits d'accueil pour un séjour agréable.`,
 			description3: `

@@ -36,7 +36,7 @@ const Footer = () => {
 					</div>
 					<ul>
 						<li>
-							<Link to="/image/livingroom">Galeries photo</Link>
+							<Link to="/image/livingroom">Galeries photos</Link>
 						</li>
 						<li
 							onClick={() => {

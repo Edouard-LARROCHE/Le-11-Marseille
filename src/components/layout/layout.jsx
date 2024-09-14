@@ -157,7 +157,7 @@ const Layout = () => {
 									isMobile ? handleGalleryClick : undefined
 								}
 							>
-								<Link to="/">Galeries photo</Link>
+								<Link to="/">Galeries photos</Link>
 								<div className="line" />
 								<Chevron className="chevron" />
 							</li>
@@ -249,7 +249,7 @@ const Layout = () => {
 						</div>
 						<div className="final-text">
 							<p>
-								Cordialement, l'équipe du{" "}
+								Cordialement. L'équipe du{" "}
 								<span className="highLight">11</span>
 							</p>
 						</div>
