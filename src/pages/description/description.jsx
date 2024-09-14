@@ -210,7 +210,7 @@ const Description = () => {
 		<div className="container-description">
 			<div className="card-container-description">
 				{cardData.map((card, index) => (
-					<div key={index} className="card">
+					<div key={index} className={`card card-${index}`}>
 						<div className="title-card">
 							{showMap && index === 0 ? (
 								card.titleMap

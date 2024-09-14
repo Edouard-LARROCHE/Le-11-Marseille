@@ -515,6 +515,10 @@
 						h1 {
 							font-size: 1.5rem;
 							letter-spacing: 0;
+
+							.line {
+								bottom: 0.5rem;
+							}
 						}
 					}
 
@@ -543,7 +547,7 @@
 				ul {
 					margin-top: 1.3rem;
 					display: grid;
-					grid-template-columns: 1fr 1fr 1fr;
+					grid-template-columns: 1fr 10rem 1fr;
 
 					&.ul-hovered {
 						background-color: rgb(255, 255, 255);
@@ -560,6 +564,7 @@
 					li {
 						font-size: 0.9rem;
 						margin: 0;
+						justify-content: center;
 					}
 				}
 			}

@@ -356,6 +356,10 @@
 				min-width: 23rem;
 				margin-top: 0.5rem;
 				margin-bottom: 0.5rem;
+
+				&.card-1 {
+					height: convertToREM(640);
+				}
 			}
 		}
 	}
