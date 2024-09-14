@@ -57,6 +57,7 @@
 	background-color: $grey-steam;
 	padding: 2rem;
 	border-radius: 0.5rem;
+	min-width: 500px;
 }
 
 .ant-picker {
@@ -97,6 +98,7 @@
 	}
 
 	.ant-form {
+		min-width: auto;
 		padding: 1rem;
 	}
 
@@ -127,6 +129,7 @@
 	}
 
 	.ant-form {
+		min-width: auto;
 		padding: 1rem;
 	}
 }

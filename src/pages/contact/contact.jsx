@@ -3,7 +3,7 @@ import emailjs from "emailjs-com"
 import dayjs from "dayjs"
 import "dayjs/locale/fr"
 
-import { ConfigProvider } from "antd"
+import { ConfigProvider, Spin } from "antd"
 import frFR from "antd/lib/locale/fr_FR"
 
 import {
@@ -24,6 +24,7 @@ const { RangePicker } = DatePicker
 const Contact = () => {
 	const [form] = Form.useForm()
 	const [componentVariant, setComponentVariant] = useState("filled")
+	const [loading, setLoading] = useState(false)
 
 	const serviceId = import.meta.env.VITE_API_SERVICE_ID
 	const templateId = import.meta.env.VITE_API_TEMPLATE_ID
@@ -54,8 +55,8 @@ const Contact = () => {
 		return isDateInReservedRange(current)
 	}
 
-	const handleSubmit = (e, values) => {
-		e.preventDefault()
+	const handleSubmit = (values) => {
+		setLoading(true)
 
 		const templateParams = {
 			firstName: values.firstName,
@@ -72,11 +73,14 @@ const Contact = () => {
 			() => {
 				antdMessage.success("Email envoyé avec succès !")
 				form.resetFields()
+
+				setLoading(false)
 			},
 			() => {
 				antdMessage.error(
 					"Une erreur s'est produite, veuillez réessayer.",
 				)
+				setLoading(false)
 			},
 		)
 	}
@@ -99,119 +103,124 @@ const Contact = () => {
 				</div>
 			</div>
 			<ConfigProvider locale={frFR}>
-				<Form
-					layout="vertical"
-					onFinish={handleSubmit}
-					form={form}
-					onValuesChange={onFormVariantChange}
-					style={{ width: "100%", maxWidth: "500px" }}
-					initialValues={{ variant: componentVariant }}
-				>
-					<Form.Item
-						className="custom-input"
-						label="Nom"
-						name="firstName"
-						rules={[
-							{
-								required: true,
-								message: "Merci de renseigner votre nom",
-							},
-						]}
+				<Spin spinning={loading}>
+					<Form
+						layout="vertical"
+						onFinish={handleSubmit}
+						form={form}
+						onValuesChange={onFormVariantChange}
+						style={{
+							width: "100%",
+							maxWidth: "500px",
+						}}
+						initialValues={{ variant: componentVariant }}
 					>
-						<Input />
-					</Form.Item>
-
-					<Form.Item
-						label="Prénom"
-						name="lastName"
-						rules={[
-							{
-								required: true,
-								message: "Merci de renseigner votre prénom",
-							},
-						]}
-					>
-						<Input />
-					</Form.Item>
-
-					<Form.Item label="Société" name="company">
-						<Input />
-					</Form.Item>
-
-					<Form.Item label="Téléphone" name="phone">
-						<Input />
-					</Form.Item>
-
-					<Form.Item
-						label="Adresse email"
-						name="email"
-						rules={[
-							{
-								required: true,
-								type: "email",
-								message:
-									"Merci de renseigner une adresse email valide",
-							},
-						]}
-					>
-						<Input />
-					</Form.Item>
-
-					<Form.Item
-						label="Motif du séjour"
-						name="motif"
-						rules={[
-							{
-								required: true,
-								message:
-									"Merci de renseigner le motif de votre séjour",
-							},
-						]}
-					>
-						<TreeSelect
-							treeData={[
+						<Form.Item
+							className="custom-input"
+							label="Nom"
+							name="firstName"
+							rules={[
 								{
-									title: "Déplacement professionnel",
-									value: "déplacement",
+									required: true,
+									message: "Merci de renseigner votre nom",
 								},
-								{ title: "Tourisme", value: "tourisme" },
-								{ title: "Autre", value: "autre" },
 							]}
-						/>
-					</Form.Item>
-
-					<Form.Item
-						label="Dates"
-						name="dates"
-						rules={[
-							{
-								required: true,
-								message:
-									"Merci de renseigner les dates de votre séjour",
-							},
-						]}
-					>
-						<RangePicker
-							placeholder={["Date de début", "Date de fin"]}
-							disabledDate={disabledDate}
-						/>
-					</Form.Item>
-
-					<Form.Item label="Votre message" name="message">
-						<Input.TextArea />
-					</Form.Item>
-
-					<Form.Item wrapperCol={{ offset: 20, span: 24 }}>
-						<Button
-							className="button-form"
-							type="primary"
-							htmlType="submit"
-							style={{ marginTop: "1rem" }}
 						>
-							Envoyer
-						</Button>
-					</Form.Item>
-				</Form>
+							<Input />
+						</Form.Item>
+
+						<Form.Item
+							label="Prénom"
+							name="lastName"
+							rules={[
+								{
+									required: true,
+									message: "Merci de renseigner votre prénom",
+								},
+							]}
+						>
+							<Input />
+						</Form.Item>
+
+						<Form.Item label="Société" name="company">
+							<Input />
+						</Form.Item>
+
+						<Form.Item label="Téléphone" name="phone">
+							<Input />
+						</Form.Item>
+
+						<Form.Item
+							label="Adresse email"
+							name="email"
+							rules={[
+								{
+									required: true,
+									type: "email",
+									message:
+										"Merci de renseigner une adresse email valide",
+								},
+							]}
+						>
+							<Input />
+						</Form.Item>
+
+						<Form.Item
+							label="Motif du séjour"
+							name="motif"
+							rules={[
+								{
+									required: true,
+									message:
+										"Merci de renseigner le motif de votre séjour",
+								},
+							]}
+						>
+							<TreeSelect
+								treeData={[
+									{
+										title: "Déplacement professionnel",
+										value: "déplacement",
+									},
+									{ title: "Tourisme", value: "tourisme" },
+									{ title: "Autre", value: "autre" },
+								]}
+							/>
+						</Form.Item>
+
+						<Form.Item
+							label="Dates"
+							name="dates"
+							rules={[
+								{
+									required: true,
+									message:
+										"Merci de renseigner les dates de votre séjour",
+								},
+							]}
+						>
+							<RangePicker
+								placeholder={["Date de début", "Date de fin"]}
+								disabledDate={disabledDate}
+							/>
+						</Form.Item>
+
+						<Form.Item label="Votre message" name="message">
+							<Input.TextArea />
+						</Form.Item>
+
+						<Form.Item wrapperCol={{ offset: 20, span: 24 }}>
+							<Button
+								className="button-form"
+								type="primary"
+								htmlType="submit"
+								style={{ marginTop: "1rem" }}
+							>
+								Envoyer
+							</Button>
+						</Form.Item>
+					</Form>
+				</Spin>
 			</ConfigProvider>
 		</div>
 	)
