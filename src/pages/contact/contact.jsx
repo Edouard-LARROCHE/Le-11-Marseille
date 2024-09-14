@@ -54,7 +54,9 @@ const Contact = () => {
 		return isDateInReservedRange(current)
 	}
 
-	const handleSubmit = (values) => {
+	const handleSubmit = (e, values) => {
+		e.preventDefault()
+
 		const templateParams = {
 			firstName: values.firstName,
 			lastName: values.lastName,
