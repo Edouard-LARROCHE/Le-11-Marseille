@@ -31,7 +31,10 @@ const Layout = () => {
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isHovered, setIsHovered] = useState(false)
-	const [isMobile, setIsMobile] = useState(window.innerWidth <= 770)
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 450)
+	const [isMobilePaysage, setIsMobilePaysage] = useState(
+		window.innerWidth <= 845 && window.innerWidth >= 450,
+	)
 	const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 	// const [cameFromAnotherPage, setCameFromAnotherPage] = useState(false)
 
@@ -73,7 +76,10 @@ const Layout = () => {
 
 	useEffect(() => {
 		const checkIsMobile = () => {
-			setIsMobile(window.innerWidth <= 770)
+			setIsMobile(window.innerWidth <= 450)
+			setIsMobilePaysage(
+				window.innerWidth <= 845 && window.innerWidth >= 450,
+			)
 		}
 
 		checkIsMobile()
@@ -94,11 +100,16 @@ const Layout = () => {
 	// }, [location.pathname, cameFromAnotherPage, targetRef])
 
 	useEffect(() => {
-		console.log(isMobile)
+		// console.log(isMobile)
+		console.log(isMobilePaysage, "isMobilePaysage")
 
 		gsap.fromTo(
 			contentRef.current,
-			{ top: "100%", opacity: 0, marginTop: isMobile ? "-45%" : "40%" },
+			{
+				top: "100%",
+				opacity: 0,
+				marginTop: isMobile ? "-45%" : isMobilePaysage ? "30%" : "40%",
+			},
 			{ top: "72%", opacity: 1, duration: 2.5, ease: "power3.out" },
 		)
 	}, [])
