@@ -30,7 +30,7 @@ const Layout = () => {
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isHovered, setIsHovered] = useState(false)
-	const [isMobile, setIsMobile] = useState(false)
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 770)
 	const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 	// const [cameFromAnotherPage, setCameFromAnotherPage] = useState(false)
 
@@ -95,8 +95,8 @@ const Layout = () => {
 	useEffect(() => {
 		gsap.fromTo(
 			contentRef.current,
-			{ top: "100vh", opacity: 0 },
-			{ top: "72vh", opacity: 1, duration: 2.5, ease: "power3.out" },
+			{ top: "100%", opacity: 0, marginTop: isMobile ? "130%" : "40%" },
+			{ top: "72%", opacity: 1, duration: 2.5, ease: "power3.out" },
 		)
 	}, [])
 
