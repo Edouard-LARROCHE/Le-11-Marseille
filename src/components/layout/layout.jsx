@@ -14,7 +14,7 @@ import Footer from "../../pages/footer/footer"
 
 import IMGSejour from "/images/livingRoom/PAGE_1.jpg"
 import IMGSejour2 from "/images/livingRoom/IMG_3538.jpg"
-import IMGBalcon from "/images/balcony/PAGE_1.jpg"
+// import IMGBalcon from "/images/balcony/PAGE_1.jpg"
 
 import LogoLe11 from "../../assets/logo/le11.svg?react"
 import Chevron from "../../assets/icons/chevron.svg?react"
@@ -31,7 +31,7 @@ const Layout = () => {
 	const [isScrolledToTop, setIsScrolledToTop] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
 	const [isHovered, setIsHovered] = useState(false)
-	const [isMobile, setIsMobile] = useState(false)
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 770)
 	const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 	// const [cameFromAnotherPage, setCameFromAnotherPage] = useState(false)
 
@@ -94,11 +94,13 @@ const Layout = () => {
 	// }, [location.pathname, cameFromAnotherPage, targetRef])
 
 	useEffect(() => {
+		console.log(isMobile)
+
 		gsap.fromTo(
 			contentRef.current,
 			{ y: "100vh", autoAlpha: 0, position: "absolute" },
 			{
-				y: "72vh",
+				y: isMobile ? "-30vh" : "72vh",
 				autoAlpha: 1,
 				duration: 2.5,
 				ease: "power3.out",
