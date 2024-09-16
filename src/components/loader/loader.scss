@@ -1,0 +1,64 @@
+@use "../../scss/animations/animations.scss";
+@use "../../scss/config/functions.scss" as *;
+@use "../../scss/config/primitives.scss" as *;
+
+.container-loader {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.loader {
+		width: 20rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background:
+			radial-gradient(farthest-side, $gold-yellow 94%, #0000)
+				top/convertToREM(5) convertToREM(5) no-repeat,
+			conic-gradient(#0000 30%, $gold-yellow);
+		-webkit-mask: radial-gradient(
+			farthest-side,
+			#0000 calc(100% - convertToREM(3)),
+			#000 0
+		);
+		animation: l13 3s infinite linear;
+	}
+
+	.logo-loader {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		top: 53%;
+		left: 53%;
+		z-index: 1001;
+
+		#g96 {
+			path {
+				stroke: $white !important;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
+	.container-loader {
+		.loader {
+			width: 10rem;
+		}
+
+		.logo-loader {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 51%;
+			left: 53%;
+			z-index: 1001;
+		}
+	}
+}
+
