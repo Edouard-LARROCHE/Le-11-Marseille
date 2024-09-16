@@ -137,7 +137,7 @@ const Description = () => {
 		},
 		{
 			id: 9,
-			title: "Lave vaiselle",
+			title: "Lave vaisselle",
 		},
 		{
 			id: 10,

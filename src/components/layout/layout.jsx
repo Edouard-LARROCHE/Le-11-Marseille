@@ -68,7 +68,7 @@ const Layout = () => {
 		return () => {
 			window.removeEventListener("scroll", handleScroll)
 		}
-	}, [lastScrollY])
+	}, [])
 
 	useEffect(() => {
 		const checkIsMobile = () => {
