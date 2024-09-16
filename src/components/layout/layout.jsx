@@ -100,9 +100,6 @@ const Layout = () => {
 	// }, [location.pathname, cameFromAnotherPage, targetRef])
 
 	useEffect(() => {
-		// console.log(isMobile)
-		console.log(isMobilePaysage, "isMobilePaysage")
-
 		gsap.fromTo(
 			contentRef.current,
 			{
