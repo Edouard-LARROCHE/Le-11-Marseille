@@ -71,7 +71,7 @@ const CardEffect = () => {
 		const maxScrollLeft = container.scrollWidth - container.clientWidth
 
 		const animateScroll = () => {
-			const scrollAmount = scrollDirection * 1
+			const scrollAmount = scrollDirection * 1.3
 			const currentScroll = container.scrollLeft + scrollAmount
 
 			if (currentScroll >= maxScrollLeft || currentScroll <= 0) {
