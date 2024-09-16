@@ -287,9 +287,9 @@ const Description = () => {
 														</div>
 														<div className="text-container">
 															<p>
-																11 rue FONDÈRE,
-																13004 Marseille,
-																France
+																Marseille 13004,
+																quartier des 5
+																Avenues
 															</p>
 															<p>
 																<span

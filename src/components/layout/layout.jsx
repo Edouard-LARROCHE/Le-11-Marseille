@@ -242,9 +242,8 @@ const Layout = () => {
 								<br />
 								<br />
 								Cet appartement dispose également d'une literie
-								complète, de draps et de serviettes de qualité
-								hôtelière, d'un dressing et d'un service de
-								ménage hebdomadaire.
+								complète, de draps et de serviettes, d'un
+								dressing et d'un service de ménage hebdomadaire.
 							</p>
 						</div>
 						<div className="final-text">
