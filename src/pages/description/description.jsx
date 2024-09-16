@@ -181,7 +181,7 @@ const Description = () => {
 		},
 		{
 			id: 20,
-			title: "Radiateurs électriques THERMOR haut de game",
+			title: "Radiateurs électriques THERMOR haut de gamme",
 		},
 		{
 			id: 21,
