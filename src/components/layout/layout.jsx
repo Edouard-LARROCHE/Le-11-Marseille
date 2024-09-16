@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
+
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
@@ -83,6 +84,22 @@ const Layout = () => {
 		}
 	}, [])
 
+	useEffect(() => {
+		const handleLoad = () => {
+			gsap.fromTo(
+				contentRef.current,
+				{ y: "100vh", autoAlpha: 0 },
+				{ y: "72vh", autoAlpha: 1, duration: 2.5, ease: "power3.out" },
+			)
+		}
+
+		window.addEventListener("load", handleLoad)
+
+		return () => {
+			window.removeEventListener("load", handleLoad)
+		}
+	}, [])
+
 	// useEffect(() => {
 	// 	if (location.pathname === "/" && cameFromAnotherPage) {
 	// 		if (targetRef.current) {
@@ -91,14 +108,6 @@ const Layout = () => {
 	// 		setCameFromAnotherPage(false)
 	// 	}
 	// }, [location.pathname, cameFromAnotherPage, targetRef])
-
-	useEffect(() => {
-		gsap.fromTo(
-			contentRef.current,
-			{ top: "100vh", opacity: 0 },
-			{ top: "72vh", opacity: 1, duration: 2.5, ease: "power3.out" },
-		)
-	}, [])
 
 	const scrollToDescription = () => {
 		gsap.to(window, {

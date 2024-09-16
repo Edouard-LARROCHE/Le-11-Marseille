@@ -26,13 +26,6 @@
 		margin: convertToREM(100) auto;
 		overflow: hidden;
 
-		.bg-color {
-			position: fixed;
-			width: 100%;
-			height: 18rem;
-			background-color: $grey-snow;
-		}
-
 		.card {
 			position: relative;
 			flex: 0 0 convertToREM(300);
