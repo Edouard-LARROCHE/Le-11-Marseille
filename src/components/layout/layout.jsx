@@ -98,7 +98,7 @@ const Layout = () => {
 
 		gsap.fromTo(
 			contentRef.current,
-			{ top: "100%", opacity: 0, marginTop: isMobile ? "130%" : "40%" },
+			{ top: "100%", opacity: 0, marginTop: isMobile ? "-45%" : "40%" },
 			{ top: "72%", opacity: 1, duration: 2.5, ease: "power3.out" },
 		)
 	}, [])
