@@ -9,7 +9,7 @@ import "./confidentiality.scss"
 
 const Confidentiality = () => {
 	const handleEmailClick = () => {
-		const email = "contact@le11àmarseille.fr"
+		const email = "contact@le11amarseille.fr"
 		const subject = encodeURIComponent("Information client")
 		const body = encodeURIComponent("Bonjour,")
 		const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`
@@ -75,7 +75,7 @@ const Confidentiality = () => {
 						className="highLight"
 						onClick={() => handleEmailClick()}
 					>
-						contact@le11àmarseille.fr
+						contact@le11amarseille.fr
 					</span>
 				</div>
 			</div>

@@ -45,7 +45,7 @@ const CopyRight = () => {
 					className="custom-link-adress"
 					onClick={() => handleEmailClick()}
 				>
-					contact@le11àmarseille.fr
+					contact@le11amarseille.fr
 				</li>
 			</ul>
 		</div>
