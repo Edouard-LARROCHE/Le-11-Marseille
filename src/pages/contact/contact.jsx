@@ -209,12 +209,11 @@ const Contact = () => {
 							<Input.TextArea />
 						</Form.Item>
 
-						<Form.Item wrapperCol={{ offset: 20, span: 24 }}>
+						<Form.Item>
 							<Button
 								className="button-form"
 								type="primary"
 								htmlType="submit"
-								style={{ marginTop: "1rem" }}
 							>
 								Envoyer
 							</Button>

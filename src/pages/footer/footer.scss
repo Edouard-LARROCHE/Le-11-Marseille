@@ -52,6 +52,10 @@
 					font-weight: normal;
 					margin: 0 0 0.5rem 3rem;
 
+					&:nth-child(1) {
+						cursor: default;
+					}
+
 					&:hover:not(.note) {
 						color: $gold-yellow;
 					}
@@ -147,7 +151,8 @@
 					.text {
 						position: absolute;
 						width: max-content;
-						bottom: -1rem;
+						bottom: -3rem;
+						left: -2.5rem;
 					}
 				}
 			}

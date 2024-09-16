@@ -1,18 +1,19 @@
 @use "../../scss/config/primitives" as *;
 
 .containerCopyRight {
-	position: absolute;
-	bottom: 1.4rem;
-	left: 1rem;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	opacity: 1;
+	// position: relative;
+	// bottom: 1.4rem;
+	// left: 1rem;
+	// width: 100%;
+	// display: flex;
+	// align-items: center;
+	// opacity: 1;
 
 	svg {
-		margin-right: 0.3rem;
+		margin: 0.3rem;
 		width: 1.3rem;
 		height: 1.3rem;
+		transform: translateY(0.5rem);
 
 		path {
 			fill: $brand-black;
@@ -21,20 +22,24 @@
 
 	.text {
 		display: flex;
-		align-items: center;
+		align-items: baseline;
 		font-size: 0.9rem;
 		color: $brand-black;
 		margin: 0 0.5rem 0.3rem;
 	}
 
 	.ul-bottom {
+		position: absolute;
+		bottom: 1rem;
+		left: 0;
 		list-style: none;
 		padding: 0;
 		margin-top: 1.2rem;
 		display: flex;
+		align-items: center;
 		flex-direction: row !important;
 
-		li {
+		li:not(.text) {
 			margin: 0 1.5rem -1.5rem 1.5rem !important;
 
 			.custom-link {
@@ -53,6 +58,22 @@
 				font-size: 0.9rem !important;
 				color: $brand-black;
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
+	.containerCopyRight {
+		position: relative;
+		bottom: 1.4rem;
+		left: 1rem;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		opacity: 1;
+
+		.ul-bottom {
+			position: relative;
 		}
 	}
 }

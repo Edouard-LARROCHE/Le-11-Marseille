@@ -84,22 +84,6 @@ const Layout = () => {
 		}
 	}, [])
 
-	useEffect(() => {
-		const handleLoad = () => {
-			gsap.fromTo(
-				contentRef.current,
-				{ y: "100vh", autoAlpha: 0 },
-				{ y: "72vh", autoAlpha: 1, duration: 2.5, ease: "power3.out" },
-			)
-		}
-
-		window.addEventListener("load", handleLoad)
-
-		return () => {
-			window.removeEventListener("load", handleLoad)
-		}
-	}, [])
-
 	// useEffect(() => {
 	// 	if (location.pathname === "/" && cameFromAnotherPage) {
 	// 		if (targetRef.current) {
@@ -108,6 +92,20 @@ const Layout = () => {
 	// 		setCameFromAnotherPage(false)
 	// 	}
 	// }, [location.pathname, cameFromAnotherPage, targetRef])
+
+	useEffect(() => {
+		gsap.fromTo(
+			contentRef.current,
+			{ y: "100vh", autoAlpha: 0, position: "absolute" },
+			{
+				y: "72vh",
+				autoAlpha: 1,
+				duration: 2.5,
+				ease: "power3.out",
+				position: "absolute",
+			},
+		)
+	}, [])
 
 	const scrollToDescription = () => {
 		gsap.to(window, {

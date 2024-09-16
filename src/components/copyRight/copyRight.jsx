@@ -19,11 +19,13 @@ const CopyRight = () => {
 
 	return (
 		<div className="containerCopyRight">
-			<div className="text">
-				<Copyright />
-				{currentYear} Le 11 à Marseille - Tous droits réservés
-			</div>
 			<ul className="ul-bottom">
+				<li>
+					<div className="text">
+						<Copyright />
+						{currentYear} Le 11 à Marseille - Tous droits réservés
+					</div>
+				</li>
 				<li>
 					<Link to="/confidentiality" className="custom-link">
 						Politiques de confidentialité

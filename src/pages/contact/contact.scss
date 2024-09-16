@@ -54,10 +54,17 @@
 }
 
 .ant-form {
+	position: relative;
 	background-color: $grey-steam;
 	padding: 2rem;
 	border-radius: 0.5rem;
 	min-width: 500px;
+}
+
+.ant-btn {
+	position: absolute;
+	top: 0.5rem;
+	right: 0;
 }
 
 .ant-picker {
@@ -100,10 +107,6 @@
 	.ant-form {
 		min-width: auto;
 		padding: 1rem;
-	}
-
-	.ant-btn {
-		margin-left: -2rem;
 	}
 }
 
