@@ -98,14 +98,8 @@ const Layout = () => {
 
 		gsap.fromTo(
 			contentRef.current,
-			{ y: "100vh", autoAlpha: 0, position: "absolute" },
-			{
-				y: isMobile ? "-30vh" : "72vh",
-				autoAlpha: 1,
-				duration: 2.5,
-				ease: "power3.out",
-				position: "absolute",
-			},
+			{ top: "100%", opacity: 0, marginTop: isMobile ? "130%" : "40%" },
+			{ top: "72%", opacity: 1, duration: 2.5, ease: "power3.out" },
 		)
 	}, [])
 
