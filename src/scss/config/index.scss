@@ -15,6 +15,13 @@
 		font-weight: 100;
 	}
 
+	@media screen and (max-width: 768px) {
+		p,
+		> div {
+			font-weight: 200 !important;
+		}
+	}
+
 	// font-family: "Domine", serif;
 	// font-weight: 300;
 
