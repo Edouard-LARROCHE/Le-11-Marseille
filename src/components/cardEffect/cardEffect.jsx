@@ -28,14 +28,6 @@ const CardEffect = () => {
 		setSelectedImages(shuffledImages)
 	}, [])
 
-	// useEffect(() => {
-	// 	const pic = picturesData.bathroom[0].imageUrl
-	// 	const img = new Image()
-
-	// 	img.src = pic
-	// 	img.onload = () => setIsImageLoaded(true)
-	// }, [])
-
 	useEffect(() => {
 		const loadImage = (src) => {
 			return new Promise((resolve, reject) => {
