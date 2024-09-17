@@ -15,12 +15,10 @@ const CardEffect = () => {
 
 	const [contentChange, setContentChange] = useState(null)
 	const [selectedImages, setSelectedImages] = useState([])
-	const [scrollDirection, setScrollDirection] = useState(1)
-	const [delta, setDelta] = useState(null)
 	const [isImageLoaded, setIsImageLoaded] = useState(false)
 
 	const containerRef = useRef(null)
-	const scrollAnimationRef = useRef(null)
+	const scrollContentRef = useRef(null)
 
 	useEffect(() => {
 		const allImages = getAllImages()
@@ -47,80 +45,36 @@ const CardEffect = () => {
 				setIsImageLoaded(true)
 			})
 			.catch((error) => {
-				return error
+				console.error(error)
 			})
 	}, [])
 
 	useEffect(() => {
 		if (!isImageLoaded) return
 
-		startAutoScroll()
+		const scrollContent = scrollContentRef.current
 
-		const handleScroll = () => {
-			getScrollDirection()
-
-			if (delta > 0) {
-				setScrollDirection(1)
-			} else if (delta < 0) {
-				setScrollDirection(-1)
-			}
+		const resetScroll = () => {
+			scrollContent.style.transition = "none"
+			scrollContent.style.transform = "translateX(0)"
+			setTimeout(() => {
+				scrollContent.style.transition = ""
+				scrollContent.style.animation = "scroll 20s linear infinite"
+			}, 10)
 		}
 
-		window.addEventListener("scroll", handleScroll)
+		scrollContent.addEventListener("animationiteration", resetScroll)
 
-		return () => {
-			stopAutoScroll()
-			window.removeEventListener("scroll", handleScroll)
-		}
-	}, [delta])
-
-	const getScrollDirection = () => {
-		const scrollTop = window.scrollY || document.documentElement.scrollTop
-		const windowHeight = window.innerHeight
-		const documentHeight = document.body.offsetHeight
-
-		let newDelta = 0
-		if (scrollTop + windowHeight >= documentHeight) {
-			newDelta = -1
-		} else if (scrollTop === 0) {
-			newDelta = 1
-		}
-
-		setDelta(newDelta)
-	}
+		return () =>
+			scrollContent.removeEventListener("animationiteration", resetScroll)
+	}, [isImageLoaded])
 
 	const getAllImages = () => {
 		return Object.values(picturesData).flat()
 	}
 
-	const startAutoScroll = () => {
-		const container = containerRef.current
-		const maxScrollLeft = container.scrollWidth - container.clientWidth
-
-		const animateScroll = () => {
-			const scrollAmount = scrollDirection * 1.3
-			const currentScroll = container.scrollLeft + scrollAmount
-
-			if (currentScroll >= maxScrollLeft || currentScroll <= 0) {
-				setScrollDirection((prev) => prev * -1)
-			}
-
-			container.scrollLeft += scrollAmount
-		}
-
-		scrollAnimationRef.current = gsap.ticker.add(animateScroll)
-	}
-
-	const stopAutoScroll = () => {
-		if (scrollAnimationRef.current) {
-			gsap.ticker.remove(scrollAnimationRef.current)
-			scrollAnimationRef.current = null
-		}
-	}
-
 	const handleMouseOver = (e, index) => {
 		setContentChange(index)
-		stopAutoScroll()
 
 		gsap.to(e.currentTarget, {
 			zIndex: 10,
@@ -132,7 +86,6 @@ const CardEffect = () => {
 
 	const handleMouseOut = (e, index) => {
 		setContentChange(null)
-		startAutoScroll()
 
 		gsap.to(e.currentTarget, {
 			zIndex: index,
@@ -146,6 +99,12 @@ const CardEffect = () => {
 		navigate(`/image/${key}`)
 	}
 
+	const duplicatedImages = [
+		...selectedImages,
+		...selectedImages,
+		...selectedImages,
+	]
+
 	return (
 		<div className="container-card">
 			<p className="title">
@@ -153,28 +112,32 @@ const CardEffect = () => {
 			</p>
 			{isImageLoaded ? (
 				<div className="card-container" ref={containerRef}>
-					{selectedImages.map((item, index) => (
-						<div
-							key={item.id}
-							className="card"
-							onMouseOver={(e) => handleMouseOver(e, index)}
-							onMouseOut={(e) => handleMouseOut(e, index)}
-							onClick={() => handleCardClick(item.key)}
-						>
-							<img
-								className={`${contentChange === index ? "filter" : ""}`}
-								src={item.imageUrl}
-								alt={item.title}
-							/>
-							{contentChange === index && (
-								<>
-									<div className="title">{item.title}</div>
-									<p>Voir la galerie</p>
-								</>
-							)}
-							<LogoTampon className="logo-tampon" />
-						</div>
-					))}
+					<div className="scroll-content" ref={scrollContentRef}>
+						{duplicatedImages.map((item, index) => (
+							<div
+								key={`${item.id}-${index}`}
+								className="card"
+								onMouseOver={(e) => handleMouseOver(e, index)}
+								onMouseOut={(e) => handleMouseOut(e, index)}
+								onClick={() => handleCardClick(item.key)}
+							>
+								<img
+									className={`${contentChange === index ? "filter" : ""}`}
+									src={item.imageUrl}
+									alt={item.title}
+								/>
+								{contentChange === index && (
+									<>
+										<div className="title">
+											{item.title}
+										</div>
+										<p>Voir la galerie</p>
+									</>
+								)}
+								<LogoTampon className="logo-tampon" />
+							</div>
+						))}
+					</div>
 					<div className="bg-color" />
 				</div>
 			) : (
@@ -189,4 +152,3 @@ const CardEffect = () => {
 }
 
 export default CardEffect
-

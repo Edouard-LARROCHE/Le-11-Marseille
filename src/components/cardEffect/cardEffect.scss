@@ -1,5 +1,6 @@
 @use "../../scss//config/functions" as *;
 @use "../../scss//config/primitives" as *;
+@use "../../scss/animations/animations.scss" as *;
 
 .container-card {
 	position: relative;
@@ -18,13 +19,17 @@
 
 	.card-container {
 		position: relative;
-		display: flex;
-		align-items: center;
 		width: 100%;
+		height: convertToREM(400);
 		overflow: hidden;
-		padding: 0 1rem;
+		padding: 0;
 		margin: convertToREM(100) auto;
-		overflow: hidden;
+
+		.scroll-content {
+			display: flex;
+			align-items: center;
+			animation: scroll 10s linear infinite;
+		}
 
 		.card {
 			position: relative;
@@ -93,3 +98,4 @@
 		}
 	}
 }
+
