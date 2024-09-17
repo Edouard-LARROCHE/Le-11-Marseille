@@ -59,7 +59,7 @@ const CardEffect = () => {
 			scrollContent.style.transform = "translateX(0)"
 			setTimeout(() => {
 				scrollContent.style.transition = ""
-				scrollContent.style.animation = "scroll 20s linear infinite"
+				scrollContent.style.animation = "scroll 150s linear infinite"
 			}, 10)
 		}
 
@@ -152,3 +152,4 @@ const CardEffect = () => {
 }
 
 export default CardEffect
+
