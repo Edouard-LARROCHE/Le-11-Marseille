@@ -16,6 +16,9 @@ const CardEffect = () => {
 	const [contentChange, setContentChange] = useState(null)
 	const [selectedImages, setSelectedImages] = useState([])
 	const [isImageLoaded, setIsImageLoaded] = useState(false)
+	const [isMobile, setIsMobile] = useState(false)
+	const [touchStart, setTouchStart] = useState(null)
+	const [touchEnd, setTouchEnd] = useState(null)
 
 	const containerRef = useRef(null)
 	const scrollContentRef = useRef(null)
@@ -24,6 +27,17 @@ const CardEffect = () => {
 		const allImages = getAllImages()
 		const shuffledImages = shuffleArray(allImages)
 		setSelectedImages(shuffledImages)
+	}, [])
+
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth <= 768)
+		}
+
+		checkMobile()
+		window.addEventListener("resize", checkMobile)
+
+		return () => window.removeEventListener("resize", checkMobile)
 	}, [])
 
 	useEffect(() => {
@@ -49,6 +63,8 @@ const CardEffect = () => {
 			})
 	}, [])
 
+	const animationDuration = isMobile ? "50s" : "150s"
+
 	useEffect(() => {
 		if (!isImageLoaded) return
 
@@ -59,7 +75,7 @@ const CardEffect = () => {
 			scrollContent.style.transform = "translateX(0)"
 			setTimeout(() => {
 				scrollContent.style.transition = ""
-				scrollContent.style.animation = "scroll 150s linear infinite"
+				scrollContent.style.animation = `scroll ${animationDuration} linear infinite`
 			}, 10)
 		}
 
@@ -67,7 +83,7 @@ const CardEffect = () => {
 
 		return () =>
 			scrollContent.removeEventListener("animationiteration", resetScroll)
-	}, [isImageLoaded])
+	}, [isImageLoaded, animationDuration])
 
 	const getAllImages = () => {
 		return Object.values(picturesData).flat()
@@ -99,6 +115,33 @@ const CardEffect = () => {
 		navigate(`/image/${key}`)
 	}
 
+	const onTouchStart = (e) => {
+		setTouchEnd(null)
+		setTouchStart(e.targetTouches[0].clientX)
+	}
+
+	const onTouchMove = (e) => {
+		setTouchEnd(e.targetTouches[0].clientX)
+	}
+
+	const onTouchEnd = () => {
+		if (!touchStart || !touchEnd) return
+		const distance = touchStart - touchEnd
+		const isLeftSwipe = distance > 50
+		const isRightSwipe = distance < -50
+
+		if (isLeftSwipe || isRightSwipe) {
+			const scrollContent = scrollContentRef.current
+			const currentTransform = new WebKitCSSMatrix(
+				getComputedStyle(scrollContent).transform,
+			)
+			const newTransform =
+				currentTransform.m41 - (isLeftSwipe ? 100 : -100)
+			scrollContent.style.transition = "transform 0.3s ease-out"
+			scrollContent.style.transform = `translateX(${newTransform}px)`
+		}
+	}
+
 	const duplicatedImages = [
 		...selectedImages,
 		...selectedImages,
@@ -112,7 +155,13 @@ const CardEffect = () => {
 			</p>
 			{isImageLoaded ? (
 				<div className="card-container" ref={containerRef}>
-					<div className="scroll-content" ref={scrollContentRef}>
+					<div
+						className="scroll-content"
+						ref={scrollContentRef}
+						onTouchStart={onTouchStart}
+						onTouchMove={onTouchMove}
+						onTouchEnd={onTouchEnd}
+					>
 						{duplicatedImages.map((item, index) => (
 							<div
 								key={`${item.id}-${index}`}

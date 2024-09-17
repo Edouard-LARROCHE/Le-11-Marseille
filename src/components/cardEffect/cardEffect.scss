@@ -100,3 +100,16 @@
 	}
 }
 
+@media (max-width: 768px) {
+	.scroll-content {
+		animation: scroll 50s linear infinite !important;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scroll-snap-type: x mandatory;
+
+		.card {
+			scroll-snap-align: center;
+		}
+	}
+}
+
