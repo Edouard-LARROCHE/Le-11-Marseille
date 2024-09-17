@@ -23,6 +23,8 @@ const CardEffect = () => {
 	const containerRef = useRef(null)
 	const scrollContentRef = useRef(null)
 
+	const animationDuration = isMobile ? "50s" : "150s"
+
 	useEffect(() => {
 		const allImages = getAllImages()
 		const shuffledImages = shuffleArray(allImages)
@@ -62,8 +64,6 @@ const CardEffect = () => {
 				console.error(error)
 			})
 	}, [])
-
-	const animationDuration = isMobile ? "50s" : "150s"
 
 	useEffect(() => {
 		if (!isImageLoaded) return
@@ -126,6 +126,7 @@ const CardEffect = () => {
 
 	const onTouchEnd = () => {
 		if (!touchStart || !touchEnd) return
+
 		const distance = touchStart - touchEnd
 		const isLeftSwipe = distance > 50
 		const isRightSwipe = distance < -50
