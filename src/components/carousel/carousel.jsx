@@ -1,7 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Slider from "react-slick"
 import { useNavigate } from "react-router-dom"
 import { Modal } from "antd"
+
+import Loader from "../loader/loader"
 
 import Cross from "../../assets/icons/cross.svg?react"
 import LogoTampon from "../../assets/logo/logo-tampon.svg?react"
@@ -15,6 +17,7 @@ const Carousel = ({ images }) => {
 
 	const [selectedImage, setSelectedImage] = useState(null)
 	const [isModalVisible, setIsModalVisible] = useState(false)
+	const [isImageLoaded, setIsImageLoaded] = useState(false)
 
 	const settings = {
 		dots: true,
@@ -44,6 +47,14 @@ const Carousel = ({ images }) => {
 		],
 	}
 
+	useEffect(() => {
+		const pic = images[0].imageUrl
+		const img = new Image()
+
+		img.src = pic
+		img.onload = () => setIsImageLoaded(true)
+	}, [images])
+
 	const handleImageClick = (imageUrl) => {
 		setSelectedImage(imageUrl)
 		setIsModalVisible(true)
@@ -59,37 +70,45 @@ const Carousel = ({ images }) => {
 
 	return (
 		<div className="content-carousel">
-			<div className="container-carousel">
-				<Cross className="cross" onClick={handleClose} />
-				<Slider {...settings}>
-					{images.map((item, key) => (
-						<div key={key}>
-							<div
-								className="img-body"
-								onClick={() => handleImageClick(item.imageUrl)}
-							>
-								<img src={item.imageUrl} alt={item.title} />
-								<LogoTampon className="logo-tampon" />
+			{isImageLoaded ? (
+				<div className="container-carousel">
+					<Cross className="cross" onClick={handleClose} />
+					<Slider {...settings}>
+						{images.map((item, key) => (
+							<div key={key}>
+								<div
+									className="img-body"
+									onClick={() =>
+										handleImageClick(item.imageUrl)
+									}
+								>
+									<img src={item.imageUrl} alt={item.title} />
+									<LogoTampon className="logo-tampon" />
+								</div>
 							</div>
-						</div>
-					))}
-				</Slider>
+						))}
+					</Slider>
 
-				{isModalVisible && (
-					<Modal
-						open={isModalVisible}
-						onCancel={handleModalClose}
-						footer={null}
-						centered
-					>
-						<img
-							src={selectedImage}
-							alt="biggerImage"
-							style={{ width: "100%" }}
-						/>
-					</Modal>
-				)}
-			</div>
+					{isModalVisible && (
+						<Modal
+							open={isModalVisible}
+							onCancel={handleModalClose}
+							footer={null}
+							centered
+						>
+							<img
+								src={selectedImage}
+								alt="biggerImage"
+								style={{ width: "100%" }}
+							/>
+						</Modal>
+					)}
+				</div>
+			) : (
+				<div className="container-loader">
+					<Loader />
+				</div>
+			)}
 		</div>
 	)
 }

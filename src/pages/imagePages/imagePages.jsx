@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 import Nav from "../header/nav"
 import Carousel from "../../components/carousel/carousel"
@@ -20,7 +20,9 @@ const ImagePage = () => {
 	return (
 		<div className="image-page">
 			<Nav />
-			<LogoLe11 className="logo" />
+			<Link to="/">
+				<LogoLe11 className="logo" />
+			</Link>
 			<div className="container-text">
 				<h2>{item?.title}</h2>
 				<p>{item?.desc}</p>

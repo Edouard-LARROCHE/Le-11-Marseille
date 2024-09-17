@@ -5,3 +5,8 @@ body {
 	overflow-y: auto;
 }
 
+:root {
+	--loading-card-bg-1: #{$white-opacity};
+	--loading-card-bg-2: #{$gold-yellow-opacity};
+}
+

@@ -4,6 +4,7 @@ import gsap from "gsap"
 
 import { shuffleArray } from "../../utils/utils"
 import picturesData from "../../data/picturesData"
+import Loader from "../animation/loader"
 
 import LogoTampon from "../../assets/logo/logo-tampon.svg?react"
 
@@ -16,6 +17,7 @@ const CardEffect = () => {
 	const [selectedImages, setSelectedImages] = useState([])
 	const [scrollDirection, setScrollDirection] = useState(1)
 	const [delta, setDelta] = useState(null)
+	const [isImageLoaded, setIsImageLoaded] = useState(false)
 
 	const containerRef = useRef(null)
 	const scrollAnimationRef = useRef(null)
@@ -27,6 +29,16 @@ const CardEffect = () => {
 	}, [])
 
 	useEffect(() => {
+		const pic = picturesData.bathroom[0].imageUrl
+		const img = new Image()
+
+		img.src = pic
+		img.onload = () => setIsImageLoaded(true)
+	}, [])
+
+	useEffect(() => {
+		if (!isImageLoaded) return
+
 		startAutoScroll()
 
 		const handleScroll = () => {
@@ -124,31 +136,39 @@ const CardEffect = () => {
 			<p className="title">
 				Accéder aux <span className="highlight">galeries photos</span>
 			</p>
-			<div className="card-container" ref={containerRef}>
-				{selectedImages.map((item, index) => (
-					<div
-						key={item.id}
-						className="card"
-						onMouseOver={(e) => handleMouseOver(e, index)}
-						onMouseOut={(e) => handleMouseOut(e, index)}
-						onClick={() => handleCardClick(item.key)}
-					>
-						<img
-							className={`${contentChange === index ? "filter" : ""}`}
-							src={item.imageUrl}
-							alt={item.title}
-						/>
-						{contentChange === index && (
-							<>
-								<div className="title">{item.title}</div>
-								<p>Voir la galerie</p>
-							</>
-						)}
-						<LogoTampon className="logo-tampon" />
+			{isImageLoaded ? (
+				<div className="card-container" ref={containerRef}>
+					{selectedImages.map((item, index) => (
+						<div
+							key={item.id}
+							className="card"
+							onMouseOver={(e) => handleMouseOver(e, index)}
+							onMouseOut={(e) => handleMouseOut(e, index)}
+							onClick={() => handleCardClick(item.key)}
+						>
+							<img
+								className={`${contentChange === index ? "filter" : ""}`}
+								src={item.imageUrl}
+								alt={item.title}
+							/>
+							{contentChange === index && (
+								<>
+									<div className="title">{item.title}</div>
+									<p>Voir la galerie</p>
+								</>
+							)}
+							<LogoTampon className="logo-tampon" />
+						</div>
+					))}
+					<div className="bg-color" />
+				</div>
+			) : (
+				<div className="card-container">
+					<div className="containerLoader">
+						<Loader type={["long"]} number={1} />
 					</div>
-				))}
-				<div className="bg-color" />
-			</div>
+				</div>
+			)}
 		</div>
 	)
 }
