@@ -28,12 +28,35 @@ const CardEffect = () => {
 		setSelectedImages(shuffledImages)
 	}, [])
 
-	useEffect(() => {
-		const pic = picturesData.bathroom[0].imageUrl
-		const img = new Image()
+	// useEffect(() => {
+	// 	const pic = picturesData.bathroom[0].imageUrl
+	// 	const img = new Image()
 
-		img.src = pic
-		img.onload = () => setIsImageLoaded(true)
+	// 	img.src = pic
+	// 	img.onload = () => setIsImageLoaded(true)
+	// }, [])
+
+	useEffect(() => {
+		const loadImage = (src) => {
+			return new Promise((resolve, reject) => {
+				const img = new Image()
+				img.src = src
+				img.onload = () => resolve(src)
+				img.onerror = reject
+			})
+		}
+
+		const allImageUrls = Object.values(picturesData)
+			.flat()
+			.map((item) => item.imageUrl)
+
+		Promise.all(allImageUrls.map((url) => loadImage(url)))
+			.then(() => {
+				setIsImageLoaded(true)
+			})
+			.catch((error) => {
+				return error
+			})
 	}, [])
 
 	useEffect(() => {
