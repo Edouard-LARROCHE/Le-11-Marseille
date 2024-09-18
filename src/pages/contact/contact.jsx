@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import emailjs from "emailjs-com"
 import dayjs from "dayjs"
 import "dayjs/locale/fr"
@@ -25,10 +25,20 @@ const Contact = () => {
 	const [form] = Form.useForm()
 	const [componentVariant, setComponentVariant] = useState("filled")
 	const [loading, setLoading] = useState(false)
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
 
 	const serviceId = import.meta.env.VITE_API_SERVICE_ID
 	const templateId = import.meta.env.VITE_API_TEMPLATE_ID
 	const userId = import.meta.env.VITE_API_USER_ID
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 768)
+		}
+
+		window.addEventListener("resize", handleResize)
+		return () => window.removeEventListener("resize", handleResize)
+	}, [])
 
 	const onFormVariantChange = ({ variant }) => {
 		setComponentVariant(variant)
@@ -202,6 +212,7 @@ const Contact = () => {
 							<RangePicker
 								placeholder={["Date de début", "Date de fin"]}
 								disabledDate={disabledDate}
+								direction={isMobile ? "vertical" : "horizontal"}
 							/>
 						</Form.Item>
 
