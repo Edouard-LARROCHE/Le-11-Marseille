@@ -4,11 +4,14 @@ import "./card.scss"
 
 const CardNotice = ({ item }) => {
 	const { Paragraph } = Typography
-	const [expanded, setExpanded] = useState(false)
 
-	const toggleExpand = () => {
-		setExpanded(!expanded)
+	const [expanded, setExpanded] = useState({})
+
+	const toggleExpand = (index) => {
+		setExpanded((prev) => ({ ...prev, [index]: !prev[index] }))
 	}
+
+	console.log(expanded, "expanded")
 
 	return (
 		<Card
@@ -54,7 +57,7 @@ const CardNotice = ({ item }) => {
 					<>
 						<Paragraph
 							ellipsis={
-								expanded
+								expanded[item.id]
 									? false
 									: {
 											rows: 4,
@@ -77,7 +80,7 @@ const CardNotice = ({ item }) => {
 				<Button
 					className="button-expand"
 					type="link"
-					onClick={toggleExpand}
+					onClick={() => toggleExpand(item.id)}
 				>
 					{expanded ? "Voir moins" : "Voir plus"}
 				</Button>
@@ -87,3 +90,4 @@ const CardNotice = ({ item }) => {
 }
 
 export default CardNotice
+

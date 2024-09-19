@@ -7,6 +7,7 @@ import "./notice.scss"
 const Notice = () => {
 	const cardsData = [
 		{
+			id: 0,
 			desc: "Appartement très accessible et confortable, très bien protégé et bien entretenu",
 			dateStart: "13/09/2024",
 			dateEnd: "25/09/2024",
@@ -15,6 +16,7 @@ const Notice = () => {
 			valueRate: 3,
 		},
 		{
+			id: 1,
 			desc: "Un super séjour nous avons passé dans le centre de Marseille, l'appartement contient le confort moderne, le service est impeccable, l'équipe est sympathique et le prix est juste ! Nous recommandons à tous ceux qui souhaitent vivre une expérience unique et exceptionnelle !",
 			dateStart: "13/09/2024",
 			dateEnd: "25/09/2024",
@@ -23,6 +25,7 @@ const Notice = () => {
 			valueRate: 4,
 		},
 		{
+			id: 2,
 			desc: "Super séjour, l'équipe du 11 est au top ! Merci à tous.",
 			dateStart: "13/09/2024",
 			dateEnd: "25/09/2024",
@@ -31,6 +34,7 @@ const Notice = () => {
 			valueRate: 5,
 		},
 		{
+			id: 3,
 			desc: "Super séjour !",
 			dateStart: "13/09/2024",
 			dateEnd: "25/09/2024",
@@ -39,6 +43,7 @@ const Notice = () => {
 			valueRate: 5,
 		},
 		{
+			id: 4,
 			desc: "L'équipe du 11 est au top ! Merci beaucoup.",
 			dateStart: "13/09/2024",
 			dateEnd: "25/09/2024",
