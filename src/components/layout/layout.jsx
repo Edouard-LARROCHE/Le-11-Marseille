@@ -10,6 +10,7 @@ import picturesData from "../../data/picturesData"
 import CardEffect from "../cardEffect/cardEffect"
 import Description from "../../pages/description/description"
 import Contact from "../../pages/contact/contact"
+import Notice from "../../pages/notice/notice"
 import Footer from "../../pages/footer/footer"
 
 import IMGSejour from "/images/livingRoom/PAGE_1.jpg"
@@ -302,6 +303,7 @@ const Layout = () => {
 				<div ref={targetRef}>
 					<Contact />
 				</div>
+				<Notice />
 				<Footer />
 			</div>
 		</div>

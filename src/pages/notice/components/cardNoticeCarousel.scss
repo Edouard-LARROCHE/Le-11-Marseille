@@ -1,0 +1,26 @@
+@use "../../../scss/config/functions" as *;
+
+.carousel-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.carousel {
+	display: flex;
+	gap: convertToREM(16);
+	padding: convertToREM(20) 0;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.carousel-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+
