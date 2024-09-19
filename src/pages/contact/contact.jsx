@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import emailjs from "emailjs-com"
 import dayjs from "dayjs"
 import "dayjs/locale/fr"
+import isBetween from "dayjs/plugin/isBetween"
 
 import { ConfigProvider, Spin } from "antd"
 import frFR from "antd/lib/locale/fr_FR"
@@ -18,6 +19,7 @@ import {
 import "./contact.scss"
 
 dayjs.locale("fr")
+dayjs.extend(isBetween)
 
 const { RangePicker } = DatePicker
 
@@ -45,8 +47,8 @@ const Contact = () => {
 	}
 
 	const reservedDates = [
-		// [dayjs("2024-09-10"), dayjs("2024-09-15")],
-		// [dayjs("2024-09-20"), dayjs("2024-09-25")],
+		[dayjs("2010-09-20"), dayjs("2010-09-25")],
+		[dayjs("2024-10-06"), dayjs("2025-04-30")],
 	]
 
 	const isDateInReservedRange = (current) => {
