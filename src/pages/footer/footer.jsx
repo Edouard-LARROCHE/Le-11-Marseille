@@ -1,6 +1,7 @@
 import React from "react"
 import { gsap } from "gsap"
 import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 import { useScrollTarget } from "../../Context"
 
@@ -12,9 +13,15 @@ import Insta from "../../assets/icons/instagram.svg?react"
 import "./footer.scss"
 
 const Footer = () => {
+	const { i18n } = useTranslation()
+
 	const navigate = useNavigate()
 	const location = useLocation()
 	const targetRef = useScrollTarget()
+
+	const changeLanguage = (lng) => {
+		i18n.changeLanguage(lng)
+	}
 
 	const handleScroll = () => {
 		if (location.pathname !== "/") {
@@ -59,6 +66,12 @@ const Footer = () => {
 							</a>
 						</li>
 						<li className="note">Laisser un avis</li>
+						<button onClick={() => changeLanguage("en")}>
+							English
+						</button>
+						<button onClick={() => changeLanguage("fr")}>
+							Français
+						</button>
 					</ul>
 					<CopyRight />
 				</div>

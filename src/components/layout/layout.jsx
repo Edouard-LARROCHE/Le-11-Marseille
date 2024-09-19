@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
@@ -25,6 +26,7 @@ import "./layout.scss"
 gsap.registerPlugin(ScrollToPlugin)
 
 const Layout = () => {
+	const { t } = useTranslation()
 	const navigate = useNavigate()
 	// const location = useLocation()
 
@@ -219,8 +221,7 @@ const Layout = () => {
 						</div>
 						<div className="content-top-right-description">
 							<p>
-								Au coeur de la cité Phocéenne, votre appartement
-								en{" "}
+								{t("layout.contentTopDesc")}{" "}
 								<span className="highLight">
 									BAIL MOBILITÉ.
 								</span>
