@@ -11,8 +11,6 @@ const CardNotice = ({ item }) => {
 		setExpanded((prev) => ({ ...prev, [index]: !prev[index] }))
 	}
 
-	console.log(expanded, "expanded")
-
 	return (
 		<Card
 			className="card-shadow"
