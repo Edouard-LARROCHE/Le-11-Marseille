@@ -2,6 +2,7 @@ import React from "react"
 import { gsap } from "gsap"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
+import { Select } from "antd"
 
 import { useScrollTarget } from "../../Context"
 
@@ -12,6 +13,8 @@ import Insta from "../../assets/icons/instagram.svg?react"
 
 import "./footer.scss"
 
+const { Option } = Select
+
 const Footer = () => {
 	const { i18n } = useTranslation()
 
@@ -21,6 +24,10 @@ const Footer = () => {
 
 	const changeLanguage = (lng) => {
 		i18n.changeLanguage(lng)
+	}
+
+	const handleLanguageChange = (value) => {
+		changeLanguage(value)
 	}
 
 	const handleScroll = () => {
@@ -45,14 +52,7 @@ const Footer = () => {
 						<li>
 							<Link to="/image/livingroom">Galeries photos</Link>
 						</li>
-						<li
-							onClick={() => {
-								// props.setCameFromAnotherPage(true)
-								handleScroll()
-							}}
-						>
-							Nous contacter
-						</li>
+						<li onClick={handleScroll}>Nous contacter</li>
 						<li className="li-social" translate="no">
 							<a
 								href="https://www.instagram.com/locationle11"
@@ -66,14 +66,35 @@ const Footer = () => {
 							</a>
 						</li>
 						<li className="note">Laisser un avis</li>
-						<button onClick={() => changeLanguage("en")}>
-							English
-						</button>
-						<button onClick={() => changeLanguage("fr")}>
-							Français
-						</button>
 					</ul>
 					<CopyRight />
+					<Select
+						defaultValue={i18n.language}
+						style={{
+							width: 120,
+							position: "absolute",
+							right: "1rem",
+							bottom: "1rem",
+						}}
+						bordered={false}
+						onChange={handleLanguageChange}
+						dropdownStyle={{
+							zIndex: 2000,
+						}}
+					>
+						<Option value="fr">
+							<span role="img" aria-label="french flag">
+								🇫🇷
+							</span>{" "}
+							Français
+						</Option>
+						<Option value="en">
+							<span role="img" aria-label="english flag">
+								🇬🇧
+							</span>{" "}
+							English
+						</Option>
+					</Select>
 				</div>
 			</div>
 		</div>
