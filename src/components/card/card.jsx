@@ -44,7 +44,6 @@ const CardNotice = ({ item }) => {
 					>
 						<span>{item.author}</span>
 						<Rate
-							allowHalf
 							defaultValue={item.valueRate}
 							disabled
 							style={{ color: "rgb(146, 108, 0)" }}
