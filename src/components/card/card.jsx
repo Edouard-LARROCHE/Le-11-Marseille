@@ -80,7 +80,7 @@ const CardNotice = ({ item }) => {
 					type="link"
 					onClick={() => toggleExpand(item.id)}
 				>
-					{expanded ? "Voir moins" : "Voir plus"}
+					{expanded[item.id] ? "Voir moins" : "Voir plus"}
 				</Button>
 			)}
 		</Card>
