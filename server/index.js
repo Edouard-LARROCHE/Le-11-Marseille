@@ -3,6 +3,8 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 require("dotenv").config()
 
+const clientRoutes = require("./routes/client.routes")
+
 const app = express()
 const PORT = process.env.PORT || 5001
 const password = encodeURIComponent(process.env.VITE_PASSWORD_MGDB)
@@ -16,6 +18,7 @@ mongoose
 	.then(() => console.log("MongoDB connected"))
 	.catch((err) => console.log(err))
 
+app.use("/api/client", clientRoutes)
 app.get("/api", (req, res) => {
 	res.json({ message: "Bonjour depuis le backend!" })
 })
