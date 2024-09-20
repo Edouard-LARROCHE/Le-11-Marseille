@@ -16,15 +16,30 @@ const resources = {
 	},
 }
 
+const getStoredLanguage = () => {
+	const storedLang = localStorage.getItem("i18nextLng")
+	if (!storedLang) {
+		localStorage.setItem("i18nextLng", "fr")
+
+		return "fr"
+	}
+	return storedLang
+}
+
 i18n.use(Backend)
 	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
 		resources,
-		fallbackLng: "en",
-		debug: true,
+		lng: getStoredLanguage(),
+		fallbackLng: "fr",
+		debug: false,
 		interpolation: {
 			escapeValue: false,
+		},
+		detection: {
+			order: ["localStorage", "navigator"],
+			caches: ["localStorage"],
 		},
 	})
 
