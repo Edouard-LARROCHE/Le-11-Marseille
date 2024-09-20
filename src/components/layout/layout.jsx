@@ -158,7 +158,7 @@ const Layout = () => {
 						<ul>
 							<li translate="no">
 								<a href="#" onClick={scrollToDescription}>
-									A propos
+									{t("layout.nav.about")}
 								</a>
 								<div className="line" />
 							</li>
@@ -171,13 +171,13 @@ const Layout = () => {
 									isMobile ? handleGalleryClick : undefined
 								}
 							>
-								<Link to="/">Galeries photos</Link>
+								<Link to="/">{t("layout.nav.gallery")}</Link>
 								<div className="line" />
 								<Chevron className="chevron" />
 							</li>
 							<li>
 								<a href="#" onClick={scrollToContact}>
-									Contact
+									{t("layout.nav.contact")}
 								</a>
 								<div className="line" />
 							</li>

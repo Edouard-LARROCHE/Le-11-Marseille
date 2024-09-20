@@ -1,6 +1,11 @@
 {
 	"layout": {
-		"contentTopDesc": "Au coeur de la cité Phocéenne, votre appartement en"
+		"contentTopDesc": "Au coeur de la cité Phocéenne, votre appartement en",
+		"nav": {
+			"about": "A propos",
+			"contact": "Contact",
+			"gallery": "Galeries photos"
+		}
 	}
 }
 
