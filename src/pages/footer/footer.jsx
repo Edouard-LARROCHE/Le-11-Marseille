@@ -8,6 +8,7 @@ import { Select, Drawer, Form, Input, DatePicker, Button } from "antd"
 import { useScrollTarget } from "../../Context"
 
 import CopyRight from "../../components/copyRight/copyRight"
+import SendNotice from "../notice/components/sendNotice"
 
 import LogoTampon from "../../assets/logo/logo-tampon.svg?react"
 import Insta from "../../assets/icons/instagram.svg?react"
@@ -23,6 +24,7 @@ const Footer = () => {
 
 	const [drawerVisible, setDrawerVisible] = useState(false)
 	const [size, setSize] = useState()
+	const [validedAccount, setValidedAccount] = useState(false)
 
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -53,12 +55,15 @@ const Footer = () => {
 
 	const closeDrawer = () => {
 		setDrawerVisible(false)
+		setValidedAccount(false)
 		form.resetFields()
 	}
 
 	const submitForm = (values) => {
 		console.log("Formulaire soumis:", values)
-		// form.resetFields();
+
+		setValidedAccount(true)
+		form.resetFields()
 	}
 
 	return (
@@ -126,88 +131,101 @@ const Footer = () => {
 				open={drawerVisible}
 				size={size}
 			>
-				<div className="title-content">
-					<p className="title">
-						Vous avez séjourné dans notre appartement ?
-					</p>
-					<p className="subtitle">
-						Pour nous laisser un avis, veuillez rempir le formulaire
-						ci-dessous.
-					</p>
-				</div>
-				<Form
-					className="form-drawer"
-					form={form}
-					layout="vertical"
-					onFinish={submitForm}
-				>
-					<Form.Item
-						name="nom"
-						label="Nom"
-						rules={[
-							{
-								required: true,
-								message: "Veuillez entrer votre nom",
-							},
-						]}
-					>
-						<Input />
-					</Form.Item>
-					<Form.Item
-						name="prenom"
-						label="Prénom"
-						rules={[
-							{
-								required: true,
-								message: "Veuillez entrer votre prénom",
-							},
-						]}
-					>
-						<Input />
-					</Form.Item>
-					<Form.Item
-						name="email"
-						label="Adresse email"
-						rules={[
-							{
-								required: true,
-								message: "Veuillez entrer votre adresse email",
-							},
-							{
-								type: "email",
-								message:
-									"Veuillez entrer une adresse email valide",
-							},
-						]}
-					>
-						<Input />
-					</Form.Item>
-					<Form.Item
-						name="dateSejour"
-						label="Dates du séjour"
-						rules={[
-							{
-								required: true,
-								message:
-									"Veuillez sélectionner vos dates de séjour",
-							},
-						]}
-					>
-						<RangePicker
-							placeholder={["Date de début", "Date de fin"]}
-							// direction={isMobile ? "vertical" : "horizontal"}
-						/>
-					</Form.Item>
-					<Form.Item>
-						<Button
-							className="button"
-							type="primary"
-							htmlType="submit"
+				{!validedAccount ? (
+					<>
+						<div className="title-content">
+							<p className="title">
+								Vous avez séjourné dans notre appartement ?
+							</p>
+							<p className="subtitle">
+								Pour nous laisser un avis, veuillez rempir le
+								formulaire ci-dessous.
+							</p>
+						</div>
+						<Form
+							className="form-drawer"
+							form={form}
+							layout="vertical"
+							onFinish={submitForm}
 						>
-							Envoyer
-						</Button>
-					</Form.Item>
-				</Form>
+							<Form.Item
+								name="nom"
+								label="Nom"
+								rules={[
+									{
+										required: true,
+										message: "Veuillez entrer votre nom",
+									},
+								]}
+							>
+								<Input />
+							</Form.Item>
+							<Form.Item
+								name="prenom"
+								label="Prénom"
+								rules={[
+									{
+										required: true,
+										message: "Veuillez entrer votre prénom",
+									},
+								]}
+							>
+								<Input />
+							</Form.Item>
+							<Form.Item
+								name="email"
+								label="Adresse email"
+								rules={[
+									{
+										required: true,
+										message:
+											"Veuillez entrer votre adresse email",
+									},
+									{
+										type: "email",
+										message:
+											"Veuillez entrer une adresse email valide",
+									},
+								]}
+							>
+								<Input />
+							</Form.Item>
+							<Form.Item
+								name="dateSejour"
+								label="Dates du séjour"
+								rules={[
+									{
+										required: true,
+										message:
+											"Veuillez sélectionner vos dates de séjour",
+									},
+								]}
+							>
+								<RangePicker
+									placeholder={[
+										"Date de début",
+										"Date de fin",
+									]}
+									// direction={isMobile ? "vertical" : "horizontal"}
+								/>
+							</Form.Item>
+							<Form.Item>
+								<Button
+									className="button"
+									type="primary"
+									htmlType="submit"
+								>
+									Envoyer
+								</Button>
+							</Form.Item>
+						</Form>
+					</>
+				) : (
+					<SendNotice
+						setDrawerVisible={setDrawerVisible}
+						setValidedAccount={setValidedAccount}
+					/>
+				)}
 				<div className="help">
 					<p>Besoin d'aide ?</p>
 					<a href="mailto:contact@le11amarseille.fr">

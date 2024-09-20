@@ -2,7 +2,7 @@ import React from "react"
 
 import CardNotice from "../../../components/card/card"
 
-import "./cardNoticeCarousel.scss"
+import "./scss/cardNoticeCarousel.scss"
 
 const CardNoticeCarousel = ({ data }) => {
 	return (
