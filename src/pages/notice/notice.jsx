@@ -53,10 +53,15 @@ const Notice = () => {
 		},
 	]
 
+	const ratings = cardsData.map((card) => card.valueRate)
+	const average =
+		ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length
+
 	return (
 		<div className="container-notice">
 			<p className="title-notice">
 				Vos <span className="highlight">avis</span>
+				<span className="average">{average.toFixed(1)}/5</span>
 			</p>
 			<CardNoticeCarousel data={cardsData} />
 		</div>

@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { gsap } from "gsap"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
-import { Select } from "antd"
+
+import { Select, Drawer, Form, Input, DatePicker, Button } from "antd"
 
 import { useScrollTarget } from "../../Context"
 
@@ -14,9 +15,14 @@ import Insta from "../../assets/icons/instagram.svg?react"
 import "./footer.scss"
 
 const { Option } = Select
+const { RangePicker } = DatePicker
 
 const Footer = () => {
 	const { i18n } = useTranslation()
+	const [form] = Form.useForm()
+
+	const [drawerVisible, setDrawerVisible] = useState(false)
+	const [size, setSize] = useState()
 
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -38,6 +44,21 @@ const Footer = () => {
 				gsap.to(window, { duration: 1, scrollTo: targetRef.current })
 			}
 		}
+	}
+
+	const showDrawer = () => {
+		setSize("large")
+		setDrawerVisible(true)
+	}
+
+	const closeDrawer = () => {
+		setDrawerVisible(false)
+		form.resetFields()
+	}
+
+	const submitForm = (values) => {
+		console.log("Formulaire soumis:", values)
+		// form.resetFields();
 	}
 
 	return (
@@ -65,7 +86,7 @@ const Footer = () => {
 								</div>
 							</a>
 						</li>
-						<li className="note">Laisser un avis</li>
+						<li onClick={showDrawer}>Laisser un avis</li>
 					</ul>
 					<CopyRight />
 					<Select
@@ -97,6 +118,103 @@ const Footer = () => {
 					</Select>
 				</div>
 			</div>
+			<Drawer
+				className="drawer"
+				// title="Le 11 à Marseille"
+				placement="right"
+				onClose={closeDrawer}
+				open={drawerVisible}
+				size={size}
+			>
+				<div className="title-content">
+					<p className="title">
+						Vous avez séjourné dans notre appartement ?
+					</p>
+					<p className="subtitle">
+						Pour nous laisser un avis, veuillez rempir le formulaire
+						ci-dessous.
+					</p>
+				</div>
+				<Form
+					className="form-drawer"
+					form={form}
+					layout="vertical"
+					onFinish={submitForm}
+				>
+					<Form.Item
+						name="nom"
+						label="Nom"
+						rules={[
+							{
+								required: true,
+								message: "Veuillez entrer votre nom",
+							},
+						]}
+					>
+						<Input />
+					</Form.Item>
+					<Form.Item
+						name="prenom"
+						label="Prénom"
+						rules={[
+							{
+								required: true,
+								message: "Veuillez entrer votre prénom",
+							},
+						]}
+					>
+						<Input />
+					</Form.Item>
+					<Form.Item
+						name="email"
+						label="Adresse email"
+						rules={[
+							{
+								required: true,
+								message: "Veuillez entrer votre adresse email",
+							},
+							{
+								type: "email",
+								message:
+									"Veuillez entrer une adresse email valide",
+							},
+						]}
+					>
+						<Input />
+					</Form.Item>
+					<Form.Item
+						name="dateSejour"
+						label="Dates du séjour"
+						rules={[
+							{
+								required: true,
+								message:
+									"Veuillez sélectionner vos dates de séjour",
+							},
+						]}
+					>
+						<RangePicker
+							placeholder={["Date de début", "Date de fin"]}
+							// direction={isMobile ? "vertical" : "horizontal"}
+						/>
+					</Form.Item>
+					<Form.Item>
+						<Button
+							className="button"
+							type="primary"
+							htmlType="submit"
+						>
+							Envoyer
+						</Button>
+					</Form.Item>
+				</Form>
+				<div className="help">
+					<p>Besoin d'aide ?</p>
+					<a href="mailto:contact@le11amarseille.fr">
+						contact@le11amarseille.fr
+					</a>
+				</div>
+			</Drawer>
 		</div>
 	)
 }
