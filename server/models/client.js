@@ -23,6 +23,11 @@ const ClientSchema = new mongoose.Schema(
 			type: Date,
 			required: true,
 		},
+		status: {
+			type: String,
+			enum: ["pending", "completed", "cancelled"],
+			default: "pending",
+		},
 	},
 	{
 		timestamps: true,

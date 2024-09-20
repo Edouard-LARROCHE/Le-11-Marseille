@@ -1,7 +1,6 @@
 const express = require("express")
 
 const clientModel = require("../models/client")
-
 const router = express.Router()
 
 router.get("/", (req, res) => {
@@ -53,4 +52,27 @@ router.get("/:id", (req, res) => {
 		})
 })
 
+router.put("/:id/status", (req, res) => {
+	const { id } = req.params
+	const { status } = req.body
+
+	if (!["pending", "completed", "cancelled"].includes(status)) {
+		return res.status(400).json({ message: "Statut invalide !" })
+	}
+
+	clientModel
+		.findByIdAndUpdate(id, { status }, { new: true })
+		.then((client) => {
+			if (!client) {
+				res.status(404).json({ message: "Client introuvable !" })
+			} else {
+				res.json(client)
+			}
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Erreur serveur !" })
+		})
+})
+
 module.exports = router
+
