@@ -74,5 +74,28 @@ router.put("/:id/status", (req, res) => {
 		})
 })
 
+router.post("/checkClient", (req, res) => {
+	const { firstName, lastName, email, dateSejour } = req.body
+
+	clientModel
+		.findOne({
+			firstName: firstName,
+			lastName: lastName,
+			email: email,
+			startDate: { $lte: dateSejour.endDate },
+			endDate: { $gte: dateSejour.startDate },
+		})
+		.then((client) => {
+			if (client) {
+				res.json({ exists: true })
+			} else {
+				res.json({ exists: false })
+			}
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Erreur serveur !" })
+		})
+})
+
 module.exports = router
 

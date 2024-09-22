@@ -5,8 +5,24 @@ export const getAllClients = async () => {
 	return response.json()
 }
 
+export const getClient = async (id) => {
+	const response = await fetch(`${url}/client/${id}`)
+	return response.json()
+}
+
 export const addClient = async (client) => {
 	const response = await fetch(`${url}/client`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(client),
+	})
+	return response.json()
+}
+
+export const checkClient = async (client) => {
+	const response = await fetch(`${url}/checkClient`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
