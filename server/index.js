@@ -20,7 +20,7 @@ mongoose
 
 app.use("/api/client", clientRoutes)
 app.get("/api", (req, res) => {
-	res.json({ message: "Bonjour depuis le backend!" })
+	res.json({ message: "Le 11 à Marseille" })
 })
 
 app.listen(PORT, () => {

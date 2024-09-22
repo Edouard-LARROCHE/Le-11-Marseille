@@ -130,6 +130,12 @@
 		.subtitle {
 			margin: 0.4rem 0 0 0.5rem;
 			opacity: 0.8;
+
+			.highlight {
+				color: $gold-yellow;
+				font-size: 0.7rem;
+				font-weight: bold;
+			}
 		}
 	}
 
