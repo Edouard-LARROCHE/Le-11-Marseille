@@ -140,6 +140,11 @@ const Footer = () => {
 							<p className="subtitle">
 								Pour nous laisser un avis, veuillez rempir le
 								formulaire ci-dessous.
+								<span className="highlight">
+									{" "}
+									Vous pourrez laisser un avis une fois votre
+									séjour terminé.
+								</span>
 							</p>
 						</div>
 						<Form

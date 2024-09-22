@@ -16,6 +16,8 @@ import {
 	message as antdMessage,
 } from "antd"
 
+import { addClient } from "../../server/server"
+
 import "./contact.scss"
 
 dayjs.locale("fr")
@@ -81,11 +83,20 @@ const Contact = () => {
 			message: values.message || "N/A",
 		}
 
+		const clientData = {
+			firstName: values.firstName,
+			lastName: values.lastName,
+			email: values.email,
+			startDate: values.dates[0].toISOString(),
+			endDate: values.dates[1].toISOString(),
+		}
+
 		emailjs.send(serviceId, templateId, templateParams, userId).then(
 			() => {
 				antdMessage.success("Email envoyé avec succès !")
 				form.resetFields()
 
+				addClient(clientData)
 				setLoading(false)
 			},
 			() => {
