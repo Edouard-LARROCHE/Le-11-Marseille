@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next"
 import { Select, Drawer, Form, Input, DatePicker, Button } from "antd"
 
 import { useScrollTarget } from "../../Context"
+import { checkClient } from "../../server/server"
 
 import CopyRight from "../../components/copyRight/copyRight"
 import SendNotice from "../notice/components/sendNotice"
@@ -25,6 +26,7 @@ const Footer = () => {
 	const [drawerVisible, setDrawerVisible] = useState(false)
 	const [size, setSize] = useState()
 	const [validedAccount, setValidedAccount] = useState(false)
+	const [loading, setLoading] = useState(false)
 
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -60,10 +62,29 @@ const Footer = () => {
 	}
 
 	const submitForm = (values) => {
-		console.log("Formulaire soumis:", values)
+		setLoading(true)
 
-		setValidedAccount(true)
-		form.resetFields()
+		const clientData = {
+			firstName: values.firstName,
+			lastName: values.lastName,
+			email: values.email,
+			startDate: values.dates[0].toISOString(),
+			endDate: values.dates[1].toISOString(),
+		}
+
+		checkClient(clientData)
+			.then((response) => {
+				if (response.exists) {
+					setValidedAccount(true)
+					form.resetFields()
+				} else {
+					setValidedAccount(false)
+					form.resetFields()
+				}
+			})
+			.finally(() => {
+				setLoading(false)
+			})
 	}
 
 	return (
@@ -154,7 +175,7 @@ const Footer = () => {
 							onFinish={submitForm}
 						>
 							<Form.Item
-								name="nom"
+								name="firstName"
 								label="Nom"
 								rules={[
 									{
@@ -166,7 +187,7 @@ const Footer = () => {
 								<Input />
 							</Form.Item>
 							<Form.Item
-								name="prenom"
+								name="lastName"
 								label="Prénom"
 								rules={[
 									{
@@ -196,7 +217,7 @@ const Footer = () => {
 								<Input />
 							</Form.Item>
 							<Form.Item
-								name="dateSejour"
+								name="dates"
 								label="Dates du séjour"
 								rules={[
 									{
