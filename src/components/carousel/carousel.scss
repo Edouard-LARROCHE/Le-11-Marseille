@@ -88,9 +88,19 @@
 	}
 }
 
+.ant-modal {
+	width: 60vw !important;
+	max-height: 100vh !important;
+}
+
 @media screen and (max-width: 500px) {
 	.container-carousel {
 		width: 95%;
+	}
+
+	.ant-modal {
+		width: auto !important;
+		max-height: none !important;
 	}
 }
 

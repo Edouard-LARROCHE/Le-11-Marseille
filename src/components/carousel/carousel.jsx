@@ -95,11 +95,12 @@ const Carousel = ({ images }) => {
 							onCancel={handleModalClose}
 							footer={null}
 							centered
+							className="custom-modal"
 						>
 							<img
 								src={selectedImage}
 								alt="biggerImage"
-								style={{ width: "100%" }}
+								style={{ width: "100%", maxHeight: "90vh" }}
 							/>
 						</Modal>
 					)}
