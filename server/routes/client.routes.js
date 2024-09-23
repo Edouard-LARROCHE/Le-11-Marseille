@@ -75,19 +75,19 @@ router.put("/:id/status", (req, res) => {
 })
 
 router.post("/checkClient", (req, res) => {
-	const { firstName, lastName, email, dateSejour } = req.body
+	const { firstName, lastName, email, startDate, endDate } = req.body
 
 	clientModel
 		.findOne({
 			firstName: firstName,
 			lastName: lastName,
 			email: email,
-			startDate: { $lte: dateSejour.endDate },
-			endDate: { $gte: dateSejour.startDate },
+			startDate: startDate,
+			endDate: endDate,
 		})
 		.then((client) => {
 			if (client) {
-				res.json({ exists: true })
+				res.json({ exists: true, client: client })
 			} else {
 				res.json({ exists: false })
 			}
