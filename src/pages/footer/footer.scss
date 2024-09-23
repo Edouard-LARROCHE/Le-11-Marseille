@@ -170,6 +170,19 @@
 			text-decoration: none;
 		}
 	}
+
+	.container-loader {
+		height: 70vh;
+
+		.loader {
+			width: 15rem;
+		}
+
+		.logo-loader {
+			width: 80%;
+			height: 80%;
+		}
+	}
 }
 
 @media screen and (min-width: 100px) and (max-width: 768px) {

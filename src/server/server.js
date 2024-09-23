@@ -22,7 +22,7 @@ export const addClient = async (client) => {
 }
 
 export const checkClient = async (client) => {
-	const response = await fetch(`${url}/checkClient`, {
+	const response = await fetch(`${url}/client/checkClient`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

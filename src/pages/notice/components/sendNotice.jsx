@@ -6,7 +6,7 @@ import "./scss/sendNotice.scss"
 
 const { TextArea } = Input
 
-const SendNotice = ({ setDrawerVisible, setValidedAccount }) => {
+const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 	const [form] = Form.useForm()
 	const [fileList, setFileList] = useState([])
 
@@ -43,7 +43,13 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount }) => {
 
 	return (
 		<div className="send-notice-container">
-			<h2>Laissez votre avis</h2>
+			<h2>
+				Laissez votre avis{" "}
+				<span className="userName">
+					{userData?.firstName} {userData?.lastName}
+				</span>
+			</h2>
+
 			<Form form={form} layout="vertical" onFinish={sendNotice}>
 				<Form.Item
 					name="rating"

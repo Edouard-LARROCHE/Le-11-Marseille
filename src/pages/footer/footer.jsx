@@ -10,6 +10,7 @@ import { checkClient } from "../../server/server"
 
 import CopyRight from "../../components/copyRight/copyRight"
 import SendNotice from "../notice/components/sendNotice"
+import Loader from "../../components/loader/loader"
 
 import LogoTampon from "../../assets/logo/logo-tampon.svg?react"
 import Insta from "../../assets/icons/instagram.svg?react"
@@ -26,6 +27,7 @@ const Footer = () => {
 	const [drawerVisible, setDrawerVisible] = useState(false)
 	const [size, setSize] = useState()
 	const [validedAccount, setValidedAccount] = useState(false)
+	const [userData, setUserData] = useState()
 	const [loading, setLoading] = useState(false)
 
 	const navigate = useNavigate()
@@ -68,13 +70,16 @@ const Footer = () => {
 			firstName: values.firstName,
 			lastName: values.lastName,
 			email: values.email,
-			startDate: values.dates[0].toISOString(),
-			endDate: values.dates[1].toISOString(),
+			startDate: new Date(values.dates[0] + 86400000).toISOString(),
+			endDate: new Date(values.dates[1] + 86400000).toISOString(),
 		}
 
 		checkClient(clientData)
 			.then((response) => {
 				if (response.exists) {
+					const clientInfo = response.client
+					setUserData(clientInfo)
+
 					setValidedAccount(true)
 					form.resetFields()
 				} else {
@@ -83,7 +88,9 @@ const Footer = () => {
 				}
 			})
 			.finally(() => {
-				setLoading(false)
+				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
+					setLoading(false)
+				})
 			})
 	}
 
@@ -246,10 +253,13 @@ const Footer = () => {
 							</Form.Item>
 						</Form>
 					</>
+				) : loading ? (
+					<Loader />
 				) : (
 					<SendNotice
 						setDrawerVisible={setDrawerVisible}
 						setValidedAccount={setValidedAccount}
+						userData={userData}
 					/>
 				)}
 				<div className="help">
