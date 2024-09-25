@@ -32,3 +32,14 @@ export const checkClient = async (client) => {
 	return response.json()
 }
 
+export const addNotice = async (notice) => {
+	const response = await fetch(`${url}/client/notice`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(notice),
+	})
+	return response.json()
+}
+
