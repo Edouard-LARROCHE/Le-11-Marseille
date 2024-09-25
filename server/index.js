@@ -1,9 +1,11 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
+
 require("dotenv").config()
 
 const clientRoutes = require("./routes/client.routes")
+const noticesRoutes = require("./routes/notices.routes")
 
 const app = express()
 const PORT = process.env.PORT || 5001
@@ -19,6 +21,8 @@ mongoose
 	.catch((err) => console.log(err))
 
 app.use("/api/client", clientRoutes)
+app.use("/api/client/notice", noticesRoutes)
+
 app.get("/api", (req, res) => {
 	res.json({ message: "Le 11 à Marseille" })
 })

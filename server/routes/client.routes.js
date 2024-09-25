@@ -1,4 +1,5 @@
 const express = require("express")
+const cron = require("node-cron")
 
 const clientModel = require("../models/client")
 const router = express.Router()
@@ -94,6 +95,25 @@ router.post("/checkClient", (req, res) => {
 		})
 		.catch((err) => {
 			res.status(500).json({ message: "Erreur serveur !" })
+		})
+})
+
+cron.schedule("0 0 * * *", () => {
+	const currentDate = new Date()
+
+	clientModel
+		.updateMany(
+			{
+				endDate: { $lt: currentDate },
+				status: "pending",
+			},
+			{ $set: { status: "completed" } },
+		)
+		.then((result) => {
+			console.log(`${result.nModified} clients mis à jour`)
+		})
+		.catch((err) => {
+			console.error("Erreur lors de la mise à jour des clients :", err)
 		})
 })
 

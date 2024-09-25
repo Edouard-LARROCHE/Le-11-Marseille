@@ -3,7 +3,15 @@ import { gsap } from "gsap"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
-import { Select, Drawer, Form, Input, DatePicker, Button } from "antd"
+import {
+	Select,
+	Drawer,
+	Form,
+	Input,
+	DatePicker,
+	Button,
+	message as antdMessage,
+} from "antd"
 
 import { useScrollTarget } from "../../Context"
 import { checkClient } from "../../server/server"
@@ -80,11 +88,21 @@ const Footer = () => {
 					const clientInfo = response.client
 					setUserData(clientInfo)
 
-					setValidedAccount(true)
-					form.resetFields()
+					const statusClient = response.client.status
+					if (statusClient !== "completed") {
+						setValidedAccount(false)
+						antdMessage.error(
+							`Bonjour ${clientInfo.firstName} ${clientInfo.lastName}, votre séjour n'est pas terminé. Veuillez réessayer plus tard.`,
+						)
+					} else {
+						setValidedAccount(true)
+						form.resetFields()
+					}
 				} else {
+					antdMessage.error(
+						"Vos informations ne correspondent pas. Veuillez réessayer.",
+					)
 					setValidedAccount(false)
-					form.resetFields()
 				}
 			})
 			.finally(() => {

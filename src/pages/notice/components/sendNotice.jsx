@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Form, Rate, Input, Upload, Button, message } from "antd"
 import { UploadOutlined } from "@ant-design/icons"
 
+import { addNotice } from "../../../server/server"
+
 import "./scss/sendNotice.scss"
 
 const { TextArea } = Input
@@ -9,17 +11,37 @@ const { TextArea } = Input
 const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 	const [form] = Form.useForm()
 	const [fileList, setFileList] = useState([])
+	const [loading, setLoading] = useState(false)
 
 	const sendNotice = (values) => {
-		console.log("Formulaire soumis:", values)
+		setLoading(true)
 
-		message.success(
-			"Votre avis à été envoyé avec succès, il sera visible très bientôt !",
-		)
-		form.resetFields()
-		setDrawerVisible(false)
-		setValidedAccount(false)
-		setFileList([])
+		const noticesData = {
+			rating: values.rating,
+			comment: values.comment,
+			picture: fileList[0]?.url,
+		}
+
+		addNotice(noticesData)
+			.then((response) => {
+				message.success(
+					"Votre avis à été envoyé avec succès, il sera visible très bientôt !",
+				)
+				form.resetFields()
+				setDrawerVisible(false)
+				setValidedAccount(false)
+				setFileList([])
+			})
+			.catch((err) => {
+				message.error(
+					"Erreur lors de l'envoi de votre avis. Veuillez réessayer.",
+				)
+			})
+			.finally(() => {
+				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
+					setLoading(false)
+				})
+			})
 	}
 
 	const beforeUpload = (file) => {
