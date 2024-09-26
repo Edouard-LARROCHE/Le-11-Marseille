@@ -1,6 +1,8 @@
 const express = require("express")
 const cors = require("cors")
+
 const mongoose = require("mongoose")
+const path = require("path")
 
 require("dotenv").config()
 
@@ -14,6 +16,7 @@ const uri = `mongodb+srv://${process.env.VITE_USER_MGDB}:${password}@${process.e
 
 app.use(cors())
 app.use(express.json())
+app.use("/uploads", express.static(path.resolve(__dirname, "uploads")))
 
 mongoose
 	.connect(uri)
@@ -21,7 +24,7 @@ mongoose
 	.catch((err) => console.log(err))
 
 app.use("/api/client", clientRoutes)
-app.use("/api/client/notice", noticesRoutes)
+app.use("/api/notice", noticesRoutes)
 
 app.get("/api", (req, res) => {
 	res.json({ message: "Le 11 à Marseille" })
