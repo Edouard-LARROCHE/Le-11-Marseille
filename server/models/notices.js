@@ -12,6 +12,26 @@ const NoticeSchema = new mongoose.Schema({
 	picture: {
 		type: String,
 	},
+	userId: {
+		type: String,
+		required: true,
+	},
+	startDate: {
+		type: String,
+		required: true,
+	},
+	endDate: {
+		type: String,
+		required: true,
+	},
+	firstName: {
+		type: String,
+		required: true,
+	},
+	lastName: {
+		type: String,
+		required: true,
+	},
 	createdAt: {
 		type: Date,
 		default: Date.now,

@@ -16,23 +16,29 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 	const sendNotice = (values) => {
 		setLoading(true)
 
-		const noticesData = {
-			rating: values.rating,
-			comment: values.comment,
-			picture: fileList[0]?.url,
-		}
+		const formData = new FormData()
+		formData.append("rating", values.rating)
+		formData.append("comment", values.comment)
 
-		addNotice(noticesData)
-			.then((response) => {
+		if (fileList.length > 0 && fileList[0].originFileObj) {
+			formData.append("picture", fileList[0].originFileObj)
+		}
+		formData.append("userId", userData?._id)
+		formData.append("startDate", userData?.startDate)
+		formData.append("endDate", userData?.endDate)
+		formData.append("firstName", userData?.firstName)
+		formData.append("lastName", userData?.lastName)
+
+		addNotice(formData)
+			.then(() => {
 				message.success(
 					"Votre avis à été envoyé avec succès, il sera visible très bientôt !",
 				)
 				form.resetFields()
-				setDrawerVisible(false)
 				setValidedAccount(false)
 				setFileList([])
 			})
-			.catch((err) => {
+			.catch(() => {
 				message.error(
 					"Erreur lors de l'envoi de votre avis. Veuillez réessayer.",
 				)
@@ -40,6 +46,7 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 			.finally(() => {
 				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
 					setLoading(false)
+					setDrawerVisible(false)
 				})
 			})
 	}

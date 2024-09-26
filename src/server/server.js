@@ -32,14 +32,16 @@ export const checkClient = async (client) => {
 	return response.json()
 }
 
-export const addNotice = async (notice) => {
-	const response = await fetch(`${url}/client/notice`, {
+export const addNotice = async (formData) => {
+	const response = await fetch(`${url}/notice`, {
 		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(notice),
+		body: formData,
 	})
+	return response.json()
+}
+
+export const getNoticesByUserId = async (userId) => {
+	const response = await fetch(`${url}/notice/user/${userId}`)
 	return response.json()
 }
 
