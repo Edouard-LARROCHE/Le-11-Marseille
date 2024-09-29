@@ -25,7 +25,7 @@ const Notice = () => {
 		}
 	}, [clientsIds])
 
-	const ratings = cardsData.length && cardsData.map((card) => card.valueRate)
+	const ratings = cardsData.length && cardsData.map((card) => card.rating)
 	const average =
 		cardsData.length &&
 		ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length
@@ -38,7 +38,7 @@ const Notice = () => {
 					{average && average.toFixed(1)}/5
 				</span>
 			</p>
-			{/* <CardNoticeCarousel data={cardsData} /> */}
+			<CardNoticeCarousel data={cardsData} />
 		</div>
 	) : null
 }

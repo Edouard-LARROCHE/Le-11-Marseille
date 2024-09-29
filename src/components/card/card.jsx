@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { Avatar, Card, Typography, Button, Rate } from "antd"
+import dayjs from "dayjs"
+
 import "./card.scss"
 
 const CardNotice = ({ item }) => {
@@ -10,6 +12,9 @@ const CardNotice = ({ item }) => {
 	const toggleExpand = (index) => {
 		setExpanded((prev) => ({ ...prev, [index]: !prev[index] }))
 	}
+
+	const formattedStartDate = dayjs(item.startDate).format("DD/MM/YYYY")
+	const formattedEndDate = dayjs(item.endDate).format("DD/MM/YYYY")
 
 	return (
 		<Card
@@ -26,12 +31,21 @@ const CardNotice = ({ item }) => {
 						<Avatar
 							src={item.avatar}
 							size={35}
-							alt={item.author.split(" ")[0].slice(0, 1)}
+							alt={item.firstName.split(" ")[0].slice(0, 1)}
 						/>
 					) : (
-						<p className="letter">
-							{item.author.split(" ")[0].slice(0, 1)}
-						</p>
+						<div className="container-letters">
+							<p className="letter">
+								{item.firstName
+									.split(" ")[0]
+									.slice(0, 1)
+									.toUpperCase()}
+								{item.lastName
+									.split(" ")[0]
+									.slice(0, 1)
+									.toUpperCase()}
+							</p>
+						</div>
 					)
 				}
 				title={
@@ -42,9 +56,11 @@ const CardNotice = ({ item }) => {
 							alignItems: "center",
 						}}
 					>
-						<span>{item.author}</span>
+						<span>
+							{item.firstName} {item.lastName}
+						</span>
 						<Rate
-							defaultValue={item.valueRate}
+							defaultValue={item.rating}
 							disabled
 							style={{ color: "rgb(146, 108, 0)" }}
 						/>
@@ -54,7 +70,7 @@ const CardNotice = ({ item }) => {
 					<>
 						<Paragraph
 							ellipsis={
-								expanded[item.id]
+								expanded[item._id]
 									? false
 									: {
 											rows: 4,
@@ -63,23 +79,23 @@ const CardNotice = ({ item }) => {
 										}
 							}
 						>
-							{item.desc}
+							{item.comment}
 						</Paragraph>
 						<p>
 							<span className="date">
-								Du {item.dateStart} au {item.dateEnd}
+								Du {formattedStartDate} au {formattedEndDate}
 							</span>
 						</p>
 					</>
 				}
 			/>
-			{item.desc.length > 180 && (
+			{item.comment.length > 180 && (
 				<Button
 					className="button-expand"
 					type="link"
-					onClick={() => toggleExpand(item.id)}
+					onClick={() => toggleExpand(item._id)}
 				>
-					{expanded[item.id] ? "Voir moins" : "Voir plus"}
+					{expanded[item._id] ? "Voir moins" : "Voir plus"}
 				</Button>
 			)}
 		</Card>

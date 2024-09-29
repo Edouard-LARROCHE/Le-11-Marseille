@@ -1,9 +1,19 @@
 @use "../../scss/config/primitives" as *;
 
-.letter {
-	font-size: 1.5rem;
-	color: $gold-yellow;
-	font-weight: bold;
+.container-letters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 0.5rem;
+	background-color: $grey-steam;
+	border-radius: 0.5rem;
+	margin-top: -0.3rem;
+
+	.letter {
+		font-size: 1.5rem;
+		color: $gold-yellow;
+		font-weight: bold;
+	}
 }
 
 .date {

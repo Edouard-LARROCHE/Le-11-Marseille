@@ -18,21 +18,35 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
 	const { firstName, lastName, email, startDate, endDate } = req.body
 
-	const client = new clientModel({
-		firstName,
-		lastName,
-		email,
-		startDate,
-		endDate,
-	})
+	clientModel
+		.findOne({ email })
+		.then((existingClient) => {
+			if (existingClient) {
+				res.status(400).json({
+					success: false,
+					message: "Cet email est déjà utilisé.",
+				})
 
-	client
-		.save()
+				return
+			}
+
+			const client = new clientModel({
+				firstName,
+				lastName,
+				email,
+				startDate,
+				endDate,
+			})
+
+			return client.save()
+		})
 		.then((client) => {
-			res.json(client)
+			if (client) {
+				return res.json({ success: true, client })
+			}
 		})
 		.catch((err) => {
-			res.status(500).json({ message: "Erreur serveur !" })
+			return res.status(500).json({ message: "Erreur serveur !" })
 		})
 })
 

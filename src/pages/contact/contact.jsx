@@ -93,26 +93,32 @@ const Contact = () => {
 
 		emailjs.send(serviceId, templateId, templateParams, userId).then(
 			() => {
-				antdMessage.success("Email envoyé avec succès.")
-				form.resetFields()
-
-				addClient(clientData)
-				confirmationEmail(clientData)
-					.then((response) => {
-						if (response.success) {
-							antdMessage.success(
-								"Un email de confirmation a été envoyé à votre adresse email.",
-							)
-						}
-					})
-					.catch(() => {
-						antdMessage.error(
-							"Erreur lors de l'envoi de l'email de confirmation.",
-						)
-					})
-					.finally(() => {
+				addClient(clientData).then((response) => {
+					if (!response.success) {
+						antdMessage.error(response.message)
 						setLoading(false)
-					})
+					} else {
+						antdMessage.success("Email envoyé avec succès.")
+						form.resetFields()
+
+						confirmationEmail(clientData)
+							.then((response) => {
+								if (response.success) {
+									antdMessage.success(
+										"Un email de confirmation a été envoyé à votre adresse email.",
+									)
+								}
+							})
+							.catch(() => {
+								antdMessage.error(
+									"Erreur lors de l'envoi de l'email de confirmation.",
+								)
+							})
+							.finally(() => {
+								setLoading(false)
+							})
+					}
+				})
 			},
 			() => {
 				antdMessage.error(
