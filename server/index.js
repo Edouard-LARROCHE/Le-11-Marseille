@@ -3,11 +3,13 @@ const cors = require("cors")
 
 const mongoose = require("mongoose")
 const path = require("path")
+const bodyParser = require("body-parser")
 
 require("dotenv").config()
 
 const clientRoutes = require("./routes/client.routes")
 const noticesRoutes = require("./routes/notices.routes")
+const nodemailerRoutes = require("./routes/nodemailer.routes")
 
 const app = express()
 const PORT = process.env.PORT || 5001
@@ -16,6 +18,7 @@ const uri = `mongodb+srv://${process.env.VITE_USER_MGDB}:${password}@${process.e
 
 app.use(cors())
 app.use(express.json())
+app.use(bodyParser.json())
 app.use("/uploads", express.static(path.resolve(__dirname, "uploads")))
 
 mongoose
@@ -25,6 +28,7 @@ mongoose
 
 app.use("/api/client", clientRoutes)
 app.use("/api/notice", noticesRoutes)
+app.use("/api/send-confirmation-email", nodemailerRoutes)
 
 app.get("/api", (req, res) => {
 	res.json({ message: "Le 11 à Marseille" })

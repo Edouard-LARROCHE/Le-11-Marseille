@@ -45,3 +45,14 @@ export const getNoticesByUserId = async (userId) => {
 	return response.json()
 }
 
+export const confirmationEmail = async (formData) => {
+	const response = await fetch(`${url}/send-confirmation-email`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(formData),
+	})
+	return response.json()
+}
+

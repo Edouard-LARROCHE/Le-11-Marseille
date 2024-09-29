@@ -16,7 +16,7 @@ import {
 	message as antdMessage,
 } from "antd"
 
-import { addClient } from "../../server/server"
+import { addClient, confirmationEmail } from "../../server/server"
 
 import "./contact.scss"
 
@@ -93,11 +93,26 @@ const Contact = () => {
 
 		emailjs.send(serviceId, templateId, templateParams, userId).then(
 			() => {
-				antdMessage.success("Email envoyé avec succès !")
+				antdMessage.success("Email envoyé avec succès.")
 				form.resetFields()
 
 				addClient(clientData)
-				setLoading(false)
+				confirmationEmail(clientData)
+					.then((response) => {
+						if (response.success) {
+							antdMessage.success(
+								"Un email de confirmation a été envoyé à votre adresse email.",
+							)
+						}
+					})
+					.catch(() => {
+						antdMessage.error(
+							"Erreur lors de l'envoi de l'email de confirmation.",
+						)
+					})
+					.finally(() => {
+						setLoading(false)
+					})
 			},
 			() => {
 				antdMessage.error(

@@ -38,7 +38,7 @@ const Notice = () => {
 					{average && average.toFixed(1)}/5
 				</span>
 			</p>
-			<CardNoticeCarousel data={cardsData} />
+			{/* <CardNoticeCarousel data={cardsData} /> */}
 		</div>
 	) : null
 }
