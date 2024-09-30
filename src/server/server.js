@@ -1,5 +1,4 @@
-const url =
-	import.meta.env.VITE_API_URL_LOCAL || "https://www.le11amarseille.fr/api"
+const url = import.meta.env.VITE_API_URL_LOCAL || import.meta.env.VITE_API_URL
 
 export const getAllClients = async () => {
 	const response = await fetch(`${url}/client`)
