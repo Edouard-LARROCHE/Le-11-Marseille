@@ -13,3 +13,12 @@ export const shuffleArray = (array) => {
 
 export const generateId = () => Math.floor(Math.random() * 1000)
 
+export const capitalizeFirstLetter = (string) => {
+	if (!string) return ""
+
+	return string
+		.split("-")
+		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+		.join("-")
+}
+

@@ -46,6 +46,19 @@ router.post("/", upload.single("picture"), (req, res) => {
 		})
 })
 
+router.get("/", (req, res) => {
+	noticesModel
+		.find()
+		.then((notices) => {
+			res.json(notices)
+		})
+		.catch((err) => {
+			res.status(500).json({
+				message: "Erreur serveur lors de la récupération des avis.",
+			})
+		})
+})
+
 router.delete("/:id", (req, res) => {
 	const { id } = req.params
 

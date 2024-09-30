@@ -15,6 +15,7 @@ import {
 
 import { useScrollTarget } from "../../Context"
 import { checkClient, getNoticesByUserId } from "../../server/server"
+import { capitalizeFirstLetter } from "../../utils/utils"
 
 import CopyRight from "../../components/copyRight/copyRight"
 import SendNotice from "../notice/components/sendNotice"
@@ -71,6 +72,7 @@ const Footer = () => {
 	const closeDrawer = () => {
 		setDrawerVisible(false)
 		setValidedAccount(false)
+		setToogleDeleteNotice(false)
 		form.resetFields()
 	}
 
@@ -96,7 +98,7 @@ const Footer = () => {
 
 					if (response.alreadyPostedReview) {
 						antdMessage.error(
-							`Bonjour ${clientInfo.firstName} ${clientInfo.lastName}, vous ne pouvez pas poster plusieurs avis pour le même séjour.`,
+							`Bonjour ${clientInfo.firstName.toUpperCase()} ${capitalizeFirstLetter(clientInfo.lastName)}, vous ne pouvez pas poster plusieurs avis pour le même séjour.`,
 						)
 						setValidedAccount(false)
 
@@ -108,7 +110,7 @@ const Footer = () => {
 					if (statusClient !== "completed") {
 						setValidedAccount(false)
 						antdMessage.error(
-							`Bonjour ${clientInfo.firstName} ${clientInfo.lastName}, votre séjour n'est pas terminé. Veuillez réessayer plus tard.`,
+							`Bonjour ${clientInfo.firstName.toUpperCase()} ${capitalizeFirstLetter(clientInfo.lastName)}, votre séjour n'est pas terminé. Veuillez réessayer plus tard.`,
 						)
 					} else {
 						setValidedAccount(true)

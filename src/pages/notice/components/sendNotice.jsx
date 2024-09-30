@@ -3,6 +3,7 @@ import { Form, Rate, Input, Upload, Button, message } from "antd"
 import { UploadOutlined } from "@ant-design/icons"
 
 import { addNotice, updateClientHasPostedReview } from "../../../server/server"
+import { capitalizeFirstLetter } from "../../../utils/utils"
 import Loader from "../../../components/loader/loader"
 
 import "./scss/sendNotice.scss"
@@ -78,7 +79,8 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 			<h2>
 				Laissez votre avis{" "}
 				<span className="userName">
-					{userData?.firstName} {userData?.lastName}
+					{userData?.firstName.toUpperCase()}{" "}
+					{capitalizeFirstLetter(userData?.lastName)}
 				</span>
 			</h2>
 

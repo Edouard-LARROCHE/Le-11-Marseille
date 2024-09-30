@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
 		from: emailOVH,
 		to: email,
 		subject: "Confirmation d'envoi sur le site Le 11 à Marseille",
-		text: `Bonjour ${firstName} ${lastName},\n\nVotre demande de réservation du ${formattedStartDate} au ${formattedEndDate} a bien été reçue. Nous vous contacterons sous peu.\n\nCordialement, L'équipe du 11`,
+		text: `Bonjour ${firstName.toLowerCase()} ${lastName.toLowerCase()},\n\nVotre demande de réservation du ${formattedStartDate} au ${formattedEndDate} a bien été reçue. Nous vous contacterons sous peu.\n\nCordialement, L'équipe du 11`,
 	}
 
 	transporter.sendMail(mailOptions, (error, info) => {

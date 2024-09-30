@@ -40,6 +40,11 @@ export const addNotice = async (formData) => {
 	return response.json()
 }
 
+export const getAllNotices = async () => {
+	const response = await fetch(`${url}/notice`)
+	return response.json()
+}
+
 export const getNoticesByUserId = async (userId) => {
 	const response = await fetch(`${url}/notice/user/${userId}`)
 	return response.json()

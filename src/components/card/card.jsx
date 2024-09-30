@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Avatar, Card, Typography, Button, Rate } from "antd"
 import dayjs from "dayjs"
 
+import { capitalizeFirstLetter } from "../../utils/utils"
+
 import "./card.scss"
 
 const CardNotice = ({ item }) => {
@@ -57,7 +59,8 @@ const CardNotice = ({ item }) => {
 						}}
 					>
 						<span>
-							{item.firstName} {item.lastName}
+							{item.firstName.toUpperCase()}{" "}
+							{capitalizeFirstLetter(item.lastName)}
 						</span>
 						<Rate
 							defaultValue={item.rating}

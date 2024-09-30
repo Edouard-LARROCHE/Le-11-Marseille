@@ -1,29 +1,19 @@
 import React, { useEffect, useState } from "react"
 
-import { getAllClients, getNoticesByUserId } from "../../server/server"
+import { getAllNotices } from "../../server/server"
 
 import CardNoticeCarousel from "./components/cardNoticeCarousel"
 
 import "./notice.scss"
 
 const Notice = () => {
-	const [clientsIds, setClientsIds] = useState([])
 	const [cardsData, setCardsData] = useState([])
 
 	useEffect(() => {
-		getAllClients().then((res) => {
-			const _ids = res.map((client) => client._id)
-			setClientsIds(_ids)
+		getAllNotices().then((res) => {
+			setCardsData(res)
 		})
 	}, [])
-
-	useEffect(() => {
-		if (clientsIds.length) {
-			getNoticesByUserId(clientsIds[0]).then((res) => {
-				setCardsData(res)
-			})
-		}
-	}, [clientsIds])
 
 	const ratings = cardsData.length && cardsData.map((card) => card.rating)
 	const average =

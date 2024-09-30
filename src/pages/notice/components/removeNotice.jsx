@@ -5,6 +5,7 @@ import {
 	removeNotice,
 	updateClientHasPostedReview,
 } from "../../../server/server"
+import { capitalizeFirstLetter } from "../../../utils/utils"
 
 import Card from "../../../components/card/card"
 import Loader from "../../../components/loader/loader"
@@ -46,7 +47,8 @@ const RemoveNotice = ({ setDrawerVisible, setValidedAccount, noticeData }) => {
 			<h2>
 				Suppression de votre avis{" "}
 				<span className="userName">
-					{noticeData?.firstName} {noticeData?.lastName}
+					{noticeData?.firstName.toUpperCase()}{" "}
+					{capitalizeFirstLetter(noticeData?.lastName)}
 				</span>
 			</h2>
 
