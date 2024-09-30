@@ -16,6 +16,8 @@ import {
 	message as antdMessage,
 } from "antd"
 
+import { addClient, confirmationEmail } from "../../server/server"
+
 import "./contact.scss"
 
 dayjs.locale("fr")
@@ -81,12 +83,42 @@ const Contact = () => {
 			message: values.message || "N/A",
 		}
 
+		const clientData = {
+			firstName: values.firstName,
+			lastName: values.lastName,
+			email: values.email,
+			startDate: values.dates[0].toISOString(),
+			endDate: values.dates[1].toISOString(),
+		}
+
 		emailjs.send(serviceId, templateId, templateParams, userId).then(
 			() => {
-				antdMessage.success("Email envoyé avec succès !")
-				form.resetFields()
+				addClient(clientData).then((response) => {
+					if (!response.success) {
+						antdMessage.error(response.message)
+						setLoading(false)
+					} else {
+						antdMessage.success("Email envoyé avec succès.")
+						form.resetFields()
 
-				setLoading(false)
+						confirmationEmail(clientData)
+							.then((response) => {
+								if (response.success) {
+									antdMessage.success(
+										"Un email de confirmation a été envoyé à votre adresse email.",
+									)
+								}
+							})
+							.catch(() => {
+								antdMessage.error(
+									"Erreur lors de l'envoi de l'email de confirmation.",
+								)
+							})
+							.finally(() => {
+								setLoading(false)
+							})
+					}
+				})
 			},
 			() => {
 				antdMessage.error(

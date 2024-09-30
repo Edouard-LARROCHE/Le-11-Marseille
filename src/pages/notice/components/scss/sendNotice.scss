@@ -1,0 +1,30 @@
+@use "../../../../scss/config/primitives" as *;
+@use "../../../../scss/config/functions" as *;
+
+.send-notice-container {
+	max-width: convertToREM(600);
+	margin: 0 auto;
+	padding: convertToREM(20);
+
+	h2 {
+		margin-bottom: convertToREM(20);
+
+		.userName {
+			font-size: 1rem;
+			color: $gold-yellow;
+		}
+	}
+
+	.ant-form-item {
+		margin-bottom: convertToREM(24);
+	}
+
+	.ant-upload-list-item-info {
+		padding-right: convertToREM(16);
+	}
+
+	.container-loader {
+		height: 60vh !important;
+	}
+}
+

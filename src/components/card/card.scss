@@ -1,0 +1,50 @@
+@use "../../scss/config/primitives" as *;
+
+.container-letters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 0.5rem;
+	background-color: $grey-steam;
+	border-radius: 0.5rem;
+	margin-top: -0.3rem;
+
+	.letter {
+		font-size: 1.5rem;
+		color: $gold-yellow;
+		font-weight: bold;
+	}
+}
+
+.date {
+	color: $vanta-black;
+	font-size: 0.7rem;
+	opacity: 0.8;
+	position: absolute;
+	bottom: 0.2rem;
+	right: 0.4rem;
+}
+
+.button-expand {
+	position: absolute;
+	bottom: 0.1rem;
+	left: 0.4rem;
+	color: $vanta-black;
+	opacity: 0.7;
+	font-size: 0.8rem;
+
+	&:hover {
+		opacity: 1;
+		color: $gold-yellow !important;
+	}
+}
+
+.card-shadow {
+	flex: 0 0 auto;
+	transition: box-shadow 0.3s;
+}
+
+.card-shadow:hover {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+

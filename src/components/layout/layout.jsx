@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 import gsap from "gsap"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
@@ -10,6 +11,7 @@ import picturesData from "../../data/picturesData"
 import CardEffect from "../cardEffect/cardEffect"
 import Description from "../../pages/description/description"
 import Contact from "../../pages/contact/contact"
+import Notice from "../../pages/notice/notice"
 import Footer from "../../pages/footer/footer"
 
 import IMGSejour from "/images/livingRoom/PAGE_1.jpg"
@@ -24,6 +26,7 @@ import "./layout.scss"
 gsap.registerPlugin(ScrollToPlugin)
 
 const Layout = () => {
+	const { t } = useTranslation()
 	const navigate = useNavigate()
 	// const location = useLocation()
 
@@ -155,7 +158,7 @@ const Layout = () => {
 						<ul>
 							<li translate="no">
 								<a href="#" onClick={scrollToDescription}>
-									A propos
+									{t("layout.nav.about")}
 								</a>
 								<div className="line" />
 							</li>
@@ -168,13 +171,13 @@ const Layout = () => {
 									isMobile ? handleGalleryClick : undefined
 								}
 							>
-								<Link to="/">Galeries photos</Link>
+								<Link to="/">{t("layout.nav.gallery")}</Link>
 								<div className="line" />
 								<Chevron className="chevron" />
 							</li>
 							<li>
 								<a href="#" onClick={scrollToContact}>
-									Contact
+									{t("layout.nav.contact")}
 								</a>
 								<div className="line" />
 							</li>
@@ -218,8 +221,7 @@ const Layout = () => {
 						</div>
 						<div className="content-top-right-description">
 							<p>
-								Au coeur de la cité Phocéenne, votre appartement
-								en{" "}
+								{t("layout.contentTopDesc")}{" "}
 								<span className="highLight">
 									BAIL MOBILITÉ.
 								</span>
@@ -302,6 +304,7 @@ const Layout = () => {
 				<div ref={targetRef}>
 					<Contact />
 				</div>
+				<Notice />
 				<Footer />
 			</div>
 		</div>
