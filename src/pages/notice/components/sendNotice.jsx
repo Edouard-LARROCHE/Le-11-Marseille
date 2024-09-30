@@ -3,6 +3,7 @@ import { Form, Rate, Input, Upload, Button, message } from "antd"
 import { UploadOutlined } from "@ant-design/icons"
 
 import { addNotice, updateClientHasPostedReview } from "../../../server/server"
+import Loader from "../../../components/loader/loader"
 
 import "./scss/sendNotice.scss"
 
@@ -31,9 +32,6 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 
 		addNotice(formData)
 			.then(() => {
-				message.success(
-					"Votre avis à été envoyé avec succès, il sera visible très bientôt !",
-				)
 				form.resetFields()
 				setValidedAccount(false)
 				setFileList([])
@@ -49,6 +47,10 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
 					setLoading(false)
 					setDrawerVisible(false)
+
+					message.success(
+						"Votre avis à été envoyé avec succès, il sera visible très bientôt !",
+					)
 				})
 			})
 	}
@@ -82,52 +84,63 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 			</h2>
 
 			<Form form={form} layout="vertical" onFinish={sendNotice}>
-				<Form.Item
-					name="rating"
-					label="Note"
-					initialValue={1}
-					rules={[
-						{ required: true, message: "Veuillez donner une note" },
-					]}
-				>
-					<Rate style={{ color: "rgb(146, 108, 0)" }} />
-				</Form.Item>
+				{loading ? (
+					<Loader />
+				) : (
+					<>
+						<Form.Item
+							name="rating"
+							label="Note"
+							initialValue={1}
+							rules={[
+								{
+									required: true,
+									message: "Veuillez donner une note",
+								},
+							]}
+						>
+							<Rate style={{ color: "rgb(146, 108, 0)" }} />
+						</Form.Item>
 
-				<Form.Item
-					name="comment"
-					label="Commentaire"
-					rules={[
-						{
-							required: true,
-							message: "Veuillez laisser un commentaire",
-						},
-					]}
-				>
-					<TextArea rows={4} style={{ resize: "none" }} />
-				</Form.Item>
+						<Form.Item
+							name="comment"
+							label="Commentaire"
+							rules={[
+								{
+									required: true,
+									message: "Veuillez laisser un commentaire",
+								},
+							]}
+						>
+							<TextArea rows={4} style={{ resize: "none" }} />
+						</Form.Item>
 
-				<Form.Item name="photo" label="Photo (optionnelle)">
-					<Upload
-						beforeUpload={beforeUpload}
-						onChange={handleChange}
-						fileList={fileList}
-						listType="picture-card"
-						maxCount={1}
-					>
-						{fileList.length >= 1 ? null : (
-							<div>
-								<UploadOutlined />
-								<div style={{ marginTop: 8 }}>Uploader</div>
-							</div>
-						)}
-					</Upload>
-				</Form.Item>
+						<Form.Item name="photo" label="Photo (optionnelle)">
+							<Upload
+								beforeUpload={beforeUpload}
+								onChange={handleChange}
+								fileList={fileList}
+								listType="picture-card"
+								maxCount={1}
+							>
+								{fileList.length >= 1 ? null : (
+									<div>
+										<UploadOutlined />
+										<div style={{ marginTop: 8 }}>
+											Uploader
+										</div>
+									</div>
+								)}
+							</Upload>
+						</Form.Item>
 
-				<Form.Item>
-					<Button type="primary" htmlType="submit">
-						Envoyer l'avis
-					</Button>
-				</Form.Item>
+						<Form.Item>
+							<Button type="primary" htmlType="submit">
+								Envoyer l'avis
+							</Button>
+						</Form.Item>
+					</>
+				)}
 			</Form>
 		</div>
 	)

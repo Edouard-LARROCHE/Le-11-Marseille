@@ -295,6 +295,9 @@ const Footer = () => {
 						contact@le11amarseille.fr
 					</a>
 				</div>
+				<div className="delete-notice">
+					<p>Supprimer mon avis</p>
+				</div>
 			</Drawer>
 		</div>
 	)
