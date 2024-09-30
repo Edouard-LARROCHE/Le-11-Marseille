@@ -194,10 +194,15 @@ const Footer = () => {
 								</div>
 							</a>
 						</li>
-						<li onClick={showDrawer}>Laisser un avis</li>
+						<li
+							className="note"
+							// onClick={showDrawer}
+						>
+							Laisser un avis
+						</li>
 					</ul>
 					<CopyRight />
-					<Select
+					{/* <Select
 						defaultValue={i18n.language}
 						style={{
 							width: 120,
@@ -223,7 +228,7 @@ const Footer = () => {
 							</span>{" "}
 							English
 						</Option>
-					</Select>
+					</Select> */}
 				</div>
 			</div>
 			<Drawer

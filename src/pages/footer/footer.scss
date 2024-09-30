@@ -57,10 +57,6 @@
 						cursor: default;
 					}
 
-					// &:hover:not(.note) {
-					// 	color: $gold-yellow;
-					// }
-
 					a {
 						color: $brand-black;
 						text-decoration: none;
@@ -70,14 +66,14 @@
 						}
 					}
 
-					&:hover {
+					&:hover:not(.note) {
 						color: $gold-yellow;
 					}
 				}
 
-				// .note {
-				// 	opacity: 0.5;
-				// }
+				.note {
+					opacity: 0.5;
+				}
 
 				.li-social,
 				a {
