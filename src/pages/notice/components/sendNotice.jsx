@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Form, Rate, Input, Upload, Button, message } from "antd"
 import { UploadOutlined } from "@ant-design/icons"
 
-import { addNotice } from "../../../server/server"
+import { addNotice, updateClientHasPostedReview } from "../../../server/server"
 
 import "./scss/sendNotice.scss"
 
@@ -37,6 +37,8 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 				form.resetFields()
 				setValidedAccount(false)
 				setFileList([])
+
+				updateClientHasPostedReview(userData._id, true)
 			})
 			.catch(() => {
 				message.error(

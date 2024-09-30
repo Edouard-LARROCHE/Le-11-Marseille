@@ -27,9 +27,9 @@ const CardNotice = ({ item }) => {
 		>
 			<Card.Meta
 				avatar={
-					item.avatar ? (
+					item.picture ? (
 						<Avatar
-							src={item.avatar}
+							src={`/server/${item.picture}`}
 							size={35}
 							alt={item.firstName.split(" ")[0].slice(0, 1)}
 						/>

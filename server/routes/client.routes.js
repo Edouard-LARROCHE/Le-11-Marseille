@@ -89,6 +89,24 @@ router.put("/:id/status", (req, res) => {
 		})
 })
 
+router.put("/:id/hasPostedReview", (req, res) => {
+	const { id } = req.params
+	const { hasPostedReview } = req.body
+
+	clientModel
+		.findByIdAndUpdate(id, { hasPostedReview }, { new: true })
+		.then((client) => {
+			if (!client) {
+				res.status(404).json({ message: "Client introuvable !" })
+			} else {
+				res.json(client)
+			}
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Erreur serveur !" })
+		})
+})
+
 router.post("/checkClient", (req, res) => {
 	const { firstName, lastName, email, startDate, endDate } = req.body
 
@@ -102,6 +120,13 @@ router.post("/checkClient", (req, res) => {
 		})
 		.then((client) => {
 			if (client) {
+				if (client.hasPostedReview) {
+					return res.status(400).json({
+						exists: true,
+						alreadyPostedReview: true,
+						client: client,
+					})
+				}
 				res.json({ exists: true, client: client })
 			} else {
 				res.json({ exists: false })

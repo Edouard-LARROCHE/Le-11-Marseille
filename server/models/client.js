@@ -28,6 +28,10 @@ const ClientSchema = new mongoose.Schema(
 			enum: ["pending", "completed", "cancelled"],
 			default: "pending",
 		},
+		hasPostedReview: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	{
 		timestamps: true,

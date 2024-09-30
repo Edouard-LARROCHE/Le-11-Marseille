@@ -86,6 +86,15 @@ const Footer = () => {
 			.then((response) => {
 				if (response.exists) {
 					const clientInfo = response.client
+
+					if (response.alreadyPostedReview) {
+						antdMessage.error(
+							`Bonjour ${clientInfo.firstName} ${clientInfo.lastName}, vous ne pouvez pas poster plusieurs avis pour le même séjour.`,
+						)
+						setValidedAccount(false)
+
+						return
+					}
 					setUserData(clientInfo)
 
 					const statusClient = response.client.status

@@ -56,3 +56,14 @@ export const confirmationEmail = async (formData) => {
 	return response.json()
 }
 
+export const updateClientHasPostedReview = async (id, hasPostedReview) => {
+	const response = await fetch(`${url}/client/${id}/hasPostedReview`, {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ hasPostedReview }),
+	})
+	return response.json()
+}
+
