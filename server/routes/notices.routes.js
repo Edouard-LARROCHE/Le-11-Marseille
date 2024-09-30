@@ -46,6 +46,27 @@ router.post("/", upload.single("picture"), (req, res) => {
 		})
 })
 
+router.delete("/:id", (req, res) => {
+	const { id } = req.params
+
+	noticesModel
+		.findByIdAndDelete(id)
+		.then((deletedNotice) => {
+			if (!deletedNotice) {
+				return res.status(404).json({
+					message: "Avis introuvable !",
+				})
+			}
+
+			res.json(deletedNotice)
+		})
+		.catch((err) => {
+			res.status(500).json({
+				message: "Erreur serveur lors de la suppression de l'avis !",
+			})
+		})
+})
+
 router.get("/user/:userId", (req, res) => {
 	const { userId } = req.params
 
@@ -61,7 +82,7 @@ router.get("/user/:userId", (req, res) => {
 				.then((notices) => {
 					if (notices.length === 0) {
 						return res.status(404).json({
-							message: "Aucun avis trouvé pour cet utilisateur.",
+							notices: notices,
 						})
 					}
 					res.status(200).json(notices)

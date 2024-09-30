@@ -35,6 +35,9 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 				form.resetFields()
 				setValidedAccount(false)
 				setFileList([])
+				message.success(
+					"Votre avis à été envoyé avec succès, il sera visible très bientôt !",
+				)
 
 				updateClientHasPostedReview(userData._id, true)
 			})
@@ -47,10 +50,6 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
 					setLoading(false)
 					setDrawerVisible(false)
-
-					message.success(
-						"Votre avis à été envoyé avec succès, il sera visible très bientôt !",
-					)
 				})
 			})
 	}

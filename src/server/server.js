@@ -67,3 +67,10 @@ export const updateClientHasPostedReview = async (id, hasPostedReview) => {
 	return response.json()
 }
 
+export const removeNotice = async (id) => {
+	const response = await fetch(`${url}/notice/${id}`, {
+		method: "DELETE",
+	})
+	return response.json()
+}
+

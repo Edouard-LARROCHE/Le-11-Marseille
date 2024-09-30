@@ -1,12 +1,13 @@
 @use "../../../../scss/config/primitives" as *;
+@use "../../../../scss/config/functions" as *;
 
 .send-notice-container {
-	max-width: 600px;
+	max-width: convertToREM(600);
 	margin: 0 auto;
-	padding: 20px;
+	padding: convertToREM(20);
 
 	h2 {
-		margin-bottom: 20px;
+		margin-bottom: convertToREM(20);
 
 		.userName {
 			font-size: 1rem;
@@ -15,11 +16,11 @@
 	}
 
 	.ant-form-item {
-		margin-bottom: 24px;
+		margin-bottom: convertToREM(24);
 	}
 
 	.ant-upload-list-item-info {
-		padding-right: 16px;
+		padding-right: convertToREM(16);
 	}
 
 	.container-loader {

@@ -108,7 +108,8 @@ router.put("/:id/hasPostedReview", (req, res) => {
 })
 
 router.post("/checkClient", (req, res) => {
-	const { firstName, lastName, email, startDate, endDate } = req.body
+	const { firstName, lastName, email, startDate, endDate, deleteNotice } =
+		req.body
 
 	clientModel
 		.findOne({
@@ -120,7 +121,7 @@ router.post("/checkClient", (req, res) => {
 		})
 		.then((client) => {
 			if (client) {
-				if (client.hasPostedReview) {
+				if (client.hasPostedReview && !deleteNotice) {
 					return res.status(400).json({
 						exists: true,
 						alreadyPostedReview: true,

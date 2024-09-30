@@ -14,10 +14,11 @@ import {
 } from "antd"
 
 import { useScrollTarget } from "../../Context"
-import { checkClient } from "../../server/server"
+import { checkClient, getNoticesByUserId } from "../../server/server"
 
 import CopyRight from "../../components/copyRight/copyRight"
 import SendNotice from "../notice/components/sendNotice"
+import RemoveNotice from "../notice/components/removeNotice"
 import Loader from "../../components/loader/loader"
 
 import LogoTampon from "../../assets/logo/logo-tampon.svg?react"
@@ -37,6 +38,8 @@ const Footer = () => {
 	const [validedAccount, setValidedAccount] = useState(false)
 	const [userData, setUserData] = useState()
 	const [loading, setLoading] = useState(false)
+	const [toogleDeleteNotice, setToogleDeleteNotice] = useState(false)
+	const [noticeData, setNoticeData] = useState([])
 
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -71,16 +74,20 @@ const Footer = () => {
 		form.resetFields()
 	}
 
-	const submitForm = (values) => {
-		setLoading(true)
-
-		const clientData = {
+	const clientDatas = (values) => {
+		return {
 			firstName: values.firstName,
 			lastName: values.lastName,
 			email: values.email,
 			startDate: new Date(values.dates[0] + 86400000).toISOString(),
 			endDate: new Date(values.dates[1] + 86400000).toISOString(),
+			deleteNotice: toogleDeleteNotice ? true : false,
 		}
+	}
+
+	const submitFormAddNotice = (values) => {
+		setLoading(true)
+		const clientData = clientDatas(values)
 
 		checkClient(clientData)
 			.then((response) => {
@@ -113,6 +120,45 @@ const Footer = () => {
 					)
 					setValidedAccount(false)
 				}
+			})
+			.finally(() => {
+				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
+					setLoading(false)
+				})
+			})
+	}
+
+	const submitFormRemoveNotice = (values) => {
+		setLoading(true)
+		const clientData = clientDatas(values)
+
+		checkClient(clientData)
+			.then((response) => {
+				if (!response.exists) {
+					antdMessage.error(
+						"Vos informations ne correspondent pas. Veuillez réessayer.",
+					)
+					setValidedAccount(false)
+
+					return
+				}
+
+				const clientId = response.client._id
+				getNoticesByUserId(clientId).then((response) => {
+					if (response?.notices?.length === 0) {
+						antdMessage.error("Vous n'avez pas d'avis à supprimer.")
+						setValidedAccount(false)
+						setNoticeData([])
+
+						return
+					}
+
+					if (response[0]) {
+						setNoticeData(response[0])
+						setValidedAccount(true)
+						form.resetFields()
+					}
+				})
 			})
 			.finally(() => {
 				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
@@ -190,15 +236,19 @@ const Footer = () => {
 					<>
 						<div className="title-content">
 							<p className="title">
-								Vous avez séjourné dans notre appartement ?
+								{toogleDeleteNotice
+									? "Vous voulez supprimer votre avis ?"
+									: "Vous avez séjourné dans notre appartement ?"}
 							</p>
 							<p className="subtitle">
-								Pour nous laisser un avis, veuillez rempir le
-								formulaire ci-dessous.
+								{toogleDeleteNotice
+									? "Pour y accéder et supprimer votre avis, veuillez remplir le formulaire ci-dessous."
+									: "Pour nous laisser un avis, veuillez remplir le formulaire ci-dessous."}
 								<span className="highlight">
 									{" "}
-									Vous pourrez laisser un avis une fois votre
-									séjour terminé.
+									{toogleDeleteNotice
+										? "La suppression sera imédiate et définitive."
+										: "Vous pourrez laisser un avis une fois votre séjour terminé."}
 								</span>
 							</p>
 						</div>
@@ -206,7 +256,11 @@ const Footer = () => {
 							className="form-drawer"
 							form={form}
 							layout="vertical"
-							onFinish={submitForm}
+							onFinish={
+								toogleDeleteNotice
+									? submitFormRemoveNotice
+									: submitFormAddNotice
+							}
 						>
 							<Form.Item
 								name="firstName"
@@ -282,6 +336,12 @@ const Footer = () => {
 					</>
 				) : loading ? (
 					<Loader />
+				) : toogleDeleteNotice ? (
+					<RemoveNotice
+						setDrawerVisible={setDrawerVisible}
+						setValidedAccount={setValidedAccount}
+						noticeData={noticeData}
+					/>
 				) : (
 					<SendNotice
 						setDrawerVisible={setDrawerVisible}
@@ -296,7 +356,17 @@ const Footer = () => {
 					</a>
 				</div>
 				<div className="delete-notice">
-					<p>Supprimer mon avis</p>
+					<p
+						onClick={() =>
+							setToogleDeleteNotice(!toogleDeleteNotice)
+						}
+					>
+						{!validedAccount
+							? toogleDeleteNotice
+								? "Ajouter un avis"
+								: "Supprimer mon avis"
+							: null}
+					</p>
 				</div>
 			</Drawer>
 		</div>
