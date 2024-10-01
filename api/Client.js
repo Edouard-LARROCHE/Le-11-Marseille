@@ -1,8 +1,10 @@
 import mongoose from "mongoose"
 import Client from "../server/models/client"
 
-const password = encodeURIComponent(process.env.VITE_PASSWORD_MGDB)
-const uri = `mongodb+srv://${process.env.VITE_USER_MGDB}:${password}@${process.env.VITE_CLUSTER_MGDB}/?retryWrites=true&w=majority&appName=${process.env.VITE_NAME_MGDB}`
+const password = encodeURIComponent(import.meta.env.VITE_PASSWORD_MGDB)
+console.log(password, "password")
+
+const uri = `mongodb+srv://${import.meta.env.VITE_USER_MGDB}:${password}@${import.meta.env.VITE_CLUSTER_MGDB}/?retryWrites=true&w=majority&appName=${import.meta.env.VITE_NAME_MGDB}`
 
 const connectMongo = async () => {
 	if (mongoose.connections[0].readyState) return
