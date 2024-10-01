@@ -4,10 +4,12 @@ import svgr from "vite-plugin-svgr"
 
 export default defineConfig({
 	server: {
-		open: true,
-		port: 3000,
 		proxy: {
-			"/api": "http://localhost:5000",
+			"/api": {
+				target: "https://www.le11amarseille.fr",
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api/, ""),
+			},
 		},
 	},
 	css: {
