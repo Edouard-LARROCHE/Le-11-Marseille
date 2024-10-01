@@ -80,3 +80,14 @@ export const removeNotice = async (id) => {
 	return response.json()
 }
 
+export const login = async (email, password) => {
+	const response = await fetch(`${url}/auth/login`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ email, password }),
+	})
+	return response.json()
+}
+

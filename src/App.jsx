@@ -11,6 +11,9 @@ import Confidentiality from "./pages/confidentiality/confidentiality.jsx"
 import Cgl from "./pages/CGL/cgl.jsx"
 import LegalNotices from "./pages/legalNotices/legalNotices.jsx"
 
+import AdminLogin from "./pages/admin/adminLogin.jsx"
+import AdminPage from "./pages/admin/adminPage.jsx"
+
 import IMGSejour from "/images/livingRoom/PAGE_1.jpg"
 
 function App() {
@@ -42,6 +45,16 @@ function App() {
 						<Route
 							path="/legalNotices"
 							element={<LegalNotices />}
+						/>
+						<Route
+							path={`/${import.meta.env.VITE_API_PATH_ADMIN_LOGIN}`}
+							exact
+							element={<AdminLogin />}
+						/>
+						<Route
+							path={`/${import.meta.env.VITE_API_PATH_ADMIN}`}
+							exact
+							element={<AdminPage />}
 						/>
 					</Routes>
 				</ScrollProvider>

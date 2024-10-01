@@ -1,0 +1,47 @@
+@use "../../../scss/config/primitives" as *;
+
+.container-admin-login {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: var(--color-primary);
+	color: var(--color-white);
+
+	.title-admin-login {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		h1 {
+			color: $gold-yellow;
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			font-size: 1.2rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.return-home {
+		position: absolute;
+		bottom: 0.5rem;
+		cursor: pointer;
+		color: var(--color-white);
+
+		p {
+			font-size: 0.9rem;
+			margin-bottom: 0;
+
+			&:hover {
+				color: $gold-yellow;
+			}
+		}
+	}
+}
+
