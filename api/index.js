@@ -30,9 +30,7 @@ app.use("/api/client", clientRoutes)
 app.use("/api/notice", noticesRoutes)
 app.use("/api/send-confirmation-email", nodemailerRoutes)
 
-app.get("/api", (req, res) => {
-	res.json({ message: "Le 11 à Marseille" })
-})
+app.get("/", (req, res) => res.send("Express on Vercel"))
 
 app.listen(PORT, () => {
 	console.log(`Le serveur tourne sur http://localhost:${PORT}`)

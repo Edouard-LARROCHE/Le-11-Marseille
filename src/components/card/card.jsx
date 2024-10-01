@@ -31,7 +31,7 @@ const CardNotice = ({ item }) => {
 				avatar={
 					item.picture ? (
 						<Avatar
-							src={`/server/${item.picture}`}
+							src={`/api/${item.picture}`}
 							size={35}
 							alt={item.firstName.split(" ")[0].slice(0, 1)}
 						/>
