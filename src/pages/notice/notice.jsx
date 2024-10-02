@@ -15,12 +15,14 @@ const Notice = () => {
 		})
 	}, [])
 
+	const validatedNotices = cardsData.filter((card) => card.isValided)
+
 	const ratings = cardsData.length && cardsData.map((card) => card.rating)
 	const average =
 		cardsData.length &&
 		ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length
 
-	return cardsData.length ? (
+	return validatedNotices.length > 0 ? (
 		<div className="container-notice">
 			<p className="title-notice">
 				Vos <span className="highlight">avis</span>

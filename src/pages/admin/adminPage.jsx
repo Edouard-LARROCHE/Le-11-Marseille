@@ -434,7 +434,40 @@ const AdminPage = () => {
 													? "Oui"
 													: "Non"}
 											</span>
+											<p>
+												- Le status doit être
+												"completed" pour pouvoir laisser
+												un avis
+											</p>
 										</div>
+										{record.hasPostedReview && (
+											<div className="expand-row-div">
+												<br />
+												Avis posté sur le site :{" "}
+												<span className="expand-row-span">
+													{record.isValided
+														? "Oui"
+														: "Non"}
+												</span>
+												{!record.isValided && (
+													<Button
+														style={{
+															width: 100,
+															height: 25,
+														}}
+														type="primary"
+														// loading={
+														// 	!record.isValided
+														// }
+														// onClick={
+														// 	handleValidation
+														// }
+													>
+														Voir l'avis
+													</Button>
+												)}
+											</div>
+										)}
 										<div className="expand-row-div">
 											<br />
 											Supprimer le compte :{" "}

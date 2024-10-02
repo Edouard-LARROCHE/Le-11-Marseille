@@ -93,20 +93,20 @@ const Contact = () => {
 		setLoading(true)
 
 		const templateParams = {
-			firstName: values.firstName,
-			lastName: values.lastName,
+			firstName: values.firstName.toLowerCase(),
+			lastName: values.lastName.toLowerCase(),
 			company: values.company || "N/A",
 			phone: values.phone || "N/A",
-			email: values.email,
+			email: values.email.toLowerCase(),
 			motif: values.motif,
 			dates: `${dayjs(values.dates[0]).format("DD/MM/YYYY")} - ${dayjs(values.dates[1]).format("DD/MM/YYYY")}`,
 			message: values.message || "N/A",
 		}
 
 		const clientData = {
-			firstName: values.firstName,
-			lastName: values.lastName,
-			email: values.email,
+			firstName: values.firstName.toLowerCase(),
+			lastName: values.lastName.toLowerCase(),
+			email: values.email.toLowerCase(),
 			startDate: values.dates[0].toISOString(),
 			endDate: values.dates[1].toISOString(),
 		}

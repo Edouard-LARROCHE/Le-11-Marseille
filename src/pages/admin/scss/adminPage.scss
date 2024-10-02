@@ -53,6 +53,11 @@
 			flex-direction: column;
 			justify-content: center;
 
+			.expand-row-div {
+				display: flex;
+				align-items: end;
+			}
+
 			.expand-row-div1 {
 				display: flex;
 				justify-content: space-between;
@@ -71,6 +76,7 @@
 				font-size: 0.9rem;
 				color: $gold-yellow;
 				font-weight: 500;
+				margin: 0 0.5rem;
 			}
 		}
 	}

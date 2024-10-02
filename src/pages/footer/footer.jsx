@@ -78,9 +78,9 @@ const Footer = () => {
 
 	const clientDatas = (values) => {
 		return {
-			firstName: values.firstName,
-			lastName: values.lastName,
-			email: values.email,
+			firstName: values.firstName.toLowerCase(),
+			lastName: values.lastName.toLowerCase(),
+			email: values.email.toLowerCase(),
 			startDate: new Date(values.dates[0] + 86400000).toISOString(),
 			endDate: new Date(values.dates[1] + 86400000).toISOString(),
 			deleteNotice: toogleDeleteNotice ? true : false,

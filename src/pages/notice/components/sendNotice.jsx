@@ -46,6 +46,8 @@ const SendNotice = ({ setDrawerVisible, setValidedAccount, userData }) => {
 				message.error(
 					"Erreur lors de l'envoi de votre avis. Veuillez réessayer.",
 				)
+
+				return
 			})
 			.finally(() => {
 				new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
