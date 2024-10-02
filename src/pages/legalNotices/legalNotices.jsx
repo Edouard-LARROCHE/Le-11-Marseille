@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import Footer from "../footer/footer"
 
@@ -8,6 +8,12 @@ import Le11Logo from "../../assets/logo/le11.svg?react"
 import "./legalNotices.scss"
 
 const LegalNotices = () => {
+	const navigate = useNavigate()
+
+	const adminLogin = () => {
+		navigate(`/${import.meta.env.VITE_API_PATH_ADMIN_LOGIN}`)
+	}
+
 	return (
 		<div className="container-legal-notices">
 			<Le11Logo className="logoLe11" />
@@ -35,6 +41,8 @@ const LegalNotices = () => {
 					<br />
 					- Adresse : 11 rue FONDERE 13004 Marseille
 					<br />- E-mail : contact@le11amarseille.fr
+					<br />- Administration du{" "}
+					<span onClick={adminLogin}>site</span> : Mr MARTY Xavier
 					<br />
 					<br />
 					Hébergeur du site :

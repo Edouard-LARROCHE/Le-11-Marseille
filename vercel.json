@@ -1,11 +1,2 @@
-{
-	"version": 2,
-	"routes": [{ "source": "/api/routes/(.*)", "destination": "/api" }],
-	"rewrites": [
-		{
-			"source": "/(.*)",
-			"destination": "/index.html"
-		}
-	]
-}
+{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
 
