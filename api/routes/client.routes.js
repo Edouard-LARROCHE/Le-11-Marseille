@@ -138,6 +138,19 @@ router.post("/checkClient", (req, res) => {
 		})
 })
 
+router.delete("/:id", async (req, res) => {
+	const { id } = req.params
+
+	clientModel
+		.findByIdAndDelete(id)
+		.then((client) => {
+			res.json(client)
+		})
+		.catch((err) => {
+			res.status(500).json({ message: "Erreur serveur !" })
+		})
+})
+
 cron.schedule("0 0 * * *", () => {
 	const currentDate = new Date()
 

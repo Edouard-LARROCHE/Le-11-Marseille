@@ -1,10 +1,10 @@
 @use "../../../scss/config/primitives" as *;
+@use "../../../scss/config/functions" as *;
 
 .container-admin-page {
 	padding: 2rem;
 	display: flex;
 	justify-content: center;
-	height: 100vh;
 
 	.top-container {
 		display: flex;
@@ -31,6 +31,78 @@
 				}
 			}
 		}
+	}
+}
+
+.container-content {
+	.table-container,
+	.update-calendar {
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0 13rem;
+
+		h2 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.expand-row {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			.expand-row-div1 {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.expand-row-div1-div1 {
+				display: flex;
+
+				span,
+				p {
+					margin-left: 0.5rem;
+				}
+			}
+
+			.expand-row-span {
+				font-size: 0.9rem;
+				color: $gold-yellow;
+				font-weight: 500;
+			}
+		}
+	}
+
+	.update-calendar {
+		margin: 3rem 0 5rem 0;
+
+		.calendar-container {
+			margin-top: 21rem;
+		}
+	}
+}
+
+#calendar {
+	.ant-picker-panel-container {
+		width: -webkit-fill-available !important;
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+
+		.ant-picker-date-panel {
+			width: convertToREM(495) !important;
+		}
+	}
+
+	.calendar-actions {
+		margin-top: convertToREM(16);
+		display: flex;
+	}
+
+	.calendar-actions button {
+		margin: 0 convertToREM(8);
 	}
 }
 

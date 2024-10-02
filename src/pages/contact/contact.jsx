@@ -16,7 +16,11 @@ import {
 	message as antdMessage,
 } from "antd"
 
-import { addClient, confirmationEmail } from "../../server/server"
+import {
+	addClient,
+	confirmationEmail,
+	getAllCalendarDates,
+} from "../../server/server"
 
 import "./contact.scss"
 
@@ -30,6 +34,7 @@ const Contact = () => {
 	const [componentVariant, setComponentVariant] = useState("filled")
 	const [loading, setLoading] = useState(false)
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+	const [reservedDates, setReservedDates] = useState([])
 
 	const serviceId = import.meta.env.VITE_API_SERVICE_ID
 	const templateId = import.meta.env.VITE_API_TEMPLATE_ID
@@ -44,14 +49,29 @@ const Contact = () => {
 		return () => window.removeEventListener("resize", handleResize)
 	}, [])
 
+	useEffect(() => {
+		const fetchReservedDates = async () => {
+			try {
+				const dates = await getAllCalendarDates()
+				setReservedDates(
+					dates.map((date) => [
+						dayjs(date.startDate),
+						dayjs(date.endDate),
+					]),
+				)
+			} catch (error) {
+				antdMessage.error(
+					"Erreur lors de la récupération des dates réservées",
+				)
+			}
+		}
+
+		fetchReservedDates()
+	}, [])
+
 	const onFormVariantChange = ({ variant }) => {
 		setComponentVariant(variant)
 	}
-
-	const reservedDates = [
-		[dayjs("2010-09-20"), dayjs("2010-09-25")],
-		[dayjs("2024-10-06"), dayjs("2025-04-30")],
-	]
 
 	const isDateInReservedRange = (current) => {
 		return reservedDates.some(([start, end]) =>
@@ -100,6 +120,11 @@ const Contact = () => {
 					} else {
 						antdMessage.success("Email envoyé avec succès.")
 						form.resetFields()
+
+						setReservedDates((prevDates) => [
+							...prevDates,
+							[dayjs(values.dates[0]), dayjs(values.dates[1])],
+						])
 
 						confirmationEmail(clientData)
 							.then((response) => {

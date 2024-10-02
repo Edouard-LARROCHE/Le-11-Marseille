@@ -11,6 +11,7 @@ const clientRoutes = require("./routes/client.routes")
 const noticesRoutes = require("./routes/notices.routes")
 const nodemailerRoutes = require("./routes/nodemailer.routes")
 const userRoutes = require("./routes/auth.routes")
+const calendarRoutes = require("./routes/calendar.routes")
 
 const app = express()
 const PORT = process.env.PORT || 5001
@@ -30,6 +31,7 @@ mongoose
 app.use("/api/client", clientRoutes)
 app.use("/api/notice", noticesRoutes)
 app.use("/api/send-confirmation-email", nodemailerRoutes)
+app.use("/api/calendar", calendarRoutes)
 app.use("/api/auth/login", userRoutes)
 
 app.get("/", (req, res) => res.send("Express on Vercel"))

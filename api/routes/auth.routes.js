@@ -7,8 +7,19 @@ const userModel = require("../models/user")
 const authMiddleware = require("../middleware/auth.middleware")
 const router = express.Router()
 
-router.get("/data", authMiddleware, async (req, res) => {
-	res.json(req.user)
+router.post("/checkTokenUser", authMiddleware, async (req, res) => {
+	const { token } = req.body
+
+	try {
+		const user = await userModel.findOne({ token })
+		if (!user) {
+			return res.status(404).json({ message: "Utilisateur non trouvé" })
+		}
+
+		res.json(user)
+	} catch (error) {
+		res.status(500).json({ message: "Erreur serveur" })
+	}
 })
 
 router.post("/", async (req, res) => {

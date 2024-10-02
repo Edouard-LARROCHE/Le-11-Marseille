@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { login } from "../../server/server"
 
 import { Form, Input, Button, message } from "antd"
+import Loader from "../../components/loader/loader"
 
 import "./scss/adminLogin.scss"
 
@@ -11,6 +12,19 @@ const AdminLogin = () => {
 	const navigate = useNavigate()
 
 	const [loading, setLoading] = useState(false)
+
+	useEffect(() => {
+		setLoading(true)
+
+		const token = localStorage.getItem("token")
+		if (token) {
+			new Promise((resolve) => setTimeout(resolve, 2000)).then(() => {
+				navigate(`/${import.meta.env.VITE_API_PATH_ADMIN}`)
+			})
+		}
+
+		setLoading(false)
+	}, [navigate])
 
 	const handleLogin = (values) => {
 		setLoading(true)
@@ -48,50 +62,57 @@ const AdminLogin = () => {
 
 	return (
 		<div className="container-admin-login">
-			<div className="title-admin-login">
-				<h1>CONNEXION</h1>
-				<p>
-					Merci de remplir le formulaire pour accéder à
-					l'administration du site.
-				</p>
-				<Form onFinish={handleLogin} style={{ height: "40vh" }}>
-					<Form.Item
-						style={{ marginBottom: "1rem" }}
-						name="email"
-						rules={[
-							{ required: true, message: "Email obligatoire" },
-						]}
-					>
-						<Input placeholder="Email" />
-					</Form.Item>
-					<Form.Item
-						name="password"
-						rules={[
-							{
-								required: true,
-								message: "Mot de passe obligatoire",
-							},
-						]}
-					>
-						<Input.Password placeholder="Mot de passe" />
-					</Form.Item>
-					<Button
-						type="primary"
-						htmlType="submit"
-						loading={loading}
-						style={{
-							position: "absolute",
-							right: "2rem",
-							marginTop: "1rem",
-						}}
-					>
-						Connexion
-					</Button>
-					<div className="return-home" onClick={returnHome}>
-						<p>Retour à l'accueil</p>
-					</div>
-				</Form>
-			</div>
+			{loading ? (
+				<Loader />
+			) : (
+				<div className="title-admin-login">
+					<h1>CONNEXION</h1>
+					<p>
+						Merci de remplir le formulaire pour accéder à
+						l'administration du site.
+					</p>
+					<Form onFinish={handleLogin} style={{ height: "40vh" }}>
+						<Form.Item
+							style={{ marginBottom: "1rem" }}
+							name="email"
+							rules={[
+								{
+									required: true,
+									message: "Email obligatoire",
+								},
+							]}
+						>
+							<Input placeholder="Email" />
+						</Form.Item>
+						<Form.Item
+							name="password"
+							rules={[
+								{
+									required: true,
+									message: "Mot de passe obligatoire",
+								},
+							]}
+						>
+							<Input.Password placeholder="Mot de passe" />
+						</Form.Item>
+						<Button
+							type="primary"
+							htmlType="submit"
+							loading={loading}
+							style={{
+								position: "absolute",
+								right: "2rem",
+								marginTop: "1rem",
+							}}
+						>
+							Connexion
+						</Button>
+						<div className="return-home" onClick={returnHome}>
+							<p>Retour à l'accueil</p>
+						</div>
+					</Form>
+				</div>
+			)}
 		</div>
 	)
 }
