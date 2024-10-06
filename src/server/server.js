@@ -118,6 +118,17 @@ export const getNoticesByUserId = async (userId) => {
 	return response.json()
 }
 
+export const updateNoticesById = async (id, isValided) => {
+	const response = await fetch(`${url}/notice/${id}`, {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ isValided }),
+	})
+	return response.json()
+}
+
 export const removeNotice = async (id) => {
 	const response = await fetch(`${url}/notice/${id}`, {
 		method: "DELETE",

@@ -32,6 +32,7 @@ router.post("/", upload.single("picture"), (req, res) => {
 		endDate,
 		firstName,
 		lastName,
+		isValided: false,
 	})
 
 	notice
@@ -55,6 +56,30 @@ router.get("/", (req, res) => {
 		.catch((err) => {
 			res.status(500).json({
 				message: "Erreur serveur lors de la récupération des avis.",
+			})
+		})
+})
+
+router.put("/:id", (req, res) => {
+	const { id } = req.params
+	const { isValided } = req.body
+
+	noticesModel
+		.findByIdAndUpdate(id, {
+			isValided: isValided ? false : true,
+		})
+		.then((updatedNotice) => {
+			if (!updatedNotice) {
+				return res.status(404).json({
+					message: "Avis introuvable !",
+				})
+			}
+
+			res.json(updatedNotice)
+		})
+		.catch((err) => {
+			res.status(500).json({
+				message: "Erreur serveur lors de la mise à jour de l'avis !",
 			})
 		})
 })

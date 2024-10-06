@@ -29,9 +29,13 @@ import {
 	getAllCalendarDates,
 	deleteCalendarDate,
 	updateCalendarDate,
+	getNoticesByUserId,
+	updateNoticesById,
+	removeNotice,
 } from "../../server/server"
 
 import Loader from "../../components/loader/loader"
+import CardNotice from "../../components/card/card"
 
 import "./scss/adminPage.scss"
 
@@ -50,6 +54,8 @@ const AdminPage = () => {
 	const [reservedDates, setReservedDates] = useState([])
 	const [isModalVisible, setIsModalVisible] = useState(false)
 	const [currentEditingDate, setCurrentEditingDate] = useState(null)
+	const [showNotice, setShowNotice] = useState(null)
+	const [notice, setNotice] = useState([])
 
 	const { Option } = Select
 	const { RangePicker } = DatePicker
@@ -275,6 +281,8 @@ const AdminPage = () => {
 				},
 			])
 			message.success("Nouvelle réservation ajoutée")
+
+			await new Promise((resolve) => setTimeout(resolve, 2000))
 			window.location.reload()
 		} catch (error) {
 			message.error("Erreur lors de l'ajout de la réservation")
@@ -333,6 +341,34 @@ const AdminPage = () => {
 				"[]",
 			),
 		)
+	}
+
+	const handleGetNotices = async (userId) => {
+		const matchedId = clients.find((client) => client._id === userId)
+
+		if (showNotice === userId) {
+			setShowNotice(null)
+		} else {
+			const notices = await getNoticesByUserId(matchedId._id)
+			setNotice(notices)
+			setShowNotice(userId)
+		}
+	}
+
+	const handleValidateNotice = async () => {
+		await updateNoticesById(notice[0]._id, notice[0].isValided)
+		message.success("Avis validé avec succès")
+
+		await new Promise((resolve) => setTimeout(resolve, 2000))
+		window.location.reload()
+	}
+
+	const handleRemoveNotice = async () => {
+		await removeNotice(notice._id)
+		message.success("Avis supprimé avec succès")
+
+		await new Promise((resolve) => setTimeout(resolve, 2000))
+		window.location.reload()
 	}
 
 	const returnHome = () => {
@@ -443,31 +479,107 @@ const AdminPage = () => {
 										{record.hasPostedReview && (
 											<div className="expand-row-div">
 												<br />
-												Avis posté sur le site :{" "}
-												<span className="expand-row-span">
-													{record.isValided
-														? "Oui"
-														: "Non"}
-												</span>
-												{!record.isValided && (
-													<Button
-														style={{
-															width: 100,
-															height: 25,
-														}}
-														type="primary"
-														// loading={
-														// 	!record.isValided
-														// }
-														// onClick={
-														// 	handleValidation
-														// }
-													>
-														Voir l'avis
-													</Button>
-												)}
+												Avis du client :{" "}
+												<span className="expand-row-span" />
+												<Button
+													style={{
+														width: 100,
+														height: 25,
+													}}
+													type="primary"
+													onClick={() =>
+														handleGetNotices(
+															record._id,
+														)
+													}
+												>
+													{showNotice === record._id
+														? "Cacher l'avis"
+														: "Voir l'avis"}
+												</Button>
 											</div>
 										)}
+										{showNotice === record._id &&
+											notice.map((item, index) => (
+												<div className="container-show-notice">
+													<span className="text-valided">
+														{`L'avis ${notice[0].isValided ? "est " : "n'est pas"} sur le site`}
+													</span>
+													<CardNotice
+														item={item}
+														key={index}
+													/>
+													<Space size="middle">
+														<Popconfirm
+															title="Êtes-vous sûr de vouloir ajouter cet avis ?"
+															onConfirm={() =>
+																handleValidateNotice()
+															}
+															okText="Oui"
+															cancelText="Non"
+														>
+															<Button
+																style={{
+																	width: 120,
+																	height: 25,
+																	marginTop: 10,
+																}}
+																type="primary"
+																disabled={
+																	notice[0]
+																		.isValided
+																}
+															>
+																Poster l'avis
+															</Button>
+														</Popconfirm>
+														<Popconfirm
+															title="Cet avis est sur le site. Êtes-vous sûr de vouloir retirer cet avis ?"
+															onConfirm={() =>
+																handleValidateNotice()
+															}
+															okText="Oui"
+															cancelText="Non"
+														>
+															<Button
+																style={{
+																	width: 120,
+																	height: 25,
+																	marginTop: 10,
+																}}
+																type="primary"
+																danger
+																disabled={
+																	!notice[0]
+																		.isValided
+																}
+															>
+																Retirer l'avis
+															</Button>
+														</Popconfirm>
+														<Popconfirm
+															title="Cet avis n'est pas sur le site. Êtes-vous sûr de vouloir supprimer cet avis ?"
+															onConfirm={() =>
+																handleRemoveNotice()
+															}
+															okText="Oui"
+															cancelText="Non"
+														>
+															<Button
+																style={{
+																	width: 120,
+																	height: 25,
+																	marginTop: 10,
+																}}
+																type="primary"
+																danger
+															>
+																Supprimer l'avis
+															</Button>
+														</Popconfirm>
+													</Space>
+												</div>
+											))}
 										<div className="expand-row-div">
 											<br />
 											Supprimer le compte :{" "}
