@@ -7,6 +7,7 @@
 	position: relative;
 
 	.logoLe11 {
+		z-index: 0;
 		width: 15rem;
 		position: absolute;
 		top: -30rem;
@@ -88,18 +89,19 @@
 			color: $brand-black;
 			margin-top: 1rem;
 
-			a {
-				margin-left: 0.5rem;
-				color: $brand-black;
+			.adminLink {
+				z-index: 1;
+				position: relative;
+			}
+
+			.webSiteLink {
+				z-index: 1;
+				position: relative;
+				margin: 0.5rem;
+				color: $gold-yellow;
 				text-decoration: none;
 				cursor: pointer;
-				transition: 0.3s ease-in-out;
 				font-size: 0.8rem;
-
-				&:hover {
-					color: $gold-yellow;
-					transition: 0.3s ease-in-out;
-				}
 			}
 		}
 	}

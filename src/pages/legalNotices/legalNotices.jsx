@@ -14,6 +14,10 @@ const LegalNotices = () => {
 		navigate(`/${import.meta.env.VITE_API_PATH_ADMIN_LOGIN}`)
 	}
 
+	const openWindow = (url) => {
+		window.open(url, "_blank")
+	}
+
 	return (
 		<div className="container-legal-notices">
 			<Le11Logo className="logoLe11" />
@@ -42,7 +46,10 @@ const LegalNotices = () => {
 					- Adresse : 11 rue FONDERE 13004 Marseille
 					<br />- E-mail : contact@le11amarseille.fr
 					<br />- Administration du{" "}
-					<span onClick={adminLogin}>site</span> : Mr MARTY Xavier
+					<span className="adminLink" onClick={adminLogin}>
+						site
+					</span>{" "}
+					: Mr MARTY Xavier
 					<br />
 					<br />
 					Hébergeur du site :
@@ -54,13 +61,16 @@ const LegalNotices = () => {
 					<br />
 					- Nom du développeur : Edouard Larroche
 					<br />- Lien vers le site :
-					<a
-						href="https://portfolio-el-mu.vercel.app/home/projects"
-						target="_blank"
-						rel="noopener noreferrer"
+					<span
+						className="webSiteLink"
+						onClick={() =>
+							openWindow(
+								"https://portfolio-el-mu.vercel.app/home/projects",
+							)
+						}
 					>
-						https://portfolio-el-mu.vercel.app/home/projects
-					</a>
+						ici
+					</span>
 					<br />
 					<br />
 					Propriété intellectuelle : Tous les contenus présents sur ce
